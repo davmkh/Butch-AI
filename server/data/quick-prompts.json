@@ -1,0 +1,12 @@
+{
+  "note": "Site-wide FAQ buttons (US-05). Later this can be generated from the most-asked questions in the conversation logs.",
+  "prompts": [
+    { "id": "campus-life", "prompt": "Tell me about campus life" },
+    { "id": "rec-center", "prompt": "Tell me about the amenities in the rec center" },
+    { "id": "southside", "prompt": "Is Southside open right now?" },
+    { "id": "drop-deadline", "prompt": "What is the last day to drop a class?" },
+    { "id": "family-weekend", "prompt": "When is Family Weekend?" },
+    { "id": "cougar-card", "prompt": "How do I get a Cougar Card?" },
+    { "id": "admissions", "prompt": "What are the admission deadlines?" }
+  ]
+}

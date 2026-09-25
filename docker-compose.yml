@@ -1,0 +1,29 @@
+# Local development database (Milestone 1, section 2.4.1).
+#   npm run db:up     start PostgreSQL in the background
+#   npm run db:down   stop it (your data is kept in the butch-db-data volume)
+#
+# The username/password below are for local development only. Real deployments
+# get their DATABASE_URL from the host's environment settings, never from this file.
+name: butch-ai
+
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: butch-ai-db
+    environment:
+      POSTGRES_USER: butch
+      POSTGRES_PASSWORD: butch
+      POSTGRES_DB: butch_ai
+    ports:
+      # 127.0.0.1 = only this computer can connect, not others on your Wi-Fi.
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - butch-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U butch -d butch_ai']
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  butch-db-data:

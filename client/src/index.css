@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+/* Montserrat is WSU's official web typeface (brand.wsu.edu/typography). Self-hosted, no Google request. */
+@import '@fontsource-variable/montserrat';
+
+/*
+ * WSU design tokens (NFR-01). Change a color here and every component follows.
+ * Source: https://brand.wsu.edu/colors/
+ * Brand rule: don't use lighter tints ("screens") of crimson or crimson-to-gray gradients.
+ */
+@theme {
+  --font-sans: 'Montserrat Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-wsu-crimson: #a60f2d; /* Primary. White text on it = 7.7:1 contrast */
+  --color-wsu-crimson-dark: #850c24; /* Darker shade for hover/pressed states */
+  --color-wsu-gray: #4d4d4d; /* Primary */
+  --color-wsu-black-80: #1f1f1f;
+  --color-wsu-black-60: #808080;
+  --color-wsu-black-40: #cccccc;
+  --color-wsu-black-30: #ebebeb;
+  --color-wsu-surface: #f6f6f6; /* Page background */
+  --color-wsu-midnight: #002d61; /* Accent, use sparingly */
+
+  --animate-butch-bob: butch-bob 0.9s ease-in-out infinite;
+  --animate-typing-dot: typing-dot 1.2s ease-in-out infinite;
+
+  @keyframes butch-bob {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-2px) rotate(-4deg);
+    }
+  }
+
+  @keyframes typing-dot {
+    0%,
+    60%,
+    100% {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-wsu-surface font-sans text-wsu-black-80 antialiased;
+  }
+
+  /* One consistent, high-contrast keyboard focus ring (NFR-05). */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-wsu-crimson;
+  }
+}

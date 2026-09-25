@@ -1,0 +1,13 @@
+{
+  "name": "@butch/shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Types and constants shared by the Butch AI client and server",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

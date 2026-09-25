@@ -1,0 +1,142 @@
+{
+  "note": "WSU offices Butch points to when he can't answer confidently (FR-05, US-02). Links verified 2026-09-25.",
+  "general": {
+    "id": "wsu",
+    "name": "Washington State University",
+    "helpsWith": "finding the right office",
+    "keywords": [],
+    "link": { "label": "WSU homepage", "url": "https://wsu.edu/" }
+  },
+  "offices": [
+    {
+      "id": "transportation",
+      "name": "WSU Transportation Services",
+      "helpsWith": "parking permits and other parking and transportation questions (509-335-PARK)",
+      "keywords": [
+        "parking",
+        "permit",
+        "park",
+        "car",
+        "citation",
+        "ticket",
+        "bus",
+        "transit",
+        "transportation",
+        "garage",
+        "lot"
+      ],
+      "link": {
+        "label": "Transportation Services: Contact",
+        "url": "https://transportation.wsu.edu/contact-information/"
+      }
+    },
+    {
+      "id": "registrar",
+      "name": "the Office of the Registrar",
+      "helpsWith": "registration, transcripts, withdrawals, residency, and graduation applications (509-335-5346)",
+      "keywords": [
+        "registrar",
+        "register",
+        "registration",
+        "enroll",
+        "enrollment",
+        "transcript",
+        "withdraw",
+        "withdrawal",
+        "grade",
+        "graduation",
+        "diploma",
+        "residency",
+        "class",
+        "course",
+        "schedule"
+      ],
+      "link": { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+    },
+    {
+      "id": "housing",
+      "name": "Housing and Residence Life",
+      "helpsWith": "residence halls and housing questions",
+      "keywords": [
+        "housing",
+        "dorm",
+        "residence",
+        "residence hall",
+        "room",
+        "roommate",
+        "move in",
+        "apartment"
+      ],
+      "link": {
+        "label": "Housing & Residence Life: Contact",
+        "url": "https://housing.wsu.edu/about-us/contact-us/"
+      }
+    },
+    {
+      "id": "financial",
+      "name": "Student Financial Services",
+      "helpsWith": "financial aid, scholarships, tuition, and billing",
+      "keywords": [
+        "financial aid",
+        "fafsa",
+        "scholarship",
+        "tuition",
+        "bill",
+        "billing",
+        "loan",
+        "grant",
+        "payment",
+        "pay",
+        "cost",
+        "money",
+        "refund"
+      ],
+      "link": {
+        "label": "Student Financial Services: Contact",
+        "url": "https://financialaid.wsu.edu/contact-page/"
+      }
+    },
+    {
+      "id": "admissions",
+      "name": "WSU Admissions",
+      "helpsWith": "applying to WSU and admission questions",
+      "keywords": [
+        "admission",
+        "apply",
+        "application",
+        "prospective",
+        "freshman",
+        "transfer",
+        "requirement",
+        "gpa"
+      ],
+      "link": { "label": "WSU Admissions", "url": "https://admission.wsu.edu/" }
+    },
+    {
+      "id": "dining",
+      "name": "WSU Dining Services",
+      "helpsWith": "meal plans, dining locations, and food questions",
+      "keywords": ["meal plan", "meal", "dining", "food", "menu", "allergy", "vegan", "vegetarian"],
+      "link": { "label": "WSU Dining Services", "url": "https://dining.wsu.edu/" }
+    },
+    {
+      "id": "student-care",
+      "name": "the WSU Student Care Network",
+      "helpsWith": "connecting you to support for academics, housing, food insecurity, mental health, and other challenges (email student.affairs@wsu.edu)",
+      "keywords": [
+        "help",
+        "struggling",
+        "support",
+        "stress",
+        "stressed",
+        "mental health",
+        "care",
+        "worried",
+        "wellbeing",
+        "food insecurity",
+        "overwhelmed"
+      ],
+      "link": { "label": "WSU Student Care Network", "url": "https://studentcare.wsu.edu/" }
+    }
+  ]
+}
