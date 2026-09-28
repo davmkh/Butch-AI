@@ -56,11 +56,11 @@ export function ChatWindow({ messages, status, onRate }: ChatWindowProps) {
 function Intro() {
   return (
     <div className="flex flex-col items-center pt-2 pb-4 text-center">
-      <MascotAvatar size="lg" />
+      <MascotAvatar variant="full" pose="wave" animated className="aspect-[200/280] h-40" />
       <h2 className="mt-3 text-2xl font-bold text-wsu-crimson">Ask me anything about WSU</h2>
       <p className="mt-1 max-w-md text-wsu-gray">
-        Dining hours, academic deadlines, admissions, the Rec, and campus life. I answer from
-        official WSU websites and link my sources.
+        Dining, deadlines, admissions, Cougar sports, research, tutoring, the Rec, and campus life.
+        I answer from official WSU websites and link my sources.
       </p>
     </div>
   );

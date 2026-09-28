@@ -360,7 +360,21 @@ Validation enforces https-only links, `HH:MM` times with close after open, ISO d
 3. Split on anything that isn't a letter or digit.
 4. Drop 1-letter words and **stopwords**: filler like "is", "the", "how", "can", "tell", "me",
    and also "wsu" and "butch" (every question is about WSU, so they don't help).
-5. **Stem** simple plurals: "classes" → "class", "hours" → "hour", "libraries" → "library".
+5. **Stem** simple plurals and "-ing": "classes" → "class", "libraries" → "library",
+   "swimming" → "swim".
+
+**Understanding messy typing** (`understand()`, used by `search()`):
+
+- **Shorthand and known misspellings** are swapped first (`WORD_FIXES` in `synonyms.ts`):
+  "chem" → "chemistry", "brake" → "break".
+- **Typos**: a word the knowledge base never uses is matched to the closest word it does use,
+  allowing 1 typo for words up to 7 letters and 2 for longer ones (swapped letters count as
+  one). The first letter must match, which stops real words from turning into other real
+  words ("deal" is not "meal"). Typo matches score 0.9 instead of 1, so exact matches win ties.
+- **Typo'd filler words** ("wen", "teh") are dropped.
+- **Synonyms** (`SYNONYM_GROUPS` in `synonyms.ts`): if an entry's title or keywords contain one
+  word in a group, it strongly matches all of them, so "gym" finds the Rec and "grub" finds
+  dining. Keep groups to true synonyms; a word with two meanings drags in wrong answers.
 
 **Step 2: `search(entries, question)`** scores every entry:
 
@@ -585,8 +599,13 @@ because tests and accessibility depend on them:
   "Suggested questions", "Conversation with Butch".
 - **`data-testid`** (`message`, `typing-indicator`, `butch-avatar`) and **`data-role`** /
   **`data-state`** attributes.
-- **`MascotAvatar`'s `state` prop** (`idle` / `thinking`). To add real art or Lottie
-  animations, change what it renders inside and keep the prop.
+- **`MascotAvatar`'s `state` and `pose` props.** `state` is `idle` / `thinking` (the typing
+  tests use it via `data-state`). `pose` is what Butch acts out (`data-pose`): the server picks
+  one per reply (`poseFor()` in `server/src/responders/voice.ts`: sports → hype, Rec → flex,
+  deadlines and research → study, fallback → shrug). The art is one original SVG of Butch in
+  costume; `variant="head"` crops it for bubbles and the header, `variant="full"` shows him head
+  to sneakers (the intro and `ButchStage`, the side panel on wide screens). To swap in Lottie
+  animations later, change what it renders inside and keep both props.
 
 If a design change breaks an e2e step, update the step, not just the test ID, and keep the
 page accessible.
@@ -659,11 +678,11 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 ## 10. Known limitations
 
 - **Offline mode only repeats entries.** Without an API key, a reply is the matching entry's
-  text word for word.
-- **Only knows 42 facts.** Anything else falls back (e.g. "Sigma Nu", "jobs"). Add entries, or
+  text word for word, wrapped in a Butch opener and sign-off (`voice.ts`).
+- **Only knows 56 facts.** Anything else falls back (e.g. "Sigma Nu", "jobs"). Add entries, or
   add Claude's web search limited to wsu.edu (see ROADMAP.md).
-- **Keyword search** misses paraphrases with no shared words ("grub" for dining). Add keywords,
-  or move to embeddings (pgvector) later.
+- **Keyword search** handles typos and listed synonyms but still misses paraphrases with no
+  shared or synonym words. Add keywords or a synonym group, or move to embeddings (pgvector) later.
 - **Follow-ups** like "when does it close?" have no topic words, so search can't tell which
   place you mean.
 - **Regular hours only.** Holiday and break hours aren't modeled; entries warn about this.

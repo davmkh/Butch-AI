@@ -62,7 +62,7 @@ Then('will include a link to the actual Parents Weekend information website', as
 });
 
 Then('Butch responds with a fallback message instead of guessing', async ({ chat }) => {
-  await expect(chat.lastReply).toContainText("I'd rather not guess");
+  await expect(chat.lastReply).toContainText("I'd never guess on you");
 });
 
 Then(
@@ -194,5 +194,5 @@ Then('the chat window is cleared', async ({ chat }) => {
 });
 
 Then("I see Butch's default greeting message", async ({ chat }) => {
-  await expect(chat.bubbles.first()).toContainText("Hey there, Coug! I'm Butch.");
+  await expect(chat.bubbles.first()).toContainText("HEY HEY, Coug! I'm Butch");
 });

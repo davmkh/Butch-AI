@@ -31,6 +31,7 @@ export function chatReply(request: ChatRequest): ChatResponse {
     messageId: crypto.randomUUID(),
     reply: `Here's what I know about: ${request.message}`,
     kind: 'answer',
+    pose: 'thumbsup',
     sources: [{ label: 'WSU Academic Calendar', url: 'https://catalog.wsu.edu/AcademicCalendar' }],
   };
 }

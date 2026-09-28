@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import type { Rating, ReplyKind, SourceLink } from '@butch/shared';
+import type { ButchPose, Rating, ReplyKind, SourceLink } from '@butch/shared';
 import { ApiRequestError, type ButchApi } from '../api/butchApi.ts';
 
 export type ChatStatus = 'idle' | 'thinking';
@@ -12,18 +12,21 @@ export interface ChatMessage {
   /** For Butch's messages: a normal answer, a fallback, the greeting, or an error notice. */
   kind?: ReplyKind | 'greeting' | 'error';
   sources?: SourceLink[];
+  /** How Butch's avatar acts out this message. */
+  pose?: ButchPose;
   /** The server's ID for this reply. Only replies with one can be rated. */
   serverId?: string;
   rating?: Rating;
 }
 
 export const GREETING =
-  "Hey there, Coug! I'm Butch. Ask me about dining hours, academic deadlines, admissions, the Rec Center, campus life, and more. Go Cougs!";
+  "HEY HEY, Coug! I'm Butch, and I am SO pumped you're here! Ask me about dining, deadlines, admissions, Cougar sports, undergrad research, tutoring, the Rec, campus life, and more. Go Cougs! 🐾";
 
 const greetingMessage = (): ChatMessage => ({
   id: crypto.randomUUID(),
   role: 'butch',
   kind: 'greeting',
+  pose: 'wave',
   text: GREETING,
 });
 
@@ -63,6 +66,7 @@ export function useChat(api: ButchApi) {
           kind: res.kind,
           text: res.reply,
           sources: res.sources,
+          pose: res.pose,
           serverId: res.messageId,
         };
       } catch (error) {
@@ -73,6 +77,7 @@ export function useChat(api: ButchApi) {
           id: crypto.randomUUID(),
           role: 'butch',
           kind: 'error',
+          pose: 'shrug',
           text: serverSaid
             ? error.message
             : "Sorry, I couldn't reach the Butch server just now. Please try again in a moment.",

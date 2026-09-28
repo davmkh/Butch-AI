@@ -50,7 +50,9 @@ financial aid, and others). Parking is deliberately **not** in the knowledge bas
 2. Give it a unique `id` (lowercase-with-dashes), a clear `title`, and factual `content`
    written as it should be read aloud.
 3. Add `keywords`: the words students actually type ("drop a class", "rec center", "dorm").
-   These matter most for matching.
+   These matter most for matching. You don't need every typo or synonym: typos are matched
+   automatically, and whole synonym groups ("gym" = "rec") live in
+   `server/src/knowledge/synonyms.ts`.
 4. Add at least one `links` entry to the official page, and set `lastVerified` to today.
 5. Run `npm test -w server`. The loader rejects typos (bad times, missing links, duplicate IDs).
 6. Ask Butch the question in the app to confirm it matches.

@@ -13,12 +13,12 @@ export function buildFallback(
   const office = pickOffice(question, offices.offices);
   if (office) {
     return {
-      text: `Hmm, I don't have a confident answer for that one, and I'd rather not guess! Your best bet is ${office.name}. They can help with ${office.helpsWith}.`,
+      text: `Aw, shucks! I don't have a confident answer for that one, and I'd never guess on you, Coug. Your best bet is ${office.name}. They can help with ${office.helpsWith}. Try me on something else anytime!`,
       sources: [office.link, offices.general.link],
     };
   }
   return {
-    text: "Hmm, I don't have a confident answer for that one, and I'd rather not guess! The WSU website is a good place to start. You can also ask me about dining hours, academic deadlines, admissions, the Rec Center, or campus life.",
+    text: "Aw, shucks! I don't have a confident answer for that one, and I'd never guess on you, Coug. The WSU website is a great place to start. Or hit me with a question about dining, deadlines, admissions, Cougar sports, undergrad research, tutoring, Cougar Health, housing, the Rec, or campus life!",
     sources: [offices.general.link],
   };
 }

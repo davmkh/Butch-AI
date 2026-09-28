@@ -73,6 +73,7 @@ export function chatRouter({
       reply: reply.text,
       kind: reply.kind,
       sources: reply.sources,
+      pose: reply.pose,
     };
     res.json(body);
   });

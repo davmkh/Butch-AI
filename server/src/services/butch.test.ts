@@ -42,6 +42,28 @@ describe('Butch', () => {
     expect(warn).toHaveBeenCalledOnce();
   });
 
+  it('answers small talk without searching or calling the responder', async () => {
+    const respond = vi.fn();
+    const { butch } = await buildButch({ name: 'claude', respond });
+    const reply = await butch.reply('Go Cougs!', [], now);
+    expect(reply).toMatchObject({ kind: 'answer', pose: 'hype', entryIds: [], sources: [] });
+    expect(respond).not.toHaveBeenCalled();
+  });
+
+  it('picks a pose from what the answer is about', async () => {
+    const { butch } = await buildButch(new OfflineResponder());
+    expect((await butch.reply('student football tickets', [], now)).pose).toBe('hype');
+    expect((await butch.reply('Is the gym open?', [], now)).pose).toBe('flex');
+    expect((await butch.reply('When is SURCA?', [], now)).pose).toBe('study');
+  });
+
+  it('keeps the facts word for word inside Butch’s offline voice', async () => {
+    const { butch } = await buildButch(new OfflineResponder());
+    const reply = await butch.reply('When is SURCA?', [], now);
+    expect(reply.text).toContain('SURCA 2027 is Monday, March 22, 2027');
+    expect(reply.text).toMatch(/!/); // an opener or sign-off with some energy
+  });
+
   it('falls back when the responder declines to answer', async () => {
     const { butch } = await buildButch({
       name: 'claude',

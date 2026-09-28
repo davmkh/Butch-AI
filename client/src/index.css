@@ -22,6 +22,75 @@
 
   --animate-butch-bob: butch-bob 0.9s ease-in-out infinite;
   --animate-typing-dot: typing-dot 1.2s ease-in-out infinite;
+  /* Butch's poses (MascotAvatar). He's hyper, so the idle bounce never stops. */
+  --animate-butch-bounce: butch-bounce 1.4s ease-in-out infinite;
+  --animate-butch-jump: butch-jump 0.7s cubic-bezier(0.3, 0, 0.4, 1) infinite;
+  --animate-butch-wave: butch-wave 0.45s ease-in-out infinite alternate;
+  --animate-butch-flex: butch-flex 0.8s ease-in-out infinite;
+  --animate-butch-shrug: butch-shrug 1.6s ease-in-out infinite;
+  --animate-butch-talk: butch-talk 0.18s ease-in-out 10 alternate;
+
+  @keyframes butch-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes butch-jump {
+    0%,
+    100% {
+      transform: translateY(0) scaleY(1);
+    }
+    15% {
+      transform: translateY(0) scaleY(0.95);
+    }
+    50% {
+      transform: translateY(-14px) scaleY(1.02);
+    }
+  }
+
+  @keyframes butch-wave {
+    from {
+      transform: rotate(-10deg);
+    }
+    to {
+      transform: rotate(12deg);
+    }
+  }
+
+  @keyframes butch-flex {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
+  }
+
+  @keyframes butch-shrug {
+    0%,
+    60%,
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes butch-talk {
+    from {
+      transform: scaleY(1);
+    }
+    to {
+      transform: scaleY(0.55);
+    }
+  }
 
   @keyframes butch-bob {
     0%,

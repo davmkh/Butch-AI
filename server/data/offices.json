@@ -137,6 +137,56 @@
         "overwhelmed"
       ],
       "link": { "label": "WSU Student Care Network", "url": "https://studentcare.wsu.edu/" }
+    },
+    {
+      "id": "athletics",
+      "name": "WSU Athletics",
+      "helpsWith": "game schedules, tickets, and everything Cougar sports",
+      "keywords": [
+        "sport",
+        "sports",
+        "athletics",
+        "football",
+        "basketball",
+        "baseball",
+        "volleyball",
+        "soccer",
+        "tennis",
+        "game",
+        "ticket",
+        "score",
+        "coach",
+        "roster"
+      ],
+      "link": { "label": "WSU Athletics", "url": "https://wsucougars.com/" }
+    },
+    {
+      "id": "undergrad-research",
+      "name": "the Office of Undergraduate Research",
+      "helpsWith": "finding research opportunities, faculty mentors, and research funding",
+      "keywords": ["research", "lab", "mentor", "surca", "grant", "funding", "professor", "project"],
+      "link": {
+        "label": "Office of Undergraduate Research",
+        "url": "https://undergraduateresearch.wsu.edu/"
+      }
+    },
+    {
+      "id": "cougar-health",
+      "name": "Cougar Health Services",
+      "helpsWith": "medical care, counseling, pharmacy, and vision care (509-335-3575)",
+      "keywords": [
+        "health",
+        "doctor",
+        "sick",
+        "medical",
+        "clinic",
+        "pharmacy",
+        "counseling",
+        "therapy",
+        "vaccine",
+        "insurance"
+      ],
+      "link": { "label": "Cougar Health Services", "url": "https://cougarhealth.wsu.edu/" }
     }
   ]
 }

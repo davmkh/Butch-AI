@@ -1,17 +1,21 @@
 import Anthropic from '@anthropic-ai/sdk';
-import type { ReplyKind, SourceLink } from '@butch/shared';
+import type { ButchPose, ReplyKind, SourceLink } from '@butch/shared';
 import { liveStatus } from '../knowledge/liveStatus.ts';
 import { search } from '../knowledge/retrieval.ts';
 import type { OfficesFile } from '../knowledge/schema.ts';
 import { pullmanClock } from '../lib/pullmanTime.ts';
 import type { GroundedFact, HistoryTurn, Responder, ResponderResult } from '../responders/types.ts';
+import { poseFor } from '../responders/voice.ts';
 import type { Store } from '../store/types.ts';
 import { buildFallback } from './fallback.ts';
+import { smallTalk } from './smallTalk.ts';
 
 export interface ButchReply {
   text: string;
   kind: ReplyKind;
   sources: SourceLink[];
+  /** How the avatar acts out this reply. */
+  pose: ButchPose;
   /** Knowledge entries the answer was based on (empty for fallbacks). */
   entryIds: string[];
 }
@@ -29,6 +33,7 @@ export interface ButchOptions {
 
 /**
  * Butch's answer pipeline:
+ *   0. small talk ("hi", "thanks", "Go Cougs!") or a crisis -> a canned reply, no search
  *   1. search the knowledge base for the question
  *   2. not confident?  -> fallback with a link to the right WSU office (FR-05)
  *   3. add live status (open now / deadline passed) to each match
@@ -47,6 +52,9 @@ export class Butch {
 
   async reply(question: string, history: HistoryTurn[], now: Date): Promise<ButchReply> {
     const { store, confidenceThreshold, maxFacts } = this.options;
+
+    const chat = smallTalk(question);
+    if (chat) return { ...chat, kind: 'answer', entryIds: [] };
 
     const matches = search(await store.listKnowledge(), question, {
       limit: maxFacts,
@@ -67,6 +75,7 @@ export class Butch {
       text: result.text,
       kind: 'answer',
       sources: uniqueLinks(facts),
+      pose: poseFor(facts[0]!.entry.category),
       entryIds: facts.map((f) => f.entry.id),
     };
   }
@@ -86,7 +95,12 @@ export class Butch {
   }
 
   private fallback(question: string): ButchReply {
-    return { ...buildFallback(question, this.options.offices), kind: 'fallback', entryIds: [] };
+    return {
+      ...buildFallback(question, this.options.offices),
+      kind: 'fallback',
+      pose: 'shrug',
+      entryIds: [],
+    };
   }
 }
 

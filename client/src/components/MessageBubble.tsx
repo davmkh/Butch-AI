@@ -27,7 +27,7 @@ export function MessageBubble({ message, onRate }: MessageBubbleProps) {
   const isError = message.kind === 'error';
   return (
     <div className="flex items-end gap-2" data-testid="message" data-role="butch">
-      <MascotAvatar size="sm" />
+      <MascotAvatar size="sm" pose={message.pose} />
       <div
         className={`max-w-[85%] rounded-2xl rounded-bl-md border bg-white px-4 py-3 shadow-sm ${
           isError ? 'border-wsu-crimson' : 'border-wsu-black-30'

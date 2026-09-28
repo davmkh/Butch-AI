@@ -107,9 +107,10 @@ Each item has a "done when" so it can become a GitHub issue as-is.
   SCENARIOS.md passes.
 - **(Kaiden) Real "most-asked" quick prompts (US-05).** Count the most-matched entries or
   questions in the `messages` table over the last 30 days; fall back to the curated list.
-- **(Dav) Mascot art v1** in `MascotAvatar.tsx`, keeping the `state` prop. Optionally add
-  Lottie (`lottie-react`) animations, with a static frame for reduced motion (Milestone 1,
-  §2.1.5).
+- **(Dav) Mascot art v1** in `MascotAvatar.tsx`: a first pass is in (original SVG of Butch in
+  costume with 9 poses the server picks per reply). Refine the drawing, or replace it with
+  Lottie (`lottie-react`) animations with a static frame for reduced motion, keeping the
+  `state` and `pose` props (Milestone 1, §2.1.5).
 - **(Both) New scenarios** from the "worth adding" list in SCENARIOS.md: rate limit, API down,
   follow-ups, ambiguous questions.
 

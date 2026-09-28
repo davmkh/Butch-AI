@@ -29,6 +29,24 @@ export interface ChatRequest {
  */
 export type ReplyKind = 'answer' | 'fallback';
 
+/**
+ * How Butch's avatar acts out a reply (US-06). The server picks one per reply
+ * from what the reply is about, e.g. `flex` for sports and `shrug` for a fallback.
+ * `thinking` is only used by the client while a reply is on its way.
+ */
+export const BUTCH_POSES = [
+  'idle',
+  'wave',
+  'thinking',
+  'hype',
+  'point',
+  'flex',
+  'study',
+  'shrug',
+  'thumbsup',
+] as const;
+export type ButchPose = (typeof BUTCH_POSES)[number];
+
 export interface ChatResponse {
   conversationId: string;
   /** ID of Butch's reply; used when rating it. */
@@ -36,6 +54,7 @@ export interface ChatResponse {
   reply: string;
   kind: ReplyKind;
   sources: SourceLink[];
+  pose: ButchPose;
 }
 
 // ---------------------------------------------------------------------------

@@ -87,6 +87,17 @@ describe('FR-04 / US-06: typing indicator and mascot animation', () => {
     await waitFor(() => expect(screen.queryByText('Butch is typing…')).not.toBeInTheDocument());
     expect(headerAvatar).toHaveAttribute('data-state', 'idle');
   });
+
+  it('acts out each reply with the pose the server picked', async () => {
+    const { user, input } = setup();
+    const headerAvatar = within(screen.getByRole('banner')).getByTestId('butch-avatar');
+    expect(headerAvatar).toHaveAttribute('data-pose', 'wave'); // the greeting
+
+    await user.type(input, 'When is spring break?{Enter}');
+    await waitFor(() => expect(headerAvatar).toHaveAttribute('data-pose', 'thumbsup'));
+    const [, reply] = within(screen.getByRole('log')).getAllByTestId('butch-avatar');
+    expect(reply).toHaveAttribute('data-pose', 'thumbsup');
+  });
 });
 
 describe('US-02: sources and fallback links', () => {
@@ -107,6 +118,7 @@ describe('US-02: sources and fallback links', () => {
           messageId: crypto.randomUUID(),
           reply: "I'd rather not guess!",
           kind: 'fallback',
+          pose: 'shrug',
           sources: [
             {
               label: 'Transportation Services: Contact',

@@ -858,6 +858,411 @@
         }
       ],
       "lastVerified": "2026-09-25"
+    },
+    {
+      "id": "athletics-overview",
+      "category": "athletics",
+      "title": "WSU Cougars athletics",
+      "content": "WSU's teams are the Cougars (the Cougs), competing at the NCAA Division I level in the Pac-12 Conference. Sports include football, volleyball, soccer, basketball, tennis, baseball, and more. Football plays at Gesa Field in Martin Stadium, and men's basketball plays in Beasley Coliseum.",
+      "keywords": [
+        "athletics",
+        "sports",
+        "sport",
+        "teams",
+        "team",
+        "cougs",
+        "cougars",
+        "pac-12",
+        "pac 12",
+        "conference",
+        "ncaa",
+        "varsity"
+      ],
+      "links": [
+        {
+          "label": "WSU Athletics",
+          "url": "https://wsucougars.com/"
+        },
+        {
+          "label": "Pullman: Athletics, Sports and Recreation",
+          "url": "https://pullman.wsu.edu/athletics/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "athletics-football-2026-home-games",
+      "category": "athletics",
+      "title": "2026 Cougar football home games",
+      "content": "Cougar football home games in 2026 are at Gesa Field in Martin Stadium, Pullman: Duquesne (Sat, Sept 19), Arizona (Sat, Sept 26), Fresno State (Sat, Oct 3), Boise State (Sat, Oct 24), Colorado State (Sat, Nov 14), and Oregon State (Sat, Nov 28). The Pac-12 Football Championship is Friday, December 4.",
+      "keywords": [
+        "football",
+        "football game",
+        "football schedule",
+        "home game",
+        "home games",
+        "schedule",
+        "martin stadium",
+        "gesa field",
+        "stadium",
+        "kickoff",
+        "cougs",
+        "play",
+        "game day",
+        "gameday",
+        "game",
+        "games"
+      ],
+      "links": [
+        {
+          "label": "WSU Football Schedule",
+          "url": "https://wsucougars.com/sports/football/schedule"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "athletics-apple-cup-2026",
+      "category": "athletics",
+      "title": "2026 Apple Cup (WSU vs. Washington)",
+      "content": "The Apple Cup is WSU's rivalry game against the University of Washington. In 2026 it was played Sunday, September 6 at Husky Stadium in Seattle.",
+      "keywords": ["apple cup", "rivalry", "rival", "huskies", "husky", "uw", "dawgs"],
+      "links": [
+        {
+          "label": "WSU Football Schedule",
+          "url": "https://wsucougars.com/sports/football/schedule"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2026-09-06"
+    },
+    {
+      "id": "athletics-student-sports-pass",
+      "category": "athletics",
+      "title": "Student Sports Pass (student tickets)",
+      "content": "The 2026-27 Student Sports Pass costs $299 for Pullman students ($200 for urban and online campus students). It gets you into all regular-season home events in football, soccer, volleyball, men's and women's basketball, and baseball from August through May. Buy it in myWSU (Student Homepage, Manage Classes, Optional Services). The pass is digital: log in at wsucougars.com/MyAccount, add \"My Access Pass\" to Apple or Google Wallet, and scan it at the Student Entrance. Student sections are first come, first served and can fill up. Refund requests for an unused pass are due November 13, 2026.",
+      "keywords": [
+        "sports pass",
+        "student tickets",
+        "tickets",
+        "ticket",
+        "student ticket",
+        "admission",
+        "get into games",
+        "free tickets",
+        "student section",
+        "pass"
+      ],
+      "links": [
+        {
+          "label": "WSU Athletics: Student Sports Pass",
+          "url": "https://wsucougars.com/student-sports-pass"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "athletics-mens-basketball-2026",
+      "category": "athletics",
+      "title": "2026-27 men's basketball home games",
+      "content": "Cougar men's basketball plays at Beasley Coliseum in Pullman. The first home games of the 2026-27 season are Davidson (Monday, November 2), Idaho (Friday, November 27), and North Dakota State (Sunday, December 6). Tip-off times are still to be announced.",
+      "keywords": [
+        "basketball",
+        "hoops",
+        "beasley",
+        "beasley coliseum",
+        "coliseum",
+        "mens basketball",
+        "basketball game",
+        "basketball season"
+      ],
+      "links": [
+        {
+          "label": "WSU Men's Basketball Schedule",
+          "url": "https://wsucougars.com/sports/mens-basketball/schedule"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "athletics-game-day-traditions",
+      "category": "athletics",
+      "title": "Game day traditions and the ZZU Cru",
+      "content": "The ZZU Cru is the official student fan club of the Cougs and drives the energy at WSU athletic events. Cougar football game days in Pullman are a town-wide celebration with tailgating near Martin Stadium, and the Cougar Marching Band supports the teams and plays the fight song.",
+      "keywords": [
+        "zzu cru",
+        "zzu",
+        "fan club",
+        "student section",
+        "tailgate",
+        "tailgating",
+        "marching band",
+        "band",
+        "fight song",
+        "traditions",
+        "tradition",
+        "school spirit",
+        "spirit"
+      ],
+      "links": [
+        {
+          "label": "Pullman: Athletics, Sports and Recreation",
+          "url": "https://pullman.wsu.edu/athletics/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "research-getting-started",
+      "category": "research",
+      "title": "Getting started in undergraduate research",
+      "content": "WSU's Office of Undergraduate Research helps undergrads get into research, scholarship, and creative work. Good first steps: take UNIV 199, a one-credit \"Introduction to Directed Research\" course offered fall and spring; book a chat with a peer mentor (current undergrad researchers); go to the STEM Research Opportunities Fair and info sessions; and reach out to faculty in your department about joining their work. Support programs include LSAMP, the McNair Scholars Program, Research Scholars (for incoming first-year students), and the Team Mentoring Program. Some courses also build research right into the class.",
+      "keywords": [
+        "undergraduate research",
+        "undergrad research",
+        "research",
+        "researcher",
+        "lab",
+        "labs",
+        "research lab",
+        "research assistant",
+        "professor",
+        "faculty mentor",
+        "mentor",
+        "univ 199",
+        "mcnair",
+        "lsamp",
+        "research experience",
+        "research opportunities"
+      ],
+      "links": [
+        {
+          "label": "Office of Undergraduate Research: Get Started",
+          "url": "https://undergraduateresearch.wsu.edu/get-started/"
+        },
+        {
+          "label": "Office of Undergraduate Research",
+          "url": "https://undergraduateresearch.wsu.edu/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "research-awards-2027-28",
+      "category": "research",
+      "title": "Undergraduate Research Awards (2027-28 funding)",
+      "content": "The Office of Undergraduate Research funds Undergraduate Research Awards for all WSU undergrads doing research, scholarship, or creative activities with a mentor. Applications for awards paid in the 2027-28 academic year open Monday, November 2, 2026 and close January 31, 2027. The office also offers travel awards to help students present at conferences.",
+      "keywords": [
+        "research award",
+        "research awards",
+        "research grant",
+        "grant",
+        "grants",
+        "funding",
+        "research funding",
+        "money for research",
+        "travel award",
+        "travel grant",
+        "stipend"
+      ],
+      "links": [
+        {
+          "label": "Undergraduate Research Awards",
+          "url": "https://undergraduateresearch.wsu.edu/funding/undergraduate-research-awards/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2027-01-31"
+    },
+    {
+      "id": "research-surca-2027",
+      "category": "research",
+      "title": "SURCA 2027 (undergraduate research showcase)",
+      "content": "SURCA, the Showcase for Undergraduate Research and Creative Activities, is WSU's annual poster showcase where around 200 undergrads present their work and compete for awards. SURCA 2027 is Monday, March 22, 2027: public presentations run 3:30-4:45 p.m. in the CUB Senior Ballroom, and the awards ceremony starts at 5 p.m. in the CUB Auditorium.",
+      "keywords": [
+        "surca",
+        "showcase",
+        "poster",
+        "poster session",
+        "research showcase",
+        "present research",
+        "research presentation",
+        "research symposium",
+        "creative activities"
+      ],
+      "links": [
+        {
+          "label": "SURCA 2027",
+          "url": "https://surca.wsu.edu/event/showcase-for-undergraduate-research-and-creative-activities-surca-2027/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2027-03-22"
+    },
+    {
+      "id": "health-cougar-health-services",
+      "category": "health",
+      "title": "Cougar Health Services",
+      "content": "Cougar Health Services, in the Washington Building, is WSU Pullman's student health center: primary care, counseling (CAPS), vision care, pharmacy, reproductive care, sports medicine, LGBTQ+ care, and psychiatry. Services run 8:00 AM to 5:00 PM on weekdays (the pharmacy opens at 9:00 AM) and are closed on weekends and university holidays. Book medical and vision visits in the patient portal at healthweb.wsu.edu, or call 509-335-3575. In an emergency, call 911.",
+      "keywords": [
+        "cougar health",
+        "health center",
+        "health services",
+        "doctor",
+        "clinic",
+        "medical",
+        "sick",
+        "nurse",
+        "pharmacy",
+        "prescription",
+        "vision",
+        "eye doctor",
+        "washington building"
+      ],
+      "links": [
+        {
+          "label": "Cougar Health Services",
+          "url": "https://cougarhealth.wsu.edu/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "hours": {
+        "mon": [["08:00", "17:00"]],
+        "tue": [["08:00", "17:00"]],
+        "wed": [["08:00", "17:00"]],
+        "thu": [["08:00", "17:00"]],
+        "fri": [["08:00", "17:00"]]
+      }
+    },
+    {
+      "id": "health-counseling-caps",
+      "category": "health",
+      "title": "Counseling and Psychological Services (CAPS)",
+      "content": "CAPS, part of Cougar Health Services in the Washington Building, offers brief individual and couples therapy, group counseling, psychological assessment, biofeedback, and psychiatric services. New students schedule an initial consultation with the Make an Appointment button on the CAPS site, or call 509-335-4511 during business hours. After hours, call 509-335-2159. If you're in danger or it's an emergency, call 911.",
+      "keywords": [
+        "caps",
+        "counseling",
+        "counselor",
+        "therapy",
+        "therapist",
+        "mental health",
+        "psychologist",
+        "psychiatrist",
+        "stress",
+        "stressed",
+        "anxiety",
+        "anxious",
+        "depression",
+        "depressed",
+        "crisis"
+      ],
+      "links": [
+        {
+          "label": "Cougar Health: Counseling (CAPS)",
+          "url": "https://cougarhealth.wsu.edu/counseling/"
+        },
+        {
+          "label": "Cougar Health: Crisis Support",
+          "url": "https://cougarhealth.wsu.edu/crisis-support/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "housing-overview",
+      "category": "housing",
+      "title": "WSU housing (residence halls and apartments)",
+      "content": "WSU Housing and Residence Life runs the residence halls and campus apartments in Pullman, including Learning Living Communities and Gender Inclusive Housing. Apply online through the housing site (\"Apply for a Residence Hall\" or \"Apply for an Apartment\"). Questions? Call (509) 335-4577, email housing@wsu.edu, or stop by Streit-Perham Hall, 2nd floor.",
+      "keywords": [
+        "housing",
+        "dorm",
+        "dorms",
+        "residence hall",
+        "residence halls",
+        "res hall",
+        "apartment",
+        "apartments",
+        "room",
+        "roommate",
+        "apply",
+        "application",
+        "learning living community",
+        "streit perham"
+      ],
+      "links": [
+        {
+          "label": "WSU Housing and Residence Life",
+          "url": "https://housing.wsu.edu/"
+        },
+        {
+          "label": "Housing: Contact Us",
+          "url": "https://housing.wsu.edu/about-us/contact-us/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "support-tutoring",
+      "category": "academic-support",
+      "title": "Free peer tutoring (ASCC)",
+      "content": "ASCC Peer Tutoring is free for WSU students in subjects like biology, chemistry, accounting, business, computer science, engineering, economics, physics, statistics, and psychology. Book a one-on-one appointment in the tutoring portal (log in, then \"Book Me\"), or just drop in: Lighty Student Services Room 190 (appointments Mon-Thu 1-5 pm), Streit-Perham Hall and Stephenson Hall (drop-in Sun-Thu 5-8 pm), and Terrell Library (drop-in and appointments Mon-Wed 5-8 pm). Contact (509) 335-6000 or ascc@wsu.edu.",
+      "keywords": [
+        "tutoring",
+        "tutor",
+        "tutors",
+        "homework help",
+        "study help",
+        "struggling",
+        "failing",
+        "ascc",
+        "math help",
+        "chemistry help",
+        "drop in tutoring"
+      ],
+      "links": [
+        {
+          "label": "ASCC: Tutoring",
+          "url": "https://ascc.wsu.edu/channels/tutoring/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "support-career-coaching",
+      "category": "academic-support",
+      "title": "Career coaching (ASCC)",
+      "content": "Career coaches at the Academic Success and Career Center (ASCC) help you explore majors and careers, polish your resume and cover letter, prep for interviews, network, and find internships and jobs. Book in Handshake (Career Center, Appointments, Schedule a New Appointment, then \"The Academic Success and Career Center - Pullman\"), in person or virtual. ASCC is in Lighty Student Services, Rooms 160-190, open Monday-Friday 8:00 am-5:00 pm; call (509) 335-6000 or email ascc@wsu.edu.",
+      "keywords": [
+        "career",
+        "careers",
+        "career center",
+        "career coaching",
+        "resume",
+        "cover letter",
+        "internship",
+        "internships",
+        "job",
+        "jobs",
+        "interview",
+        "handshake",
+        "major",
+        "choose a major"
+      ],
+      "links": [
+        {
+          "label": "ASCC: Career Coaching",
+          "url": "https://ascc.wsu.edu/channels/career-coaching/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "hours": {
+        "mon": [["08:00", "17:00"]],
+        "tue": [["08:00", "17:00"]],
+        "wed": [["08:00", "17:00"]],
+        "thu": [["08:00", "17:00"]],
+        "fri": [["08:00", "17:00"]]
+      }
     }
   ]
 }

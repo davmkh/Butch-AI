@@ -22,12 +22,17 @@ export const SourceLinkSchema = z.object({
 
 export const CATEGORIES = [
   'academic-calendar',
+  'academic-support',
   'admissions',
+  'athletics',
   'campus-life',
   'dining',
   'events',
+  'health',
+  'housing',
   'library',
   'recreation',
+  'research',
   'services',
 ] as const;
 

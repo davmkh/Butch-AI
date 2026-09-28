@@ -58,7 +58,8 @@ describe('POST /api/chat', () => {
     const { app } = await buildTestApp();
     const { body } = await ask(app, 'How do I get a refund on my parking permit?');
     expect(body.kind).toBe('fallback');
-    expect(body.reply).toContain('rather not guess');
+    expect(body.pose).toBe('shrug');
+    expect(body.reply).toContain('never guess on you');
     expect(body.sources[0]?.url).toBe('https://transportation.wsu.edu/contact-information/');
     expect(
       body.sources.every((s) => s.url.startsWith('https://') && s.url.includes('wsu.edu')),
