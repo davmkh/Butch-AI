@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  "tailwindCSS.experimental.configFile": "client/src/index.css",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  "cucumber.features": ["e2e/features/**/*.feature"],
+  "cucumber.glue": ["e2e/steps/**/*.ts"],
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "e2e/.features-gen": true,
+    "package-lock.json": true
+  }
+}

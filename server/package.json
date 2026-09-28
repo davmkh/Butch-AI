@@ -1,0 +1,46 @@
+{
+  "name": "@butch/server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Butch AI API: Express server that answers WSU questions",
+  "type": "module",
+  "scripts": {
+    "db:generate": "prisma generate --no-hints",
+    "predev": "npm run db:generate",
+    "dev": "node --watch --env-file-if-exists=.env src/index.ts",
+    "prestart": "npm run db:generate",
+    "start": "node --env-file-if-exists=.env src/index.ts",
+    "pretypecheck": "npm run db:generate",
+    "typecheck": "tsc -p tsconfig.json",
+    "pretest": "npm run db:generate",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "pretest:db": "npm run db:generate",
+    "test:db": "vitest run --config vitest.db.config.ts",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "@butch/shared": "^0.1.0",
+    "@prisma/adapter-pg": "~7.10.0",
+    "@prisma/client": "~7.10.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.6",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "prisma": "~7.10.0",
+    "supertest": "^7.3.0",
+    "vitest": "^5.0.2"
+  }
+}

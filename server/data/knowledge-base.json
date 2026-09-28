@@ -1,0 +1,1268 @@
+{
+  "note": "Starter knowledge base for Butch AI. Every fact was copied from the linked official WSU page on the lastVerified date. Re-check before demos: dining and library hours change during breaks. See docs/DATA_STRATEGY.md for how to add entries.",
+  "entries": [
+    {
+      "id": "fall-2026-classes-begin",
+      "category": "academic-calendar",
+      "title": "Fall 2026: first day of classes",
+      "content": "The first day of instruction for Fall 2026 is Monday, August 24, 2026. Late registration (with a $25 late registration fee) begins the same day.",
+      "keywords": [
+        "first day of class",
+        "classes start",
+        "semester start",
+        "start of semester",
+        "fall semester",
+        "begin",
+        "instruction",
+        "late registration"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-08-24"
+    },
+    {
+      "id": "fall-2026-add-deadline",
+      "category": "academic-calendar",
+      "title": "Fall 2026: last day to add a course online",
+      "content": "Sunday, August 30, 2026 is the last day to add a Fall 2026 course online. Courses added after that need the appropriate signatures (the final day to add with signatures is Friday, December 11, 2026).",
+      "keywords": [
+        "add",
+        "add a class",
+        "add a course",
+        "online",
+        "registration",
+        "enroll",
+        "class",
+        "course"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-08-30"
+    },
+    {
+      "id": "fall-2026-full-refund-withdrawal",
+      "category": "academic-calendar",
+      "title": "Fall 2026: withdraw from the term with a full refund",
+      "content": "Sunday, August 30, 2026 is the Fall 2026 deadline to withdraw from the whole term with a full refund (less the term withdrawal fee).",
+      "keywords": [
+        "refund",
+        "full refund",
+        "term withdrawal",
+        "tuition refund",
+        "withdraw from all classes"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        {
+          "label": "Registrar: Term Withdrawal",
+          "url": "https://registrar.wsu.edu/term-withdrawal/"
+        }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-08-30"
+    },
+    {
+      "id": "fall-2026-labor-day",
+      "category": "academic-calendar",
+      "title": "Labor Day 2026 (university holiday)",
+      "content": "Labor Day, Monday, September 7, 2026, is an all-university holiday at WSU.",
+      "keywords": ["labor day", "holiday", "no class", "day off"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "fall-2026-grading-option-deadline",
+      "category": "academic-calendar",
+      "title": "Fall 2026: deadline to switch to pass/fail or audit",
+      "content": "Friday, September 11, 2026 is the last day in Fall 2026 to change a course from letter-graded to pass/fail, or between credit and audit. Changing from pass/fail back to letter-graded is allowed until Friday, December 11, 2026.",
+      "keywords": ["pass fail", "pass/fail", "audit", "grading option", "letter grade", "credit"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-09-11"
+    },
+    {
+      "id": "fall-2026-drop-deadline",
+      "category": "academic-calendar",
+      "title": "Fall 2026: last day to drop a course without record",
+      "content": "The Fall 2026 deadline to drop a course without a record is Tuesday, September 22, 2026. After that, course withdrawals show on your transcript. Undergraduate and professional students can still withdraw from a course until Friday, November 20, 2026 (withdrawals don't reduce tuition). For late withdrawal options, contact the Office of the Registrar.",
+      "keywords": [
+        "drop",
+        "drop a class",
+        "drop a course",
+        "last day to drop",
+        "drop deadline",
+        "without record",
+        "class",
+        "course",
+        "deadline"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-09-22"
+    },
+    {
+      "id": "fall-2026-graduation-application",
+      "category": "academic-calendar",
+      "title": "Fall 2026: apply to graduate without a late fee",
+      "content": "Friday, October 2, 2026 is the last day to apply for a Fall 2026 undergraduate or professional degree or certificate without a late fee. After that a $75 late fee applies, rising to $150 after Friday, December 11, 2026. Graduate degree applications are also due October 2.",
+      "keywords": [
+        "graduation application",
+        "apply to graduate",
+        "degree application",
+        "late fee",
+        "diploma"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "spring-2027-priority-registration",
+      "category": "academic-calendar",
+      "title": "Priority registration for Spring 2027",
+      "content": "Priority registration for Spring 2027 courses begins Monday, November 9, 2026.",
+      "keywords": [
+        "registration",
+        "register",
+        "spring registration",
+        "priority registration",
+        "sign up for classes",
+        "enroll",
+        "schedule"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-11-09"
+    },
+    {
+      "id": "fall-2026-veterans-day",
+      "category": "academic-calendar",
+      "title": "Veterans Day 2026 (university holiday)",
+      "content": "Veterans Day, Wednesday, November 11, 2026, is an all-university holiday at WSU.",
+      "keywords": ["veterans day", "holiday", "no class", "day off"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-11-11"
+    },
+    {
+      "id": "fall-2026-course-withdrawal-deadline",
+      "category": "academic-calendar",
+      "title": "Fall 2026: last day to withdraw from a course",
+      "content": "Friday, November 20, 2026 is the Fall 2026 deadline for undergraduate and professional students to withdraw from a course (see Rule 68). Withdrawals are recorded on your transcript and don't reduce tuition charges. The deadline to withdraw from the whole term is Friday, December 11, 2026 (Rule 70b).",
+      "keywords": [
+        "withdraw",
+        "withdrawal",
+        "course withdrawal",
+        "late drop",
+        "late withdrawal",
+        "rule 68"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" },
+        {
+          "label": "Registrar: Term Withdrawal",
+          "url": "https://registrar.wsu.edu/term-withdrawal/"
+        }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-11-20"
+    },
+    {
+      "id": "fall-2026-thanksgiving-break",
+      "category": "academic-calendar",
+      "title": "Fall 2026 Thanksgiving break",
+      "content": "Thanksgiving vacation for Fall 2026 runs Monday, November 23 through Friday, November 27, 2026.",
+      "keywords": ["thanksgiving", "break", "vacation", "holiday", "fall break"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-11-23",
+      "endDate": "2026-11-27"
+    },
+    {
+      "id": "fall-2026-last-day-of-classes",
+      "category": "academic-calendar",
+      "title": "Fall 2026: last day of classes",
+      "content": "Friday, December 11, 2026 is the last day of instruction for Fall 2026. It's also the deadline to withdraw from the whole term, to change from pass/fail back to letter-graded, and to add a course with the appropriate signatures.",
+      "keywords": [
+        "last day of class",
+        "classes end",
+        "end of semester",
+        "semester end",
+        "last day of instruction"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-12-11"
+    },
+    {
+      "id": "fall-2026-commencement",
+      "category": "academic-calendar",
+      "title": "Fall 2026 commencement (graduation ceremony)",
+      "content": "Fall 2026 commencement for the Pullman campus is Saturday, December 12, 2026.",
+      "keywords": ["commencement", "graduation", "graduation ceremony", "graduate", "walk"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-12-12"
+    },
+    {
+      "id": "fall-2026-finals-week",
+      "category": "academic-calendar",
+      "title": "Fall 2026 final exams week",
+      "content": "Fall 2026 final examinations run Monday, December 14 through Friday, December 18, 2026. Final grades are available in myWSU on Wednesday, December 23, 2026.",
+      "keywords": ["finals", "final exam", "exams", "finals week", "exam week", "grades"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-12-14",
+      "endDate": "2026-12-18"
+    },
+    {
+      "id": "spring-2027-classes-begin",
+      "category": "academic-calendar",
+      "title": "Spring 2027: first day of classes",
+      "content": "The first day of instruction for Spring 2027 is Monday, January 11, 2027. Late registration (with a $25 late registration fee) begins the same day, and the last day to add a course online is Sunday, January 17, 2027.",
+      "keywords": [
+        "first day of class",
+        "classes start",
+        "semester start",
+        "start of semester",
+        "spring semester",
+        "begin"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-01-11"
+    },
+    {
+      "id": "spring-2027-mlk-day",
+      "category": "academic-calendar",
+      "title": "Martin Luther King Jr. Day 2027 (university holiday)",
+      "content": "Martin Luther King Jr. Day, Monday, January 18, 2027, is an all-university holiday at WSU.",
+      "keywords": ["mlk", "martin luther king", "holiday", "no class", "day off"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-01-18"
+    },
+    {
+      "id": "spring-2027-drop-deadline",
+      "category": "academic-calendar",
+      "title": "Spring 2027: last day to drop a course without record",
+      "content": "The Spring 2027 deadline to drop a course without a record is Tuesday, February 9, 2027. After that, course withdrawals show on your transcript. Undergraduate and professional students can withdraw from a course until Friday, April 16, 2027.",
+      "keywords": [
+        "drop",
+        "drop a class",
+        "drop a course",
+        "last day to drop",
+        "drop deadline",
+        "without record",
+        "class",
+        "course",
+        "deadline"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-02-09"
+    },
+    {
+      "id": "spring-2027-spring-break",
+      "category": "academic-calendar",
+      "title": "Spring 2027 spring break",
+      "content": "Spring vacation for 2027 runs Monday, March 15 through Friday, March 19, 2027.",
+      "keywords": ["spring break", "break", "vacation"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-03-15",
+      "endDate": "2027-03-19"
+    },
+    {
+      "id": "spring-2027-course-withdrawal-deadline",
+      "category": "academic-calendar",
+      "title": "Spring 2027: last day to withdraw from a course",
+      "content": "Friday, April 16, 2027 is the Spring 2027 deadline for undergraduate and professional students to withdraw from a course (see Rule 68). Withdrawals don't reduce tuition charges. The deadline to withdraw from the whole term is Friday, April 30, 2027.",
+      "keywords": [
+        "withdraw",
+        "withdrawal",
+        "course withdrawal",
+        "late drop",
+        "late withdrawal",
+        "rule 68"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" },
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-04-16"
+    },
+    {
+      "id": "spring-2027-finals-week",
+      "category": "academic-calendar",
+      "title": "Spring 2027 final exams week",
+      "content": "Spring 2027 final examinations run Monday, May 3 through Friday, May 7, 2027. The last day of classes is Friday, April 30, 2027.",
+      "keywords": [
+        "finals",
+        "final exam",
+        "exams",
+        "finals week",
+        "exam week",
+        "last day of class"
+      ],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-05-03",
+      "endDate": "2027-05-07"
+    },
+    {
+      "id": "spring-2027-commencement",
+      "category": "academic-calendar",
+      "title": "Spring 2027 commencement (graduation ceremony)",
+      "content": "Spring 2027 commencement for the Pullman campus is Saturday, May 8, 2027. Other campuses: Tri-Cities on Sunday, May 9; Vancouver on Wednesday, May 12; Everett on Friday, May 14; and Global Campus on Saturday, May 15, 2027.",
+      "keywords": ["commencement", "graduation", "graduation ceremony", "graduate", "walk"],
+      "links": [
+        { "label": "WSU Academic Calendar", "url": "https://catalog.wsu.edu/AcademicCalendar" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-05-08"
+    },
+    {
+      "id": "fall-2026-family-weekend",
+      "category": "events",
+      "title": "Fall 2026 Family Weekend",
+      "content": "Fall 2026 Family Weekend at WSU Pullman is Friday, October 2 through Sunday, October 4, 2026. Highlights include comedian Dusty Slay at Beasley Coliseum (Friday, Oct. 2 at 7 p.m.), Cougar Football vs. Fresno State (Saturday, Oct. 3 at 6:30 p.m.), women's volleyball vs. San Diego State (Saturday, Oct. 3), and women's soccer vs. Fresno State (Sunday, Oct. 4). No formal RSVP is required.",
+      "keywords": [
+        "family weekend",
+        "parents weekend",
+        "parent",
+        "dads weekend",
+        "moms weekend",
+        "family",
+        "visit",
+        "visitors"
+      ],
+      "links": [
+        { "label": "WSU Family Weekends", "url": "https://family.wsu.edu/family-weekends/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2026-10-02",
+      "endDate": "2026-10-04"
+    },
+    {
+      "id": "spring-2027-family-weekend",
+      "category": "events",
+      "title": "Spring 2027 Family Weekend",
+      "content": "Spring 2027 Family Weekend at WSU Pullman is Friday, April 2 through Sunday, April 4, 2027.",
+      "keywords": [
+        "family weekend",
+        "parents weekend",
+        "parent",
+        "dads weekend",
+        "moms weekend",
+        "family",
+        "visit",
+        "visitors"
+      ],
+      "links": [
+        { "label": "WSU Family Weekends", "url": "https://family.wsu.edu/family-weekends/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "date": "2027-04-02",
+      "endDate": "2027-04-04"
+    },
+    {
+      "id": "dining-overview",
+      "category": "dining",
+      "title": "Dining at WSU Pullman",
+      "content": "WSU Dining Services runs three dining centers in Pullman (Southside Café, Northside Café, and Hillside Café) plus markets and coffee spots such as The Market on Cougar Way, Southside Market, Einstein Bros Bagels, Carlita's, and Starbucks @ SPARK. Ask me whether a specific spot is open right now!",
+      "keywords": [
+        "dining",
+        "food",
+        "eat",
+        "hungry",
+        "dining hall",
+        "dining center",
+        "meal",
+        "where to eat",
+        "restaurant",
+        "cafeteria"
+      ],
+      "links": [
+        { "label": "WSU Dining Options", "url": "https://dining.wsu.edu/dining-options/" },
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25"
+    },
+    {
+      "id": "dining-southside-cafe",
+      "category": "dining",
+      "title": "Southside Café",
+      "content": "Southside Café is one of WSU Dining Services' three dining centers in Pullman. These are its regular fall 2026 hours; hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": [
+        "southside",
+        "south side",
+        "dining hall",
+        "dining center",
+        "food",
+        "eat",
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "21:00"]],
+        "tue": [["07:30", "21:00"]],
+        "wed": [["07:30", "21:00"]],
+        "thu": [["07:30", "21:00"]],
+        "fri": [["07:30", "21:00"]],
+        "sat": [["08:30", "21:00"]],
+        "sun": [["08:30", "21:00"]]
+      }
+    },
+    {
+      "id": "dining-northside-cafe",
+      "category": "dining",
+      "title": "Northside Café",
+      "content": "Northside Café is one of WSU Dining Services' three dining centers in Pullman. These are its regular fall 2026 hours; hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": [
+        "northside",
+        "north side",
+        "dining hall",
+        "dining center",
+        "food",
+        "eat",
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "19:30"]],
+        "tue": [["07:30", "19:30"]],
+        "wed": [["07:30", "19:30"]],
+        "thu": [["07:30", "19:30"]],
+        "fri": [["07:30", "19:30"]],
+        "sat": [["08:30", "19:30"]],
+        "sun": [["08:30", "19:30"]]
+      }
+    },
+    {
+      "id": "dining-hillside-cafe",
+      "category": "dining",
+      "title": "Hillside Café",
+      "content": "Hillside Café is one of WSU Dining Services' three dining centers in Pullman. These are its regular fall 2026 hours (closed on weekends); hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": [
+        "hillside",
+        "hill side",
+        "dining hall",
+        "dining center",
+        "food",
+        "eat",
+        "lunch",
+        "dinner"
+      ],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["10:30", "19:30"]],
+        "tue": [["10:30", "19:30"]],
+        "wed": [["10:30", "19:30"]],
+        "thu": [["10:30", "19:30"]],
+        "fri": [["10:30", "19:30"]]
+      }
+    },
+    {
+      "id": "dining-market-on-cougar-way",
+      "category": "dining",
+      "title": "The Market on Cougar Way",
+      "content": "The Market on Cougar Way is a WSU Dining Services market in Pullman. These are its regular fall 2026 hours; hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": ["market", "cougar way", "convenience store", "snacks", "groceries"],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "22:00"]],
+        "tue": [["07:30", "22:00"]],
+        "wed": [["07:30", "22:00"]],
+        "thu": [["07:30", "22:00"]],
+        "fri": [["07:30", "22:00"]],
+        "sat": [["10:30", "22:00"]],
+        "sun": [["10:30", "22:00"]]
+      }
+    },
+    {
+      "id": "dining-southside-market",
+      "category": "dining",
+      "title": "Southside Market",
+      "content": "Southside Market is a WSU Dining Services market in Pullman. These are its regular fall 2026 hours; hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": [
+        "southside market",
+        "south side",
+        "market",
+        "convenience store",
+        "snacks",
+        "groceries"
+      ],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "22:00"]],
+        "tue": [["07:30", "22:00"]],
+        "wed": [["07:30", "22:00"]],
+        "thu": [["07:30", "22:00"]],
+        "fri": [["07:30", "22:00"]],
+        "sat": [["10:30", "22:00"]],
+        "sun": [["10:30", "22:00"]]
+      }
+    },
+    {
+      "id": "dining-einstein-bros",
+      "category": "dining",
+      "title": "Einstein Bros Bagels",
+      "content": "Einstein Bros Bagels is a WSU Dining Services location in Pullman. These are its regular fall 2026 hours; hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": ["einstein", "einstein bros", "bagel", "coffee", "breakfast"],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "22:00"]],
+        "tue": [["07:30", "22:00"]],
+        "wed": [["07:30", "22:00"]],
+        "thu": [["07:30", "22:00"]],
+        "fri": [["07:30", "22:00"]],
+        "sat": [["10:30", "22:00"]],
+        "sun": [["10:30", "22:00"]]
+      }
+    },
+    {
+      "id": "dining-starbucks-spark",
+      "category": "dining",
+      "title": "Starbucks @ SPARK",
+      "content": "Starbucks @ SPARK is a WSU Dining Services coffee spot in Pullman. These are its regular fall 2026 hours (closed on weekends); hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": ["starbucks", "spark", "coffee", "espresso"],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "16:00"]],
+        "tue": [["07:30", "16:00"]],
+        "wed": [["07:30", "16:00"]],
+        "thu": [["07:30", "16:00"]],
+        "fri": [["07:30", "16:00"]]
+      }
+    },
+    {
+      "id": "dining-carlitas",
+      "category": "dining",
+      "title": "Carlita's",
+      "content": "Carlita's is a WSU Dining Services location in Pullman. These are its regular fall 2026 hours (closed on weekends); hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": ["carlitas", "carlita"],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["10:30", "17:00"]],
+        "tue": [["10:30", "17:00"]],
+        "wed": [["10:30", "17:00"]],
+        "thu": [["10:30", "17:00"]],
+        "fri": [["10:30", "17:00"]]
+      }
+    },
+    {
+      "id": "dining-chinook-freshens",
+      "category": "dining",
+      "title": "Chinook Freshens",
+      "content": "Chinook Freshens is a WSU Dining Services location in Pullman. These are its regular fall 2026 hours (closed on weekends); hours change during breaks, holidays, and some special events, so check Facility Hours for the latest.",
+      "keywords": ["freshens", "chinook"],
+      "links": [
+        { "label": "WSU Dining: Facility Hours", "url": "https://dining.wsu.edu/facility-hours/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "18:00"]],
+        "tue": [["07:30", "18:00"]],
+        "wed": [["07:30", "18:00"]],
+        "thu": [["07:30", "18:00"]],
+        "fri": [["07:30", "16:00"]]
+      }
+    },
+    {
+      "id": "library-holland-terrell",
+      "category": "library",
+      "title": "Holland and Terrell Libraries",
+      "content": "Holland and Terrell Libraries are on the WSU Pullman campus. Reference Services: 509-335-8516 or lib.reference@wsu.edu. Access Services: 509-335-9672. These are the regular fall 2026 hours; they change during breaks and finals, so check the Libraries' hours page for the latest.",
+      "keywords": ["library", "libraries", "terrell", "holland", "study", "books"],
+      "links": [{ "label": "WSU Libraries: Hours", "url": "https://libraries.wsu.edu/hours/" }],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["07:30", "21:45"]],
+        "tue": [["07:30", "21:45"]],
+        "wed": [["07:30", "21:45"]],
+        "thu": [["07:30", "21:45"]],
+        "fri": [["07:30", "19:45"]],
+        "sat": [["11:00", "19:45"]],
+        "sun": [["11:00", "21:45"]]
+      }
+    },
+    {
+      "id": "library-owen",
+      "category": "library",
+      "title": "Owen Science and Engineering Library",
+      "content": "Owen Science and Engineering Library is on the WSU Pullman campus (phone 509-335-2672). These are the regular fall 2026 hours (closed on weekends); check the Libraries' hours page for the latest.",
+      "keywords": ["owen", "science library", "engineering library", "library"],
+      "links": [{ "label": "WSU Libraries: Hours", "url": "https://libraries.wsu.edu/hours/" }],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["10:00", "17:45"]],
+        "tue": [["10:00", "17:45"]],
+        "wed": [["10:00", "17:45"]],
+        "thu": [["10:00", "17:45"]],
+        "fri": [["10:00", "17:45"]]
+      }
+    },
+    {
+      "id": "rec-src-hours",
+      "category": "recreation",
+      "title": "Student Recreation Center (SRC)",
+      "content": "The Student Recreation Center is the largest recreation space on the WSU Pullman campus. Contact University Recreation at 509-335-8732 (509-335-UREC) or urec@wsu.edu. These are the regular fall 2026 building hours; check UREC's hours page for changes.",
+      "keywords": ["rec", "rec center", "src", "gym", "urec", "recreation", "workout", "fitness"],
+      "links": [
+        { "label": "UREC: SRC Hours", "url": "https://urec.wsu.edu/hours/src-hours/" },
+        {
+          "label": "UREC: Student Recreation Center",
+          "url": "https://urec.wsu.edu/locations-facilities/student-recreation-center/"
+        }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["05:30", "22:30"]],
+        "tue": [["05:30", "22:30"]],
+        "wed": [["05:30", "22:30"]],
+        "thu": [["05:30", "22:30"]],
+        "fri": [["05:30", "22:30"]],
+        "sat": [["09:00", "22:30"]],
+        "sun": [["09:00", "22:30"]]
+      }
+    },
+    {
+      "id": "rec-src-pool",
+      "category": "recreation",
+      "title": "SRC Pool",
+      "content": "The SRC Pool is in the Student Recreation Center. On weekdays it's open in three blocks (early morning, midday, and evening). These are the regular fall 2026 hours; check UREC's hours page for changes.",
+      "keywords": ["pool", "swim", "swimming", "aquatics", "src", "rec"],
+      "links": [{ "label": "UREC: SRC Hours", "url": "https://urec.wsu.edu/hours/src-hours/" }],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [
+          ["06:00", "08:00"],
+          ["11:00", "13:30"],
+          ["16:00", "22:00"]
+        ],
+        "tue": [
+          ["06:00", "08:00"],
+          ["11:00", "13:30"],
+          ["16:00", "22:00"]
+        ],
+        "wed": [
+          ["06:00", "08:00"],
+          ["11:00", "13:30"],
+          ["16:00", "22:00"]
+        ],
+        "thu": [
+          ["06:00", "08:00"],
+          ["11:00", "13:30"],
+          ["16:00", "22:00"]
+        ],
+        "fri": [
+          ["06:00", "08:00"],
+          ["11:00", "13:30"],
+          ["16:00", "22:00"]
+        ],
+        "sat": [["09:30", "22:00"]],
+        "sun": [["09:30", "22:00"]]
+      }
+    },
+    {
+      "id": "rec-src-amenities",
+      "category": "recreation",
+      "title": "Student Recreation Center amenities",
+      "content": "The Student Recreation Center (SRC) is the largest recreation space on the WSU Pullman campus. It has basketball, volleyball, badminton, pickleball, racquetball, and squash courts; weight and cardio equipment; fitness classes and personal training; a pool and spa; a 1/8-mile running track; a climbing and bouldering wall; a challenge course; a sport court for soccer and inline hockey; plus billiards, lockers, and towel service. WSU students, faculty, and staff sign in with their WSU Network ID to manage memberships, lockers, and registrations.",
+      "keywords": [
+        "rec",
+        "rec center",
+        "src",
+        "gym",
+        "amenities",
+        "facilities",
+        "workout",
+        "fitness",
+        "pool",
+        "climbing wall",
+        "basketball",
+        "track",
+        "weights",
+        "urec"
+      ],
+      "links": [
+        {
+          "label": "UREC: Student Recreation Center",
+          "url": "https://urec.wsu.edu/locations-facilities/student-recreation-center/"
+        },
+        { "label": "UREC: SRC Hours", "url": "https://urec.wsu.edu/hours/src-hours/" }
+      ],
+      "lastVerified": "2026-09-25"
+    },
+    {
+      "id": "cougar-card",
+      "category": "services",
+      "title": "Getting your CougarCard (student ID)",
+      "content": "To get your CougarCard (WSU's ID card), visit the CougarCard Center in person. At WSU Pullman it's in the Compton Union Building (CUB), room G60. Bring a valid photo ID: a driver's license, state ID card, military ID, passport, or Residence Alien Card. Your photo is taken on the spot and you get your card right away. Questions: cougarcard@wsu.edu or 509-335-2273.",
+      "keywords": ["cougar card", "cougarcard", "student id", "id card", "campus id", "card", "id"],
+      "links": [
+        {
+          "label": "CougarCard Center: Get Your Card",
+          "url": "https://cougarcard.wsu.edu/get-your-card/"
+        }
+      ],
+      "lastVerified": "2026-09-25"
+    },
+    {
+      "id": "registrar-office",
+      "category": "services",
+      "title": "Office of the Registrar",
+      "content": "The Office of the Registrar handles registration, enrollment records, transcripts, residency, graduation applications, and withdrawals. It's in the French Administration Building, Room 346 (1815 NE Wilson Road, Pullman). Phone 509-335-5346 or email registrar@wsu.edu.",
+      "keywords": ["registrar", "transcript", "enrollment", "records", "registration", "residency"],
+      "links": [
+        { "label": "Office of the Registrar", "url": "https://registrar.wsu.edu/contact-us/" }
+      ],
+      "lastVerified": "2026-09-25",
+      "hours": {
+        "mon": [["08:00", "17:00"]],
+        "tue": [["08:00", "17:00"]],
+        "wed": [["08:00", "17:00"]],
+        "thu": [["08:00", "17:00"]],
+        "fri": [["08:00", "17:00"]]
+      }
+    },
+    {
+      "id": "admissions-dates",
+      "category": "admissions",
+      "title": "WSU Pullman admission dates and deadlines (2026-27)",
+      "content": "Key WSU Pullman admission dates for the 2026-27 cycle: applications and the WSU General Scholarship application open August 3. The FAFSA and WASFA are scheduled to open October 1. November 15 is the priority date for spring admission. The summer and fall housing application opens December 1. January 31 is the priority date for the WSU General Scholarship and for the FAFSA/WASFA, and the Top Scholar consideration deadline. March 31 is the fall priority date for first-year applicants: apply by then to be considered for automatic academic awards (later applications are accepted as space allows). Confirm your enrollment and submit your housing application by May 1 for priority. Financial aid verification documents (if required) are due July 31. For transfer students, the priority date is August 7.",
+      "keywords": [
+        "admission",
+        "admissions",
+        "apply",
+        "application",
+        "deadline",
+        "priority date",
+        "freshman",
+        "first year",
+        "prospective",
+        "scholarship",
+        "fafsa",
+        "transfer",
+        "housing application"
+      ],
+      "links": [
+        {
+          "label": "Admissions Dates & Deadlines",
+          "url": "https://admission.wsu.edu/apply/admissions-dates-deadlines/"
+        },
+        {
+          "label": "Admissions: First-Year Students",
+          "url": "https://admission.wsu.edu/apply/first-year-students/"
+        }
+      ],
+      "lastVerified": "2026-09-25"
+    },
+    {
+      "id": "campus-life",
+      "category": "campus-life",
+      "title": "Campus life and student organizations",
+      "content": "WSU Pullman has 500+ student organizations, from sports and gaming to cultural, academic, and media groups, plus a Greek system of 50+ chapters with nearly 3,500 members (about 22% of students). Find clubs on WSU Involve: open the Organizations tab, browse by category, and check meeting times and contacts. There are also 80+ intramural sports activities, free movies at the CUB, big-name shows at Beasley Coliseum, and Cougar athletics across 11 sports. Popular spots include the Compton Union Building (CUB), the Student Recreation Center, the Jordan Schnitzer Museum of Art, and the Elson S. Floyd Cultural Center.",
+      "keywords": [
+        "campus life",
+        "student life",
+        "club",
+        "organization",
+        "get involved",
+        "involvement",
+        "activities",
+        "things to do",
+        "fun",
+        "social",
+        "greek",
+        "fraternity",
+        "sorority",
+        "intramural",
+        "cub"
+      ],
+      "links": [
+        { "label": "WSU Pullman Community Life", "url": "https://pullman.wsu.edu/community-life/" },
+        {
+          "label": "Get Involved: Student Organizations",
+          "url": "https://getinvolved.wsu.edu/student-organizations/"
+        }
+      ],
+      "lastVerified": "2026-09-25"
+    },
+    {
+      "id": "athletics-overview",
+      "category": "athletics",
+      "title": "WSU Cougars athletics",
+      "content": "WSU's teams are the Cougars (the Cougs), competing at the NCAA Division I level in the Pac-12 Conference. Sports include football, volleyball, soccer, basketball, tennis, baseball, and more. Football plays at Gesa Field in Martin Stadium, and men's basketball plays in Beasley Coliseum.",
+      "keywords": [
+        "athletics",
+        "sports",
+        "sport",
+        "teams",
+        "team",
+        "cougs",
+        "cougars",
+        "pac-12",
+        "pac 12",
+        "conference",
+        "ncaa",
+        "varsity"
+      ],
+      "links": [
+        {
+          "label": "WSU Athletics",
+          "url": "https://wsucougars.com/"
+        },
+        {
+          "label": "Pullman: Athletics, Sports and Recreation",
+          "url": "https://pullman.wsu.edu/athletics/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "athletics-football-2026-home-games",
+      "category": "athletics",
+      "title": "2026 Cougar football home games",
+      "content": "Cougar football home games in 2026 are at Gesa Field in Martin Stadium, Pullman: Duquesne (Sat, Sept 19), Arizona (Sat, Sept 26), Fresno State (Sat, Oct 3), Boise State (Sat, Oct 24), Colorado State (Sat, Nov 14), and Oregon State (Sat, Nov 28). The Pac-12 Football Championship is Friday, December 4.",
+      "keywords": [
+        "football",
+        "football game",
+        "football schedule",
+        "home game",
+        "home games",
+        "schedule",
+        "martin stadium",
+        "gesa field",
+        "stadium",
+        "kickoff",
+        "cougs",
+        "play",
+        "game day",
+        "gameday",
+        "game",
+        "games"
+      ],
+      "links": [
+        {
+          "label": "WSU Football Schedule",
+          "url": "https://wsucougars.com/sports/football/schedule"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "athletics-apple-cup-2026",
+      "category": "athletics",
+      "title": "2026 Apple Cup (WSU vs. Washington)",
+      "content": "The Apple Cup is WSU's rivalry game against the University of Washington. In 2026 it was played Sunday, September 6 at Husky Stadium in Seattle.",
+      "keywords": ["apple cup", "rivalry", "rival", "huskies", "husky", "uw", "dawgs"],
+      "links": [
+        {
+          "label": "WSU Football Schedule",
+          "url": "https://wsucougars.com/sports/football/schedule"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2026-09-06"
+    },
+    {
+      "id": "athletics-student-sports-pass",
+      "category": "athletics",
+      "title": "Student Sports Pass (student tickets)",
+      "content": "The 2026-27 Student Sports Pass costs $299 for Pullman students ($200 for urban and online campus students). It gets you into all regular-season home events in football, soccer, volleyball, men's and women's basketball, and baseball from August through May. Buy it in myWSU (Student Homepage, Manage Classes, Optional Services). The pass is digital: log in at wsucougars.com/MyAccount, add \"My Access Pass\" to Apple or Google Wallet, and scan it at the Student Entrance. Student sections are first come, first served and can fill up. Refund requests for an unused pass are due November 13, 2026.",
+      "keywords": [
+        "sports pass",
+        "student tickets",
+        "tickets",
+        "ticket",
+        "student ticket",
+        "admission",
+        "get into games",
+        "free tickets",
+        "student section",
+        "pass"
+      ],
+      "links": [
+        {
+          "label": "WSU Athletics: Student Sports Pass",
+          "url": "https://wsucougars.com/student-sports-pass"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "athletics-mens-basketball-2026",
+      "category": "athletics",
+      "title": "2026-27 men's basketball home games",
+      "content": "Cougar men's basketball plays at Beasley Coliseum in Pullman. The first home games of the 2026-27 season are Davidson (Monday, November 2), Idaho (Friday, November 27), and North Dakota State (Sunday, December 6). Tip-off times are still to be announced.",
+      "keywords": [
+        "basketball",
+        "hoops",
+        "beasley",
+        "beasley coliseum",
+        "coliseum",
+        "mens basketball",
+        "basketball game",
+        "basketball season"
+      ],
+      "links": [
+        {
+          "label": "WSU Men's Basketball Schedule",
+          "url": "https://wsucougars.com/sports/mens-basketball/schedule"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "athletics-game-day-traditions",
+      "category": "athletics",
+      "title": "Game day traditions and the ZZU Cru",
+      "content": "The ZZU Cru is the official student fan club of the Cougs and drives the energy at WSU athletic events. Cougar football game days in Pullman are a town-wide celebration with tailgating near Martin Stadium, and the Cougar Marching Band supports the teams and plays the fight song.",
+      "keywords": [
+        "zzu cru",
+        "zzu",
+        "fan club",
+        "student section",
+        "tailgate",
+        "tailgating",
+        "marching band",
+        "band",
+        "fight song",
+        "traditions",
+        "tradition",
+        "school spirit",
+        "spirit"
+      ],
+      "links": [
+        {
+          "label": "Pullman: Athletics, Sports and Recreation",
+          "url": "https://pullman.wsu.edu/athletics/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "research-getting-started",
+      "category": "research",
+      "title": "Getting started in undergraduate research",
+      "content": "WSU's Office of Undergraduate Research helps undergrads get into research, scholarship, and creative work. Good first steps: take UNIV 199, a one-credit \"Introduction to Directed Research\" course offered fall and spring; book a chat with a peer mentor (current undergrad researchers); go to the STEM Research Opportunities Fair and info sessions; and reach out to faculty in your department about joining their work. Support programs include LSAMP, the McNair Scholars Program, Research Scholars (for incoming first-year students), and the Team Mentoring Program. Some courses also build research right into the class.",
+      "keywords": [
+        "undergraduate research",
+        "undergrad research",
+        "research",
+        "researcher",
+        "lab",
+        "labs",
+        "research lab",
+        "research assistant",
+        "professor",
+        "faculty mentor",
+        "mentor",
+        "univ 199",
+        "mcnair",
+        "lsamp",
+        "research experience",
+        "research opportunities"
+      ],
+      "links": [
+        {
+          "label": "Office of Undergraduate Research: Get Started",
+          "url": "https://undergraduateresearch.wsu.edu/get-started/"
+        },
+        {
+          "label": "Office of Undergraduate Research",
+          "url": "https://undergraduateresearch.wsu.edu/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "research-awards-2027-28",
+      "category": "research",
+      "title": "Undergraduate Research Awards (2027-28 funding)",
+      "content": "The Office of Undergraduate Research funds Undergraduate Research Awards for all WSU undergrads doing research, scholarship, or creative activities with a mentor. Applications for awards paid in the 2027-28 academic year open Monday, November 2, 2026 and close January 31, 2027. The office also offers travel awards to help students present at conferences.",
+      "keywords": [
+        "research award",
+        "research awards",
+        "research grant",
+        "grant",
+        "grants",
+        "funding",
+        "research funding",
+        "money for research",
+        "travel award",
+        "travel grant",
+        "stipend"
+      ],
+      "links": [
+        {
+          "label": "Undergraduate Research Awards",
+          "url": "https://undergraduateresearch.wsu.edu/funding/undergraduate-research-awards/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2027-01-31"
+    },
+    {
+      "id": "research-surca-2027",
+      "category": "research",
+      "title": "SURCA 2027 (undergraduate research showcase)",
+      "content": "SURCA, the Showcase for Undergraduate Research and Creative Activities, is WSU's annual poster showcase where around 200 undergrads present their work and compete for awards. SURCA 2027 is Monday, March 22, 2027: public presentations run 3:30-4:45 p.m. in the CUB Senior Ballroom, and the awards ceremony starts at 5 p.m. in the CUB Auditorium.",
+      "keywords": [
+        "surca",
+        "showcase",
+        "poster",
+        "poster session",
+        "research showcase",
+        "present research",
+        "research presentation",
+        "research symposium",
+        "creative activities"
+      ],
+      "links": [
+        {
+          "label": "SURCA 2027",
+          "url": "https://surca.wsu.edu/event/showcase-for-undergraduate-research-and-creative-activities-surca-2027/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "date": "2027-03-22"
+    },
+    {
+      "id": "health-cougar-health-services",
+      "category": "health",
+      "title": "Cougar Health Services",
+      "content": "Cougar Health Services, in the Washington Building, is WSU Pullman's student health center: primary care, counseling (CAPS), vision care, pharmacy, reproductive care, sports medicine, LGBTQ+ care, and psychiatry. Services run 8:00 AM to 5:00 PM on weekdays (the pharmacy opens at 9:00 AM) and are closed on weekends and university holidays. Book medical and vision visits in the patient portal at healthweb.wsu.edu, or call 509-335-3575. In an emergency, call 911.",
+      "keywords": [
+        "cougar health",
+        "health center",
+        "health services",
+        "doctor",
+        "clinic",
+        "medical",
+        "sick",
+        "nurse",
+        "pharmacy",
+        "prescription",
+        "vision",
+        "eye doctor",
+        "washington building"
+      ],
+      "links": [
+        {
+          "label": "Cougar Health Services",
+          "url": "https://cougarhealth.wsu.edu/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "hours": {
+        "mon": [["08:00", "17:00"]],
+        "tue": [["08:00", "17:00"]],
+        "wed": [["08:00", "17:00"]],
+        "thu": [["08:00", "17:00"]],
+        "fri": [["08:00", "17:00"]]
+      }
+    },
+    {
+      "id": "health-counseling-caps",
+      "category": "health",
+      "title": "Counseling and Psychological Services (CAPS)",
+      "content": "CAPS, part of Cougar Health Services in the Washington Building, offers brief individual and couples therapy, group counseling, psychological assessment, biofeedback, and psychiatric services. New students schedule an initial consultation with the Make an Appointment button on the CAPS site, or call 509-335-4511 during business hours. After hours, call 509-335-2159. If you're in danger or it's an emergency, call 911.",
+      "keywords": [
+        "caps",
+        "counseling",
+        "counselor",
+        "therapy",
+        "therapist",
+        "mental health",
+        "psychologist",
+        "psychiatrist",
+        "stress",
+        "stressed",
+        "anxiety",
+        "anxious",
+        "depression",
+        "depressed",
+        "crisis"
+      ],
+      "links": [
+        {
+          "label": "Cougar Health: Counseling (CAPS)",
+          "url": "https://cougarhealth.wsu.edu/counseling/"
+        },
+        {
+          "label": "Cougar Health: Crisis Support",
+          "url": "https://cougarhealth.wsu.edu/crisis-support/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "housing-overview",
+      "category": "housing",
+      "title": "WSU housing (residence halls and apartments)",
+      "content": "WSU Housing and Residence Life runs the residence halls and campus apartments in Pullman, including Learning Living Communities and Gender Inclusive Housing. Apply online through the housing site (\"Apply for a Residence Hall\" or \"Apply for an Apartment\"). Questions? Call (509) 335-4577, email housing@wsu.edu, or stop by Streit-Perham Hall, 2nd floor.",
+      "keywords": [
+        "housing",
+        "dorm",
+        "dorms",
+        "residence hall",
+        "residence halls",
+        "res hall",
+        "apartment",
+        "apartments",
+        "room",
+        "roommate",
+        "apply",
+        "application",
+        "learning living community",
+        "streit perham"
+      ],
+      "links": [
+        {
+          "label": "WSU Housing and Residence Life",
+          "url": "https://housing.wsu.edu/"
+        },
+        {
+          "label": "Housing: Contact Us",
+          "url": "https://housing.wsu.edu/about-us/contact-us/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "support-tutoring",
+      "category": "academic-support",
+      "title": "Free peer tutoring (ASCC)",
+      "content": "ASCC Peer Tutoring is free for WSU students in subjects like biology, chemistry, accounting, business, computer science, engineering, economics, physics, statistics, and psychology. Book a one-on-one appointment in the tutoring portal (log in, then \"Book Me\"), or just drop in: Lighty Student Services Room 190 (appointments Mon-Thu 1-5 pm), Streit-Perham Hall and Stephenson Hall (drop-in Sun-Thu 5-8 pm), and Terrell Library (drop-in and appointments Mon-Wed 5-8 pm). Contact (509) 335-6000 or ascc@wsu.edu.",
+      "keywords": [
+        "tutoring",
+        "tutor",
+        "tutors",
+        "homework help",
+        "study help",
+        "struggling",
+        "failing",
+        "ascc",
+        "math help",
+        "chemistry help",
+        "drop in tutoring"
+      ],
+      "links": [
+        {
+          "label": "ASCC: Tutoring",
+          "url": "https://ascc.wsu.edu/channels/tutoring/"
+        }
+      ],
+      "lastVerified": "2026-09-28"
+    },
+    {
+      "id": "support-career-coaching",
+      "category": "academic-support",
+      "title": "Career coaching (ASCC)",
+      "content": "Career coaches at the Academic Success and Career Center (ASCC) help you explore majors and careers, polish your resume and cover letter, prep for interviews, network, and find internships and jobs. Book in Handshake (Career Center, Appointments, Schedule a New Appointment, then \"The Academic Success and Career Center - Pullman\"), in person or virtual. ASCC is in Lighty Student Services, Rooms 160-190, open Monday-Friday 8:00 am-5:00 pm; call (509) 335-6000 or email ascc@wsu.edu.",
+      "keywords": [
+        "career",
+        "careers",
+        "career center",
+        "career coaching",
+        "resume",
+        "cover letter",
+        "internship",
+        "internships",
+        "job",
+        "jobs",
+        "interview",
+        "handshake",
+        "major",
+        "choose a major"
+      ],
+      "links": [
+        {
+          "label": "ASCC: Career Coaching",
+          "url": "https://ascc.wsu.edu/channels/career-coaching/"
+        }
+      ],
+      "lastVerified": "2026-09-28",
+      "hours": {
+        "mon": [["08:00", "17:00"]],
+        "tue": [["08:00", "17:00"]],
+        "wed": [["08:00", "17:00"]],
+        "thu": [["08:00", "17:00"]],
+        "fri": [["08:00", "17:00"]]
+      }
+    }
+  ]
+}

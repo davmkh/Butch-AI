@@ -1,0 +1,71 @@
+// Butch AI database schema (Milestone 1, section 2.1.8).
+// After editing: `npm run db:migrate -- --name what_changed` to create and apply a migration.
+//
+// Privacy (FR-09): nothing here identifies a user. No names, emails, IP
+// addresses, or user agents; only an anonymous conversation ID.
+
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  importFileExtension = "ts"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// One chat session. "New conversation" in the UI starts a new one; old ones are kept (US-10).
+model Conversation {
+  id        String    @id @default(uuid()) @db.Uuid
+  createdAt DateTime  @default(now()) @map("created_at")
+  messages  Message[]
+
+  @@map("conversations")
+}
+
+enum MessageRole {
+  user
+  butch
+}
+
+enum ReplyKind {
+  answer
+  fallback
+}
+
+/// Every question and every reply is logged here (FR-09, US-08).
+model Message {
+  id             String       @id @default(uuid()) @db.Uuid
+  /// Insertion order, so messages created in the same millisecond still sort correctly.
+  seq            Int          @default(autoincrement())
+  conversationId String       @map("conversation_id") @db.Uuid
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           MessageRole
+  text           String
+  /// Butch's replies only: answered from the knowledge base, or fell back to an office link.
+  kind           ReplyKind?
+  /// Knowledge entries the reply was based on; useful for spotting gaps and bad entries.
+  entryIds       String[]     @map("entry_ids")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  feedback       Feedback?
+
+  @@index([conversationId, seq])
+  @@map("messages")
+}
+
+enum Rating {
+  up
+  down
+}
+
+/// Thumbs up/down on one of Butch's replies. One per reply; changing it replaces it (FR-08, US-07).
+model Feedback {
+  messageId String   @id @map("message_id") @db.Uuid
+  message   Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  rating    Rating
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("feedback")
+}
