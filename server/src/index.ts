@@ -35,7 +35,7 @@ const server = app.listen(config.port, () => {
   console.log(`[server] Butch AI API on http://localhost:${config.port}`);
   console.log(
     `[server] responder: ${butch.responderName}` +
-      (butch.responderName === 'claude' ? ` (${config.anthropic.model})` : ' (no AI)') +
+      (butch.responderName === 'deepseek' ? ` (${config.deepseek.model})` : ' (no AI)') +
       ` | storage: ${store.name} | knowledge entries: ${knowledge.length}`,
   );
   if (config.fakeNow)

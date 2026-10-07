@@ -1,9 +1,9 @@
-import Anthropic from '@anthropic-ai/sdk';
 import type { ButchPose, ReplyKind, SourceLink } from '@butch/shared';
 import { liveStatus } from '../knowledge/liveStatus.ts';
 import { search } from '../knowledge/retrieval.ts';
 import type { OfficesFile } from '../knowledge/schema.ts';
 import { pullmanClock } from '../lib/pullmanTime.ts';
+import { DeepSeekApiError } from '../responders/deepseekResponder.ts';
 import type { GroundedFact, HistoryTurn, Responder, ResponderResult } from '../responders/types.ts';
 import { poseFor } from '../responders/voice.ts';
 import type { Store } from '../store/types.ts';
@@ -24,7 +24,7 @@ export interface ButchOptions {
   store: Store;
   offices: OfficesFile;
   responder: Responder;
-  /** Used if the main responder errors, e.g. the Claude API is down (NFR-03). */
+  /** Used if the main responder errors, e.g. the DeepSeek API is down (NFR-03). */
   backupResponder: Responder;
   confidenceThreshold: number;
   maxFacts?: number;
@@ -37,7 +37,7 @@ export interface ButchOptions {
  *   1. search the knowledge base for the question
  *   2. not confident?  -> fallback with a link to the right WSU office (FR-05)
  *   3. add live status (open now / deadline passed) to each match
- *   4. have the responder (Claude or offline) write the reply from those facts
+ *   4. have the responder (DeepSeek or offline) write the reply from those facts
  */
 export class Butch {
   private readonly options: Required<ButchOptions>;
@@ -86,9 +86,7 @@ export class Butch {
       return await responder.respond(input);
     } catch (error) {
       const detail =
-        error instanceof Anthropic.APIError
-          ? `${error.status ?? 'network'} ${error.name}`
-          : String(error);
+        error instanceof DeepSeekApiError ? `${error.status} ${error.name}` : String(error);
       logger.warn(`[butch] ${responder.name} responder failed (${detail}); using backup.`);
       return backupResponder.respond(input);
     }

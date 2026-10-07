@@ -23,7 +23,7 @@ Open http://localhost:5173. The API runs on http://localhost:3001.
 - **No Docker?** Remove `DATABASE_URL` from `server/.env` and the server keeps everything in
   memory instead (lost when it restarts).
 - **No API key?** Butch runs in **offline mode**: he answers straight from the knowledge base
-  with no AI. To use Claude, put your `ANTHROPIC_API_KEY` in `server/.env` and restart.
+  with no AI. To use DeepSeek, put your `DEEPSEEK_API_KEY` in `server/.env` and restart.
 - **Never commit `.env`. This repo is public.**
 
 ## Seeing what users asked and rated
@@ -66,7 +66,7 @@ browser (what CI uses), run `npm run install-browsers -w e2e` once (about 150 MB
 
 ```
 client/     React 19 + Vite + Tailwind web app (the chat UI)
-server/     Node 24 + Express API: retrieval, live hours/deadline status, Claude
+server/     Node 24 + Express API: retrieval, live hours/deadline status, DeepSeek
   data/       knowledge-base.json, offices.json, quick-prompts.json (seed data)
   prisma/     Database schema and migrations (PostgreSQL)
 shared/     TypeScript types shared by client and server (the API contract)
@@ -91,7 +91,7 @@ docs/       Guides (see Documentation below)
 2. **Not confident?** Reply with a link to the WSU office that can help instead of guessing
    (FR-05).
 3. **Work out live facts in code:** "open right now until 9 PM", "that deadline passed 3 days ago".
-4. **Write the reply** with Claude, grounded only in those facts. Offline mode uses the facts
+4. **Write the reply** with DeepSeek, grounded only in those facts. Offline mode uses the facts
    as-is.
 
 The full walkthrough is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -115,7 +115,7 @@ Full requirement-to-code-to-test map: [docs/TRACEABILITY.md](docs/TRACEABILITY.m
 
 ## Roadmap
 
-Next up: a Claude API key and real answers, more knowledge, WSU web search, streaming replies,
+Next up: a DeepSeek API key and real answers, more knowledge, WSU web search, streaming replies,
 mascot art, admin tools with sign-in, and deployment. The sprint-by-sprint plan is in
 [docs/ROADMAP.md](docs/ROADMAP.md).
 

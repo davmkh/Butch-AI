@@ -47,10 +47,10 @@ production deployment yet.
 
 ### SEC-02: No cap on AI reply length (Medium, fixed)
 
-Claude was allowed up to 16,000 output tokens per reply. Someone could repeatedly ask for "a
+The model was allowed up to 16,000 output tokens per reply. Someone could repeatedly ask for "a
 5,000-word essay," costing up to about $0.40 per request with the default model. **Fix:**
 `max_tokens` is 4,096 (Butch's answers are a few sentences), and a reply that hits the cap is
-discarded in favor of the fallback. Tested in `claudeResponder.test.ts`.
+discarded in favor of the fallback. Tested in `deepseekResponder.test.ts`.
 
 ### SEC-03: Only chat was rate-limited (Low, fixed)
 
@@ -116,9 +116,9 @@ something embarrassing under WSU branding, or use him as a free general-purpose 
 
 - **Butch has no tools and no access to data.** An injection can't read other users' chats,
   change data, or take actions. The worst case is a bad reply to the person who asked.
-- Questions that don't match the knowledge base **never reach Claude** (FR-05).
-- The persona prompt restricts topics and tells Claude to decline unsafe or off-topic requests.
-- Claude's own safety training, the refusal handling, and the server-side refusal fallback.
+- Questions that don't match the knowledge base **never reach DeepSeek** (FR-05).
+- The persona prompt restricts topics and tells the model to decline unsafe or off-topic requests.
+- DeepSeek's content filter, and treating a `content_filter` stop as a fallback.
 - The 500-character question limit, output cap, and rate limits.
 - Replies render as **plain text**, so they can't inject HTML or scripts.
 
@@ -133,24 +133,24 @@ something embarrassing under WSU branding, or use him as a free general-purpose 
 ### SEC-10: Denial of wallet (Medium)
 
 Rate limits are per IP and kept in server memory, so someone with many IPs (or several server
-instances) can still generate a lot of Claude calls.
+instances) can still generate a lot of DeepSeek calls.
 
 **Actions:**
 
-1. **Set a monthly spend limit and alerts in the Anthropic Console** before putting a key
-   anywhere. This is the most important cost control.
+1. **Keep only a small prepaid balance on the DeepSeek platform** (and set a balance alert if
+   offered) before putting a key anywhere. This is the most important cost control.
 2. Use a separate key for development and for production. Rotate a key immediately if it's
    ever exposed.
-3. Consider a daily cap on Claude calls in the server (a circuit breaker that switches to
+3. Consider a daily cap on DeepSeek calls in the server (a circuit breaker that switches to
    offline mode).
 4. Cache answers to common questions.
-5. Choose the model and effort level deliberately (ROADMAP.md).
+5. Choose the model deliberately (ROADMAP.md).
 
 ### SEC-11: Personal information in free text (Medium, privacy)
 
 No identifying _columns_ are stored, but students may type names, student IDs, phone numbers,
 or sensitive situations ("I'm failing and stressed…"). That text is saved in `messages` and,
-in Claude mode, sent to Anthropic.
+in DeepSeek mode, sent to DeepSeek.
 
 **Recommended:**
 
@@ -159,11 +159,11 @@ in Claude mode, sent to Anthropic.
 - Restrict who can read logs (SEC-08).
 - Never use real students' data in demos.
 - Before any real deployment for WSU, check WSU's data policies (and FERPA, which protects
-  student education records) and Anthropic's API data-retention terms.
+  student education records) and DeepSeek's API data-retention and data-location terms (its servers are in China).
 
 ### SEC-12: Conversation ID as a bearer token (Low, accepted)
 
-Whoever has a conversation's ID can continue it, and Claude sees the earlier turns, so they
+Whoever has a conversation's ID can continue it, and the model sees the earlier turns, so they
 could ask "what did I ask before?" IDs are random UUIDs that live only in the page's memory
 (never in URLs or storage), so guessing or stealing one is impractical. Revisit this if
 conversations ever become resumable or shareable.
@@ -208,7 +208,7 @@ structured logging (e.g. `pino`) with request IDs, status codes, rate-limit hits
 
 ### SEC-17: Health endpoint reveals configuration (Info, accepted)
 
-`GET /api/health` returns which responder (`claude`/`offline`) and storage (`postgres`/`memory`)
+`GET /api/health` returns which responder (`deepseek`/`offline`) and storage (`postgres`/`memory`)
 is active. That's useful for debugging and low risk. Trim it in production if preferred.
 
 ### SEC-18: Repository and supply-chain settings (Info)
@@ -259,8 +259,8 @@ Optional hardening: pin GitHub Actions to commit SHAs instead of `@v5`.
 ## Pre-deployment checklist
 
 - [ ] Repo is private; branch protection and Dependabot are on (SEC-07, SEC-18)
-- [ ] Anthropic spend limit and alerts set; separate production key (SEC-10)
-- [ ] `NODE_ENV=production`, correct `CLIENT_ORIGIN`, `DATABASE_URL` and `ANTHROPIC_API_KEY` set as host secrets (SEC-13)
+- [ ] DeepSeek balance kept small and monitored; separate production key (SEC-10)
+- [ ] `NODE_ENV=production`, correct `CLIENT_ORIGIN`, `DATABASE_URL` and `DEEPSEEK_API_KEY` set as host secrets (SEC-13)
 - [ ] `BUTCH_FAKE_NOW` and `BUTCH_TEST_HOOKS` **not** set (the server refuses them in production)
 - [ ] `npm run db:deploy -w server` applied migrations to the production database
 - [ ] Production database is not publicly reachable and has a strong, unique password; backups on
@@ -272,7 +272,7 @@ Optional hardening: pin GitHub Actions to commit SHAs instead of `@v5`.
 ## Team habits
 
 - **Never commit secrets.** Keys go in `server/.env` (git-ignored) or the host's settings. If a
-  key is ever committed, even briefly, **revoke it in the Anthropic Console**. Deleting the
+  key is ever committed, even briefly, **revoke it on the DeepSeek platform**. Deleting the
   commit isn't enough.
 - Share `.env` values privately (e.g. in person or a password manager), not in Discord or git.
 - Every change goes through a PR with a review, and CI must pass.

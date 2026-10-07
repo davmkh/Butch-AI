@@ -14,7 +14,7 @@ what must be true. Each line matches one function in `e2e/steps/` by its text.
 
 **Things all e2e scenarios share:**
 
-- The test API runs **offline** (no Claude), with **in-memory storage** (your database is
+- The test API runs **offline** (no AI), with **in-memory storage** (your database is
   untouched), on ports 3199/5199.
 - Scenarios that depend on the time send an `X-Butch-Fake-Now` header, so "now" is pinned per
   request (see `e2e/steps/context.steps.ts`).
@@ -43,7 +43,7 @@ what must be true. Each line matches one function in `e2e/steps/` by its text.
 | Question meets the threshold    | "When is Parents Weekend Fall 2026?" → reply has "Friday, October 2 through Sunday, October 4, 2026" and links family.wsu.edu              | `retrieval.ts` (keyword "parents weekend"), `butch.ts` |
 | Question is below the threshold | "How do I get a refund on my parking permit?" → "I'd rather not guess", links only to `*.wsu.edu` pages, first one Transportation Services | `fallback.ts` `pickOffice()`                           |
 
-- **Also tested by:** `app.test.ts` ("US-02 S1/S2"); `butch.test.ts` (Claude is never called
+- **Also tested by:** `app.test.ts` ("US-02 S1/S2"); `butch.test.ts` (DeepSeek is never called
   for low-confidence questions); `retrieval.test.ts` (parking scores below 0.6).
 - **"Working link":** by default the step checks the link format (https, wsu.edu). Set
   `E2E_CHECK_LINKS=1` to actually visit each link (needs the internet).
@@ -78,7 +78,7 @@ what must be true. Each line matches one function in `e2e/steps/` by its text.
   deadline (Sept 22) is in week 5.
 - **Also tested by:** `retrieval.test.ts` (in January the Spring 2027 deadline wins);
   `app.test.ts` ("US-04 S1/S2").
-- **Gaps:** in offline mode both the Fall and Spring deadlines are shown (they tie). With Claude,
+- **Gaps:** in offline mode both the Fall and Spring deadlines are shown (they tie). With DeepSeek,
   the reply will focus on the current one.
 
 ## US-05: FAQ quick prompts (`05-quick-prompts.feature`)
@@ -166,8 +166,8 @@ what must be true. Each line matches one function in `e2e/steps/` by its text.
 
 ## Scenarios worth adding
 
-Ideas for the next rounds, roughly by value. Some need Claude mode. Test those with a mocked
-Claude (like `claudeResponder.test.ts`) or as occasional live smoke tests, since real AI output
+Ideas for the next rounds, roughly by value. Some need DeepSeek mode. Test those with a mocked
+DeepSeek (like `deepseekResponder.test.ts`) or as occasional live smoke tests, since real AI output
 varies.
 
 **Safety and misuse** (see SECURITY_REVIEW.md)
@@ -182,8 +182,8 @@ varies.
 **Reliability**
 
 - The API is down → friendly error bubble (covered in `App.test.tsx`; add an e2e version).
-- Claude errors or times out → offline answer instead (covered in `butch.test.ts`).
-- A long reply gets cut off → fallback message (covered in `claudeResponder.test.ts`).
+- DeepSeek errors or times out → offline answer instead (covered in `butch.test.ts`).
+- A long reply gets cut off → fallback message (covered in `deepseekResponder.test.ts`).
 
 **Answer quality**
 

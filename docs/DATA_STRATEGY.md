@@ -2,9 +2,9 @@
 
 ## Short answer: curate and retrieve, don't train
 
-Butch doesn't need a trained model. Claude already knows how to write; what it lacks is
+Butch doesn't need a trained model. DeepSeek already knows how to write; what it lacks is
 current, WSU-specific facts. So we keep our own **knowledge base** of WSU facts, look up the
-relevant ones for each question, and have Claude answer only from those. This is usually
+relevant ones for each question, and have DeepSeek answer only from those. This is usually
 called retrieval-augmented generation (RAG), and it's what the Milestone 1 plan describes
 ("we call a hosted model rather than train one").
 

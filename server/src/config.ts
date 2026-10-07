@@ -16,14 +16,13 @@ const EnvSchema = z.object({
 
   /**
    * Which responder writes Butch's replies:
-   * - `claude`: Anthropic Claude API (needs ANTHROPIC_API_KEY)
+   * - `deepseek`: DeepSeek API (needs DEEPSEEK_API_KEY)
    * - `offline`: deterministic replies built straight from the knowledge base (no API key, used by tests)
-   * - `auto`: `claude` when an API key is present, otherwise `offline`
+   * - `auto`: `deepseek` when an API key is present, otherwise `offline`
    */
-  BUTCH_RESPONDER: optional(z.enum(['auto', 'claude', 'offline'])).default('auto'),
-  ANTHROPIC_API_KEY: optional(z.string()),
-  ANTHROPIC_MODEL: optional(z.string()).default('claude-opus-5'),
-  ANTHROPIC_EFFORT: optional(z.enum(['low', 'medium', 'high', 'xhigh', 'max'])),
+  BUTCH_RESPONDER: optional(z.enum(['auto', 'deepseek', 'offline'])).default('auto'),
+  DEEPSEEK_API_KEY: optional(z.string()),
+  DEEPSEEK_MODEL: optional(z.string()).default('deepseek-flash'),
 
   /** Minimum retrieval score (0 to 1) before Butch answers instead of falling back (FR-05). */
   BUTCH_CONFIDENCE_THRESHOLD: optional(z.coerce.number().min(0).max(1)).default(0.6),
@@ -40,11 +39,10 @@ export interface Config {
   clientOrigin: string;
   rateLimitPerMinute: number;
   databaseUrl?: string;
-  responder: 'claude' | 'offline';
-  anthropic: {
+  responder: 'deepseek' | 'offline';
+  deepseek: {
     apiKey?: string;
     model: string;
-    effort?: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
   };
   confidenceThreshold: number;
   fakeNow?: Date;
@@ -58,8 +56,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
   }
   const e = parsed.data;
 
-  if (e.BUTCH_RESPONDER === 'claude' && !e.ANTHROPIC_API_KEY) {
-    throw new Error('BUTCH_RESPONDER=claude requires ANTHROPIC_API_KEY to be set.');
+  if (e.BUTCH_RESPONDER === 'deepseek' && !e.DEEPSEEK_API_KEY) {
+    throw new Error('BUTCH_RESPONDER=deepseek requires DEEPSEEK_API_KEY to be set.');
   }
   if (e.BUTCH_FAKE_NOW && e.NODE_ENV === 'production') {
     throw new Error('BUTCH_FAKE_NOW must not be set in production.');
@@ -68,7 +66,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     throw new Error('BUTCH_TEST_HOOKS must not be enabled in production.');
   }
 
-  const autoResponder = e.ANTHROPIC_API_KEY ? 'claude' : 'offline';
+  const autoResponder = e.DEEPSEEK_API_KEY ? 'deepseek' : 'offline';
 
   return {
     env: e.NODE_ENV,
@@ -77,10 +75,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     rateLimitPerMinute: e.RATE_LIMIT_PER_MINUTE,
     databaseUrl: e.DATABASE_URL,
     responder: e.BUTCH_RESPONDER === 'auto' ? autoResponder : e.BUTCH_RESPONDER,
-    anthropic: {
-      apiKey: e.ANTHROPIC_API_KEY,
-      model: e.ANTHROPIC_MODEL,
-      effort: e.ANTHROPIC_EFFORT,
+    deepseek: {
+      apiKey: e.DEEPSEEK_API_KEY,
+      model: e.DEEPSEEK_MODEL,
     },
     confidenceThreshold: e.BUTCH_CONFIDENCE_THRESHOLD,
     fakeNow: e.BUTCH_FAKE_NOW ? new Date(e.BUTCH_FAKE_NOW) : undefined,
