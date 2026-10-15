@@ -76,14 +76,17 @@ docs/       Guides (see Documentation below)
 
 ## Documentation
 
-| Guide                                         | Read it to…                                                          |
-| --------------------------------------------- | -------------------------------------------------------------------- |
-| [ARCHITECTURE.md](docs/ARCHITECTURE.md)       | Understand the whole codebase, starting from one question end to end |
-| [SCENARIOS.md](docs/SCENARIOS.md)             | See what every user-story scenario checks and which code handles it  |
-| [SECURITY_REVIEW.md](docs/SECURITY_REVIEW.md) | Know the risks, what's fixed, and the pre-deployment checklist       |
-| [ROADMAP.md](docs/ROADMAP.md)                 | Pick up the next task (sprint plan through December)                 |
-| [DATA_STRATEGY.md](docs/DATA_STRATEGY.md)     | Add or update WSU facts in the knowledge base                        |
-| [TRACEABILITY.md](docs/TRACEABILITY.md)       | Map each requirement to its code and tests                           |
+| Guide                                                    | Read it to…                                                          |
+| -------------------------------------------------------- | -------------------------------------------------------------------- |
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md)                  | Understand the whole codebase, starting from one question end to end |
+| [SCENARIOS.md](docs/SCENARIOS.md)                        | See what every user-story scenario checks and which code handles it  |
+| [SECURITY_REVIEW.md](docs/SECURITY_REVIEW.md)            | Know the risks, what's fixed, and the pre-deployment checklist       |
+| [ROADMAP.md](docs/ROADMAP.md)                            | Pick up the next task (sprint plan through December)                 |
+| [DATA_STRATEGY.md](docs/DATA_STRATEGY.md)                | Add or update WSU facts in the knowledge base                        |
+| [TRACEABILITY.md](docs/TRACEABILITY.md)                  | Map each requirement to its code and tests                           |
+| [PRODUCT_BACKLOG.md](docs/sprint-1/PRODUCT_BACKLOG.md)   | See every backlog item with its ID and priority                      |
+| [SPRINT_1_BACKLOG.md](docs/sprint-1/SPRINT_1_BACKLOG.md) | See what sprint 1 committed to, who owned it, and what shipped       |
+| [UML.md](docs/sprint-1/UML.md)                           | Use case, class, sequence, and collaboration diagrams                |
 
 ## How Butch answers
 
