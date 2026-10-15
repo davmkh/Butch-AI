@@ -164,7 +164,16 @@
       "id": "undergrad-research",
       "name": "the Office of Undergraduate Research",
       "helpsWith": "finding research opportunities, faculty mentors, and research funding",
-      "keywords": ["research", "lab", "mentor", "surca", "grant", "funding", "professor", "project"],
+      "keywords": [
+        "research",
+        "lab",
+        "mentor",
+        "surca",
+        "grant",
+        "funding",
+        "professor",
+        "project"
+      ],
       "link": {
         "label": "Office of Undergraduate Research",
         "url": "https://undergraduateresearch.wsu.edu/"
