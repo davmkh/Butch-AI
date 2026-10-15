@@ -31,6 +31,6 @@ export interface ResponderResult {
 
 /** Turns retrieved facts into Butch's reply. */
 export interface Responder {
-  readonly name: 'claude' | 'offline';
+  readonly name: 'deepseek' | 'offline';
   respond(input: ResponderInput): Promise<ResponderResult>;
 }

@@ -5,7 +5,7 @@ import { inButchVoice } from './voice.ts';
  * Answers straight from the knowledge base with no AI. Costs nothing, always
  * gives the same output, and needs no API key. The tests and end-to-end suite
  * use it as the "stubbed model" (Milestone 1, section 2.2.2), and the server
- * uses it when no ANTHROPIC_API_KEY is set.
+ * uses it when no DEEPSEEK_API_KEY is set.
  *
  * The facts are quoted word for word; Butch's personality goes around them.
  */

@@ -46,22 +46,21 @@ Each item has a "done when" so it can become a GitHub issue as-is.
 
 ### Kaiden
 
-- **Get a Claude API key and test real answers.**
-  1. Create an account at **console.anthropic.com** (separate from the claude.ai Pro plan) and
-     add a few dollars of credit.
-  2. **Set a monthly spend limit and email alerts first** (SEC-10).
-  3. Create a key named e.g. `butch-dev`, put it in `server/.env` as `ANTHROPIC_API_KEY`, and
-     restart. `GET /api/health` should show `"responder":"claude"`.
+- **Get a DeepSeek API key and test real answers.**
+  1. Create an account at **platform.deepseek.com** and top up a few dollars of credit.
+  2. **Keep the balance small** so a leaked key can't run up a big bill (SEC-10).
+  3. Create a key named e.g. `butch-dev`, put it in `server/.env` as `DEEPSEEK_API_KEY`, and
+     restart. `GET /api/health` should show `"responder":"deepseek"`.
 
   _Done when:_ Butch answers the quick prompts conversationally, with sources.
 
 - **Tune for speed and cost (NFR-02: replies within 5 s).** Time 20 typical questions with the
-  default `claude-opus-5`. Then try `ANTHROPIC_EFFORT=low` or `medium`, and cheaper models
-  (`claude-sonnet-5`, `claude-haiku-4-5`) via `ANTHROPIC_MODEL`. Record latency, cost, and
+  default `deepseek-flash`. Compare against `deepseek-v4-pro` via `DEEPSEEK_MODEL` only if
+  answer quality is lacking. Record latency, cost, and
   answer quality in a short table, and pick defaults as a team.
   _Done when:_ the table is in the sprint review notes, and `.env.example` has the chosen defaults.
 - **Write an adversarial question list (~25).** Off-topic, "ignore your instructions", rude,
-  emergency, personal info, very long, trick dates. Run them in Claude mode and note any bad
+  emergency, personal info, very long, trick dates. Run them in DeepSeek mode and note any bad
   replies; adjust `persona.ts` if needed (SEC-09).
   _Done when:_ the list and results are in `docs/` and no reply would embarrass WSU.
 - **Grow the knowledge base for the demo** (see "Knowledge to add" below). Start with what
@@ -93,12 +92,12 @@ Each item has a "done when" so it can become a GitHub issue as-is.
 ## Sprint 2 (Oct 9–23): smarter answers
 
 - **(Kaiden) Answer beyond the knowledge base with WSU web search.** When no entry matches,
-  let Claude search, restricted to `wsu.edu`, using Anthropic's web search tool
-  (`web_search_20260209` with `allowed_domains: ['wsu.edu']` and a small `max_uses`). Show the
+  search `wsu.edu` with a web search API (DeepSeek's API has no built-in search tool) and pass
+  the top results to DeepSeek as extra facts. Show the
   pages it used as sources. Keep the office fallback when search finds nothing. This fixes
   "Sigma Nu"-style questions. _Done when:_ 5 questions that used to fall back get correct,
   cited answers.
-- **(Kaiden) Streaming replies (Server-Sent Events).** Text appears as Claude writes it, which
+- **(Kaiden) Streaming replies (Server-Sent Events).** Text appears as DeepSeek writes it, which
   feels much faster (NFR-02). Server: `client.messages.stream()`. Client: read the event stream
   in `butchApi.ts` and append to the last bubble. _Done when:_ the first words appear in under
   1 s. **(Dav)** designs how streaming text and the typing indicator hand off.
@@ -139,7 +138,7 @@ Each item has a "done when" so it can become a GitHub issue as-is.
   - A GitHub Actions deploy workflow on merge to `main`.
   - Work through the **pre-deployment checklist** in SECURITY_REVIEW.md.
 - **(Kaiden) Load test NFR-02:** 200 concurrent users with replies within 5 s (e.g. `autocannon`
-  or k6 against offline mode, plus a small Claude-mode sample). Record the results.
+  or k6 against offline mode, plus a small DeepSeek-mode sample). Record the results.
 - **(Kaiden) Privacy:** redact emails, phone numbers, and student-ID-like numbers before
   saving or sending; delete messages older than the retention period (SEC-11).
 - **(Kaiden) Logging and monitoring:** structured request logs (SEC-16), plus an uptime check on
@@ -187,7 +186,7 @@ were checked on 2026-09-25; the others need you to find the official page.
 
 | Decision                                      | Options / notes                                                      |
 | --------------------------------------------- | -------------------------------------------------------------------- |
-| Default Claude model and effort               | Based on the sprint 1 latency/cost table                             |
+| Default DeepSeek model                        | Based on the sprint 1 latency/cost table                             |
 | How to meet "WSU 2FA" for admins              | Real WSU SSO (ask instructor) vs. OAuth stand-in documented as a gap |
 | Recent questions on shared computers (SEC-15) | Clear button / session-only / opt-in                                 |
 | Log retention period (SEC-11)                 | e.g. 30 or 90 days                                                   |

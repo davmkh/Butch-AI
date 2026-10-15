@@ -30,7 +30,7 @@ base), [TRACEABILITY.md](TRACEABILITY.md) (requirement → code → test).
 
 Butch AI has three running pieces: a **React web app** in the browser, an **Express API**
 server, and a **PostgreSQL database**. The API answers questions using a **knowledge base**
-(a JSON file of WSU facts) and, when an API key is set, the **Claude API** to phrase answers.
+(a JSON file of WSU facts) and, when an API key is set, the **DeepSeek API** to phrase answers.
 
 ```mermaid
 flowchart LR
@@ -43,12 +43,12 @@ flowchart LR
     KB[(knowledge-base.json<br/>offices.json<br/>quick-prompts.json)]
     DB[(PostgreSQL :5432<br/>in Docker)]
   end
-  C[Claude API<br/>Anthropic]
+  C[DeepSeek API]
 
   UI -->|HTTP| V -->|/api/*| API
   API --> KB
   API -->|Prisma| DB
-  API -.->|only if ANTHROPIC_API_KEY| C
+  API -.->|only if DEEPSEEK_API_KEY| C
 ```
 
 The code lives in one repository split into four **npm workspaces**: folders that are
@@ -67,10 +67,10 @@ plain JavaScript for browsers.
 
 **Two modes you'll see everywhere:**
 
-| Setting                    | Options                                                | Controlled by                          |
-| -------------------------- | ------------------------------------------------------ | -------------------------------------- |
-| Who writes Butch's replies | **Claude** (real AI) or **offline** (entry text as-is) | `ANTHROPIC_API_KEY`, `BUTCH_RESPONDER` |
-| Where chats are saved      | **PostgreSQL** or **memory** (lost on restart)         | `DATABASE_URL`                         |
+| Setting                    | Options                                                  | Controlled by                         |
+| -------------------------- | -------------------------------------------------------- | ------------------------------------- |
+| Who writes Butch's replies | **DeepSeek** (real AI) or **offline** (entry text as-is) | `DEEPSEEK_API_KEY`, `BUTCH_RESPONDER` |
+| Where chats are saved      | **PostgreSQL** or **memory** (lost on restart)           | `DATABASE_URL`                        |
 
 Both are set in `server/.env`. Tests always use offline + memory, so they're free, fast, and
 repeatable.
@@ -117,11 +117,11 @@ A student types **"Is Southside open right now?"** at noon on a Monday and press
    1. **Search** the knowledge base (`retrieval.ts` `search()`) for the top 3 matches, then keep
       those scoring at least `BUTCH_CONFIDENCE_THRESHOLD` (0.6).
    2. **No confident match?** Return the fallback (`fallback.ts`): "I'd rather not guess", plus
-      a link to the best-matching WSU office. **Claude is never called** for these.
+      a link to the best-matching WSU office. **DeepSeek is never called** for these.
    3. **Add live status** to each match (`liveStatus.ts`), e.g. "Southside Café: open right
       now, closing at 9:00 PM today."
-   4. **Respond** with the configured responder (Claude or offline). If Claude throws (network,
-      outage), the offline responder answers instead. If Claude declines (safety refusal, or a
+   4. **Respond** with the configured responder (DeepSeek or offline). If DeepSeek throws (network,
+      outage), the offline responder answers instead. If DeepSeek declines (safety refusal, or a
       reply cut off for being too long), the fallback is used.
    5. Return the text, `kind: 'answer'`, up to 3 unique source links, and the entry IDs used.
 8. **How the search scored this question** (details in [5.5](#55-knowledge-base-search-and-live-status)):
@@ -137,7 +137,7 @@ A student types **"Is Southside open right now?"** at noon on a Monday and press
 10. **Responder:**
     - **Offline** (no API key): returns the matching entries' text with the live status. Both
       Southside locations tied, so both are shown.
-    - **Claude:** receives Butch's persona instructions plus a message containing the current
+    - **DeepSeek:** receives Butch's persona instructions plus a message containing the current
       Pullman time, both facts with their live status, and the question. It writes a short,
       friendly answer from only those facts.
 
@@ -195,7 +195,7 @@ matches "refund" (1), so the reply points to **Transportation Services** and the
 │       ├── routes/         HTTP endpoints: chat, feedback
 │       ├── services/       The answer pipeline (butch.ts) and fallback
 │       ├── knowledge/      Knowledge schema, loading, search, live status
-│       ├── responders/     Claude and offline reply writers, Butch's persona
+│       ├── responders/     DeepSeek and offline reply writers, Butch's persona
 │       ├── store/          Where chats are saved: interface, memory, PostgreSQL
 │       ├── lib/            Pullman time-zone helpers
 │       ├── generated/      Prisma client (auto-generated, not in git)
@@ -267,22 +267,21 @@ compiling right away, instead of the chat silently breaking at runtime. Import i
 All server settings come from environment variables, which in development means `server/.env`.
 They're validated by a zod schema. Blank values (`FOO=`) count as unset.
 
-| Variable                     | Default                   | What it does                                                             |
-| ---------------------------- | ------------------------- | ------------------------------------------------------------------------ |
-| `NODE_ENV`                   | `development`             | `production` turns on proxy trust and forbids test settings              |
-| `PORT`                       | `3001`                    | API port                                                                 |
-| `CLIENT_ORIGIN`              | `http://localhost:5173`   | The only website allowed to call the API from a browser (CORS)           |
-| `RATE_LIMIT_PER_MINUTE`      | `20`                      | Questions per minute per IP. Other API calls get 5x this.                |
-| `DATABASE_URL`               | _(unset = memory)_        | PostgreSQL connection string                                             |
-| `BUTCH_RESPONDER`            | `auto`                    | `auto` (Claude if a key is set), `claude`, or `offline`                  |
-| `ANTHROPIC_API_KEY`          | _(unset)_                 | Claude API key. **Secret.**                                              |
-| `ANTHROPIC_MODEL`            | `claude-opus-5`           | Which Claude model                                                       |
-| `ANTHROPIC_EFFORT`           | _(unset = model default)_ | `low`…`max`: how hard Claude thinks (speed/cost vs. thoroughness)        |
-| `BUTCH_CONFIDENCE_THRESHOLD` | `0.6`                     | Minimum search score to answer instead of falling back                   |
-| `BUTCH_FAKE_NOW`             | _(unset)_                 | Dev demo: pretend it's this time. Refused in production.                 |
-| `BUTCH_TEST_HOOKS`           | `false`                   | Honors the `X-Butch-Fake-Now` header (e2e tests). Refused in production. |
+| Variable                     | Default                 | What it does                                                             |
+| ---------------------------- | ----------------------- | ------------------------------------------------------------------------ |
+| `NODE_ENV`                   | `development`           | `production` turns on proxy trust and forbids test settings              |
+| `PORT`                       | `3001`                  | API port                                                                 |
+| `CLIENT_ORIGIN`              | `http://localhost:5173` | The only website allowed to call the API from a browser (CORS)           |
+| `RATE_LIMIT_PER_MINUTE`      | `20`                    | Questions per minute per IP. Other API calls get 5x this.                |
+| `DATABASE_URL`               | _(unset = memory)_      | PostgreSQL connection string                                             |
+| `BUTCH_RESPONDER`            | `auto`                  | `auto` (DeepSeek if a key is set), `deepseek`, or `offline`              |
+| `DEEPSEEK_API_KEY`           | _(unset)_               | DeepSeek API key. **Secret.**                                            |
+| `DEEPSEEK_MODEL`             | `deepseek-flash`        | Which DeepSeek model (thinking mode is always off)                       |
+| `BUTCH_CONFIDENCE_THRESHOLD` | `0.6`                   | Minimum search score to answer instead of falling back                   |
+| `BUTCH_FAKE_NOW`             | _(unset)_               | Dev demo: pretend it's this time. Refused in production.                 |
+| `BUTCH_TEST_HOOKS`           | `false`                 | Honors the `X-Butch-Fake-Now` header (e2e tests). Refused in production. |
 
-`loadConfig()` also refuses combinations that can't work: `BUTCH_RESPONDER=claude` without a
+`loadConfig()` also refuses combinations that can't work: `BUTCH_RESPONDER=deepseek` without a
 key, or test settings in production.
 
 ### 5.3 HTTP layer (`src/app.ts`, `src/routes/`)
@@ -420,13 +419,14 @@ method, `respond({ question, history, facts, now })`, which returns `{ text, ans
 
 - **`offlineResponder.ts`**: no AI. It returns the top match's content with its live status,
   plus the second match if it tied. For hours entries the status comes first. It's used when
-  there's no API key, as the backup when Claude fails, and by every test.
-- **`claudeResponder.ts`**: calls Anthropic's Messages API through the official
-  `@anthropic-ai/sdk`:
-  - `system`: Butch's persona (`persona.ts`). Answer only from the facts, never invent dates,
+  there's no API key, as the backup when DeepSeek fails, and by every test.
+- **`deepseekResponder.ts`**: calls DeepSeek's OpenAI-style Chat Completions API
+  (`POST https://api.deepseek.com/chat/completions`) with the built-in `fetch`. Text only:
+  users can't attach images, so no vision model is needed.
+  - `system` message: Butch's persona (`persona.ts`). Answer only from the facts, never invent dates,
     hours, or links, keep it to 2–4 sentences, stay on WSU topics, send emergencies to 911,
     and be friendly with Cougar spirit.
-  - `messages`: earlier turns from this conversation, then the new message:
+  - then the earlier turns from this conversation, then the new message:
 
     ```
     <current_time>Monday, September 21, 2026 at 12:00 PM (Pullman, WA)</current_time>
@@ -442,18 +442,16 @@ method, `respond({ question, history, facts, now })`, which returns `{ text, ans
     ```
 
     The current time goes in the message, not the system prompt, so the system prompt stays
-    identical across requests. That lets Anthropic's prompt caching reuse it.
+    identical across requests. That lets DeepSeek's automatic context caching reuse it.
 
-  - `max_tokens: 4096`: plenty for a short answer plus the model's thinking, and it caps what
-    one request can cost.
-  - `output_config.effort`: only sent if `ANTHROPIC_EFFORT` is set.
-  - **Refusal fallback** (for `claude-opus-5`): if Claude's safety filter declines, Anthropic
-    retries on a fallback model inside the same call (`fallbacks: 'default'`).
-  - Results: a `refusal`, a reply cut off at `max_tokens`, or empty text all count as **not
-    answered**, so Butch gives the fallback message. Errors (network, rate limit, outage) are
+  - `max_tokens: 4096`: plenty for a short answer, and it caps what one request can cost.
+  - `thinking: { type: 'disabled' }`: short grounded answers don't need reasoning, so this
+    keeps replies fast and cheap.
+  - Results: any `finish_reason` other than `stop` (e.g. `content_filter`, or a reply cut off
+    at `length`) or empty text counts as **not answered**, so Butch gives the fallback message. Errors (network, rate limit, outage) are
     caught in `butch.ts`, which switches to the offline responder.
-- **`index.ts`** `createResponder(config)` builds the right one. The SDK client has a 30-second
-  timeout and 1 retry.
+- **`index.ts`** `createResponder(config)` builds the right one. Requests have a 30-second
+  timeout and 1 retry (network errors, 429s, and 5xx only).
 
 ### 5.7 Storage (`src/store/`, `prisma/`)
 
@@ -623,9 +621,9 @@ page accessible.
 
 **Test doubles** (stand-ins that keep tests fast, free, and repeatable):
 
-- **Offline responder**: the "stubbed model" from the Milestone 1 plan. Tests never call Claude.
-- **Fake Anthropic client** in `claudeResponder.test.ts`: checks the exact request sent to
-  Claude and how each kind of response is handled.
+- **Offline responder**: the "stubbed model" from the Milestone 1 plan. Tests never call DeepSeek.
+- **Fake `fetch`** in `deepseekResponder.test.ts`: checks the exact request sent to
+  DeepSeek and how each kind of response is handled.
 - **MSW (Mock Service Worker)** in client tests: a fake API, so UI tests don't need the server.
 - **Pinned clocks**: `buildTestApp({ now })` in server tests, and the `X-Butch-Fake-Now` header
   in e2e tests.
@@ -664,9 +662,9 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 
 | Decision                                   | Why                                                                           |
 | ------------------------------------------ | ----------------------------------------------------------------------------- |
-| Search + Claude (RAG), no model training   | Facts change every semester. Editing data beats retraining (NFR-07).          |
+| Search + DeepSeek (RAG), no model training | Facts change every semester. Editing data beats retraining (NFR-07).          |
 | Hours and dates computed in code           | "Open right now?" must be exact; language models are unreliable at date math. |
-| Confidence threshold before calling Claude | No guessing (FR-05), and unanswerable questions cost nothing.                 |
+| Confidence threshold before calling the AI | No guessing (FR-05), and unanswerable questions cost nothing.                 |
 | Offline responder                          | Works with no key, and is the deterministic stub for tests.                   |
 | `Store` interface: PostgreSQL or memory    | Real persistence in dev/prod; tests and no-Docker setups still work.          |
 | Shared types package                       | Client/server mismatches become compile errors.                               |
@@ -680,7 +678,7 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 - **Offline mode only repeats entries.** Without an API key, a reply is the matching entry's
   text word for word, wrapped in a Butch opener and sign-off (`voice.ts`).
 - **Only knows 56 facts.** Anything else falls back (e.g. "Sigma Nu", "jobs"). Add entries, or
-  add Claude's web search limited to wsu.edu (see ROADMAP.md).
+  add web search limited to wsu.edu (see ROADMAP.md).
 - **Keyword search** handles typos and listed synonyms but still misses paraphrases with no
   shared or synonym words. Add keywords or a synonym group, or move to embeddings (pgvector) later.
 - **Follow-ups** like "when does it close?" have no topic words, so search can't tell which
@@ -701,7 +699,7 @@ DATA_STRATEGY.md). Run `npm test -w server` to validate, then ask Butch.
 
 **Change the FAQ buttons:** edit `server/data/quick-prompts.json`.
 
-**Change how Butch talks:** edit `server/src/responders/persona.ts` (Claude mode only).
+**Change how Butch talks:** edit `server/src/responders/persona.ts` (DeepSeek mode only).
 
 **Change the colors or font:** edit the `@theme` block in `client/src/index.css`.
 
@@ -726,7 +724,7 @@ DATA_STRATEGY.md). Run `npm test -w server` to validate, then ask Butch.
 2. Run `npm run e2e:list -w e2e`. `bddgen` reports any steps that don't have code yet.
 3. Add those steps in `e2e/steps/`.
 
-**Try a different Claude model or effort:** set `ANTHROPIC_MODEL` / `ANTHROPIC_EFFORT` in
+**Try a different DeepSeek model:** set `DEEPSEEK_MODEL` in
 `server/.env` and restart.
 
 **Demo "closed at midnight" by hand:** set `BUTCH_FAKE_NOW=2026-09-22T00:00:00-07:00` in
@@ -745,7 +743,7 @@ breakpoints.
 | ---------------------- | ------------------------------------------------------------------------------------------ |
 | **RAG**                | Retrieval-augmented generation: look up relevant facts, then have the AI answer from them. |
 | **Retrieval / search** | Finding the knowledge entries that match a question (`retrieval.ts`).                      |
-| **Responder**          | What writes the reply from retrieved facts: Claude or offline.                             |
+| **Responder**          | What writes the reply from retrieved facts: DeepSeek or offline.                           |
 | **Fallback**           | Butch's "I'd rather not guess" reply with a link to the right office.                      |
 | **Live status**        | A computed sentence like "open right now" or "3 days ago".                                 |
 | **Store**              | Where chats and ratings are saved (memory or PostgreSQL).                                  |

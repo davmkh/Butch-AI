@@ -24,7 +24,7 @@ const now = pullman('2026-09-25 14:00');
 describe('Butch', () => {
   it('does not call the responder at all when it is not confident (FR-05)', async () => {
     const respond = vi.fn();
-    const { butch } = await buildButch({ name: 'claude', respond });
+    const { butch } = await buildButch({ name: 'deepseek', respond });
     const reply = await butch.reply('How do I get a refund on my parking permit?', [], now);
     expect(reply.kind).toBe('fallback');
     expect(respond).not.toHaveBeenCalled();
@@ -32,7 +32,7 @@ describe('Butch', () => {
 
   it('uses the offline backup if the main responder throws (NFR-03)', async () => {
     const failing: Responder = {
-      name: 'claude',
+      name: 'deepseek',
       respond: () => Promise.reject(new Error('API down')),
     };
     const { butch, warn } = await buildButch(failing);
@@ -44,7 +44,7 @@ describe('Butch', () => {
 
   it('answers small talk without searching or calling the responder', async () => {
     const respond = vi.fn();
-    const { butch } = await buildButch({ name: 'claude', respond });
+    const { butch } = await buildButch({ name: 'deepseek', respond });
     const reply = await butch.reply('Go Cougs!', [], now);
     expect(reply).toMatchObject({ kind: 'answer', pose: 'hype', entryIds: [], sources: [] });
     expect(respond).not.toHaveBeenCalled();
@@ -66,7 +66,7 @@ describe('Butch', () => {
 
   it('falls back when the responder declines to answer', async () => {
     const { butch } = await buildButch({
-      name: 'claude',
+      name: 'deepseek',
       respond: async () => ({ text: '', answered: false }),
     });
     const reply = await butch.reply('Tell me about campus life', [], now);
