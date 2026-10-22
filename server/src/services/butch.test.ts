@@ -22,12 +22,42 @@ async function buildButch(responder: Responder) {
 const now = pullman('2026-09-25 14:00');
 
 describe('Butch', () => {
-  it('does not call the responder at all when it is not confident (FR-05)', async () => {
-    const respond = vi.fn();
+  it('asks DeepSeek with no facts when the knowledge base has no confident match', async () => {
+    const respond = vi.fn<Responder['respond']>(async () => ({
+      text: 'WSU has six campuses!',
+      answered: true,
+    }));
     const { butch } = await buildButch({ name: 'deepseek', respond });
+    const reply = await butch.reply('How many campuses does WSU have?', [], now);
+    expect(reply).toMatchObject({ kind: 'answer', text: 'WSU has six campuses!', entryIds: [] });
+    expect(reply.sources).toContainEqual(expect.objectContaining({ url: 'https://wsu.edu/' }));
+    expect(respond.mock.calls[0]![0].facts).toEqual([]);
+  });
+
+  it('falls back when DeepSeek says an unmatched question is off-topic (FR-05)', async () => {
+    const { butch } = await buildButch({
+      name: 'deepseek',
+      respond: async () => ({ text: '', answered: false }),
+    });
+    const reply = await butch.reply('Who won the NFL game last night?', [], now);
+    expect(reply.kind).toBe('fallback');
+  });
+
+  it('falls back without an API call when unmatched and offline (FR-05)', async () => {
+    const { butch } = await buildButch(new OfflineResponder());
     const reply = await butch.reply('How do I get a refund on my parking permit?', [], now);
     expect(reply.kind).toBe('fallback');
-    expect(respond).not.toHaveBeenCalled();
+  });
+
+  it('falls back if DeepSeek errors on an unmatched question', async () => {
+    const failing: Responder = {
+      name: 'deepseek',
+      respond: () => Promise.reject(new Error('API down')),
+    };
+    const { butch, warn } = await buildButch(failing);
+    const reply = await butch.reply('How many campuses does WSU have?', [], now);
+    expect(reply.kind).toBe('fallback');
+    expect(warn).toHaveBeenCalledOnce();
   });
 
   it('uses the offline backup if the main responder throws (NFR-03)', async () => {

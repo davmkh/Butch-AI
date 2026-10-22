@@ -18,7 +18,7 @@ export interface ResponderInput {
   question: string;
   /** Earlier turns in this conversation, oldest first. */
   history: HistoryTurn[];
-  /** Best matches first. Always at least one: with none, Butch falls back before calling a responder. */
+  /** Best matches first. Empty when nothing matched: DeepSeek then answers from general WSU knowledge. */
   facts: GroundedFact[];
   now: Date;
 }

@@ -1,5 +1,5 @@
 import { formatPullmanDateTime } from '../lib/pullmanTime.ts';
-import { BUTCH_SYSTEM_PROMPT } from './persona.ts';
+import { BUTCH_SYSTEM_PROMPT, NO_ANSWER } from './persona.ts';
 import type { GroundedFact, Responder, ResponderInput, ResponderResult } from './types.ts';
 
 export const DEEPSEEK_API_URL = 'https://api.deepseek.com/chat/completions';
@@ -35,7 +35,10 @@ interface ChatCompletion {
 
 const MAX_TOKENS = 4096;
 
-/** Writes Butch's reply with DeepSeek, grounded in the retrieved WSU facts (FR-03). */
+/**
+ * Writes Butch's reply with DeepSeek, grounded in the retrieved WSU facts (FR-03).
+ * With no facts it answers from general WSU knowledge, or replies NO_ANSWER.
+ */
 export class DeepSeekResponder implements Responder {
   readonly name = 'deepseek';
   private readonly apiKey: string;
@@ -84,7 +87,9 @@ export class DeepSeekResponder implements Responder {
     if (!choice || choice.finish_reason !== 'stop') return { text: '', answered: false };
 
     const text = (choice.message.content ?? '').trim();
-    return text ? { text, answered: true } : { text: '', answered: false };
+    // NO_ANSWER: off-topic, so Butch gives the fallback message.
+    if (!text || text.includes(NO_ANSWER)) return { text: '', answered: false };
+    return { text, answered: true };
   }
 
   /** POSTs to the API, retrying once on network errors, 429s, and 5xx responses. */
@@ -125,7 +130,7 @@ export function buildPrompt({ question, facts, now }: ResponderInput): string {
     `<current_time>${formatPullmanDateTime(now)} (Pullman, WA)</current_time>`,
     '',
     '<wsu_facts>',
-    ...facts.map(formatFact),
+    ...(facts.length > 0 ? facts.map(formatFact) : ['(none found for this question)']),
     '</wsu_facts>',
     '',
     `<question>${question}</question>`,

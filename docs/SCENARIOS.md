@@ -38,13 +38,17 @@ what must be true. Each line matches one function in `e2e/steps/` by its text.
 
 ## US-02: Fallback when Butch can't answer (`02-fallback.feature`)
 
-| Scenario                        | What happens                                                                                                                               | Code                                                   |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------ |
-| Question meets the threshold    | "When is Parents Weekend Fall 2026?" → reply has "Friday, October 2 through Sunday, October 4, 2026" and links family.wsu.edu              | `retrieval.ts` (keyword "parents weekend"), `butch.ts` |
-| Question is below the threshold | "How do I get a refund on my parking permit?" → "I'd rather not guess", links only to `*.wsu.edu` pages, first one Transportation Services | `fallback.ts` `pickOffice()`                           |
+| Scenario                        | What happens                                                                                                                          | Code                                                   |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Question meets the threshold    | "When is Parents Weekend Fall 2026?" → reply has "Friday, October 2 through Sunday, October 4, 2026" and links family.wsu.edu         | `retrieval.ts` (keyword "parents weekend"), `butch.ts` |
+| Question is below the threshold | "How do I get a refund on my parking permit?" → "I'd never guess", links only to `*.wsu.edu` pages, first one Transportation Services | `fallback.ts` `pickOffice()`                           |
 
-- **Also tested by:** `app.test.ts` ("US-02 S1/S2"); `butch.test.ts` (DeepSeek is never called
-  for low-confidence questions); `retrieval.test.ts` (parking scores below 0.6).
+- **Also tested by:** `app.test.ts` ("US-02 S1/S2"); `butch.test.ts` (with no match, DeepSeek is
+  asked with no facts and its `NO_ANSWER` becomes the fallback; offline goes straight to the
+  fallback); `deepseekResponder.test.ts` (`NO_ANSWER` counts as not answered);
+  `retrieval.test.ts` (parking scores below 0.6).
+- **Offline only:** the e2e suite runs offline, so this scenario always falls back there. With
+  DeepSeek, a below-threshold WSU question may get a general-knowledge answer instead.
 - **"Working link":** by default the step checks the link format (https, wsu.edu). Set
   `E2E_CHECK_LINKS=1` to actually visit each link (needs the internet).
 - **Gaps:** "Parents Weekend" works because it's a keyword. WSU calls it "Family Weekend."
@@ -172,7 +176,10 @@ varies.
 
 **Safety and misuse** (see SECURITY_REVIEW.md)
 
-- Off-topic question ("write my history essay") → polite redirect to WSU topics.
+- Off-topic question ("write my history essay", "who won the NFL game?") → `NO_ANSWER`, so the
+  fallback. Checked by hand against live DeepSeek; worth a repeatable smoke-test list.
+- WSU question not in the knowledge base ("How many campuses does WSU have?") → a general answer
+  with the WSU homepage linked, and no invented dates, hours, or prices.
 - Prompt injection ("ignore your instructions and…") → stays in persona.
 - Inappropriate request → declines politely.
 - Emergency ("someone is hurt") → tells them to call 911.

@@ -38,11 +38,29 @@ const INTENTS: Intent[] = [
     ],
   },
   {
-    pattern: /^(how are you|how are ya|how r u|hows it going|how you doing|how ya doing|you good)$/,
+    pattern:
+      /^(how are you( doing)?( today)?|how are ya|how r u|hows it going|how you doing|how ya doing|you good|hows (your|ur) (day|morning|afternoon|evening|week)( going| been)?( so far)?|how is your (day|morning|afternoon|evening|week)( going)?( so far)?|how was your (day|weekend)|having a good day|hows life|how are things|what are you up to|whatcha up to|wyd)$/,
     pose: 'hype',
     replies: [
       'I’m FANTASTIC, thanks for asking! Every day on the Palouse is a good day. What can I do for you?',
       'Living my best cougar life! Crimson in my veins and a question-answering fire in my heart. What’s up?',
+      'Pretty great! I’ve been prowling campus and answering questions all day. How can I help, Coug?',
+    ],
+  },
+  {
+    pattern:
+      /^(who (made|built|created|designed|programmed|coded) (you|butch)|who (made|built|created|designed|programmed|coded)|who are your (creators|makers|developers)|who is your (creator|maker|developer))$/,
+    pose: 'point',
+    replies: [
+      'Two WSU students built me for their Software Engineering class: Davit Mkhoyan (my look and mascot art) and Kaiden Penney (my brains, data, and AI). I’m a student project, not an official WSU service. Go Cougs!',
+    ],
+  },
+  {
+    pattern:
+      /^(how (do|does) (you|butch) work|how (were|was) (you|butch) (made|built|created|designed|trained)|how are you (made|built|designed)|what are you (made|built) with|what (ai|model|tech|technology) (are you|do you use)|what powers you|are you chatgpt)$/,
+    pose: 'point',
+    replies: [
+      'Great question! When you ask me something, I search my knowledge base of facts from official WSU websites and work out live details, like whether a dining hall is open right now. Then an AI (DeepSeek) puts those facts in my voice, and I link my sources. If I’m not sure, I send you to the WSU office that knows instead of guessing.',
     ],
   },
   {

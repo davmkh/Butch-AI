@@ -11,6 +11,14 @@ describe('smallTalk', () => {
     ['GO COUGS!!!', 'hype'],
     ['gooo cougs', 'hype'],
     ['who are you?', 'hype'],
+    ["How's your day?", 'hype'],
+    ['hows your day going butch', 'hype'],
+    ['How is your day going so far?', 'hype'],
+    ['what are you up to', 'hype'],
+    ['Who made you?', 'point'],
+    ['who built butch', 'point'],
+    ['How were you designed?', 'point'],
+    ['how do you work', 'point'],
     ['what can you do', 'point'],
     ['bye!', 'wave'],
   ] as const)('%s -> %s', (message, pose) => {
@@ -21,6 +29,12 @@ describe('smallTalk', () => {
     expect(smallTalk('hi, when is spring break?')).toBeUndefined();
     expect(smallTalk('thanks! also when is family weekend')).toBeUndefined();
     expect(smallTalk('Is Southside open right now?')).toBeUndefined();
+  });
+
+  it('leaves off-topic chat for the knowledge base, which sends a fallback link', () => {
+    expect(smallTalk('who won the NFL game last night')).toBeUndefined();
+    expect(smallTalk("how's your day? also what's your favorite pizza")).toBeUndefined();
+    expect(smallTalk('how do you make pancakes')).toBeUndefined();
   });
 
   it('answers anything that sounds like a crisis calmly, with 911, 988, and a crisis link', () => {

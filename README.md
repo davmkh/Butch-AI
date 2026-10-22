@@ -91,10 +91,12 @@ docs/       Guides (see Documentation below)
 ## How Butch answers
 
 1. **Search** the knowledge base for the question (keyword retrieval with a confidence score).
-2. **Not confident?** Reply with a link to the WSU office that can help instead of guessing
-   (FR-05).
+2. **Nothing matched?** DeepSeek answers WSU questions from stable general knowledge (history,
+   campuses, traditions), without inventing dates, hours, or prices. Questions that aren't
+   about WSU, or any miss in offline mode, get a link to the WSU office that can help instead
+   of a guess (FR-05).
 3. **Work out live facts in code:** "open right now until 9 PM", "that deadline passed 3 days ago".
-4. **Write the reply** with DeepSeek, grounded only in those facts. Offline mode uses the facts
+4. **Write the reply** with DeepSeek, grounded in those facts. Offline mode uses the facts
    as-is.
 
 The full walkthrough is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).

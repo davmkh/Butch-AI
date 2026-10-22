@@ -116,8 +116,11 @@ something embarrassing under WSU branding, or use him as a free general-purpose 
 
 - **Butch has no tools and no access to data.** An injection can't read other users' chats,
   change data, or take actions. The worst case is a bad reply to the person who asked.
-- Questions that don't match the knowledge base **never reach DeepSeek** (FR-05).
-- The persona prompt restricts topics and tells the model to decline unsafe or off-topic requests.
+- The persona prompt restricts topics: questions that don't match the knowledge base reach
+  DeepSeek with no facts, and it must reply `NO_ANSWER` to anything not about WSU, which the
+  server turns into the fallback (FR-05). It may answer WSU questions from general knowledge,
+  but not invent dates, hours, prices, or names. This is a prompt rule, not a hard filter, so a
+  determined prompt injection can still get an off-topic or less accurate reply.
 - DeepSeek's content filter, and treating a `content_filter` stop as a fallback.
 - The 500-character question limit, output cap, and rate limits.
 - Replies render as **plain text**, so they can't inject HTML or scripts.
@@ -126,7 +129,8 @@ something embarrassing under WSU branding, or use him as a free general-purpose 
 
 - Keep a list of adversarial test questions and re-run it whenever the prompt or model changes
   (see SCENARIOS.md).
-- Review fallbacks and thumbs-downs in the logs.
+- Review fallbacks, thumbs-downs, and general-knowledge answers (replies with no `entry_ids`)
+  in the logs. Questions that come up often belong in the knowledge base.
 - If web search is added, restrict it to `wsu.edu`.
 - Treat any scraped web content as untrusted, since it can contain injected instructions.
 
@@ -250,7 +254,7 @@ Optional hardening: pin GitHub Actions to commit SHAs instead of `@v5`.
 | SQL injection     | Prisma queries only (parameterized); the one raw query is a constant `SELECT 1`        |
 | Secrets           | API key only on the server; `.env` git-ignored; only `VITE_*` values reach the browser |
 | HTTP              | Helmet headers; CORS allow-list; external links use `rel="noopener noreferrer"`        |
-| Abuse             | Per-IP rate limits (chat + API-wide); output token cap; no-match questions skip the AI |
+| Abuse             | Per-IP rate limits (chat + API-wide); output token cap; off-topic gets `NO_ANSWER`     |
 | Errors            | Generic 500 message; internals only in server logs                                     |
 | Privacy           | No identifying columns; anonymous random IDs; notice in the footer                     |
 | AI safety         | Persona limits; refusal handling + server-side fallback; no tools or data access       |
