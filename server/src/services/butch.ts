@@ -16,7 +16,7 @@ export interface ButchReply {
   sources: SourceLink[];
   /** How the avatar acts out this reply. */
   pose: ButchPose;
-  /** Knowledge entries the answer was based on (empty for fallbacks). */
+  /** Knowledge entries the answer was based on (empty for fallbacks and general-knowledge answers). */
   entryIds: string[];
 }
 
@@ -35,7 +35,9 @@ export interface ButchOptions {
  * Butch's answer pipeline:
  *   0. small talk ("hi", "thanks", "Go Cougs!") or a crisis -> a canned reply, no search
  *   1. search the knowledge base for the question
- *   2. not confident?  -> fallback with a link to the right WSU office (FR-05)
+ *   2. not confident?  -> let DeepSeek answer WSU questions from what it knows, with
+ *      no made-up dates or hours; off-topic or offline -> fallback with a link to the
+ *      right WSU office (FR-05)
  *   3. add live status (open now / deadline passed) to each match
  *   4. have the responder (DeepSeek or offline) write the reply from those facts
  */
@@ -61,7 +63,7 @@ export class Butch {
       today: pullmanClock(now).isoDate,
     }).filter((match) => match.score >= confidenceThreshold);
 
-    if (matches.length === 0) return this.fallback(question);
+    if (matches.length === 0) return this.answerWithoutFacts(question, history, now);
 
     const facts: GroundedFact[] = matches.map((match) => ({
       ...match,
@@ -90,6 +92,41 @@ export class Butch {
       logger.warn(`[butch] ${responder.name} responder failed (${detail}); using backup.`);
       return backupResponder.respond(input);
     }
+  }
+
+  /**
+   * Nothing in the knowledge base matched, so DeepSeek answers from general WSU
+   * knowledge, or declines (off-topic) and Butch falls back. The offline
+   * responder has nothing to say without facts, and a failed API call isn't
+   * worth an offline backup either, so both go straight to the fallback.
+   */
+  private async answerWithoutFacts(
+    question: string,
+    history: HistoryTurn[],
+    now: Date,
+  ): Promise<ButchReply> {
+    const { responder, offices, logger } = this.options;
+    if (responder.name === 'offline') return this.fallback(question);
+
+    let result: ResponderResult;
+    try {
+      result = await responder.respond({ question, history, facts: [], now });
+    } catch (error) {
+      const detail =
+        error instanceof DeepSeekApiError ? `${error.status} ${error.name}` : String(error);
+      logger.warn(`[butch] ${responder.name} responder failed (${detail}); using fallback.`);
+      return this.fallback(question);
+    }
+    if (!result.answered) return this.fallback(question);
+
+    return {
+      text: result.text,
+      kind: 'answer',
+      // Not from the knowledge base, so point to where the student can double-check.
+      sources: buildFallback(question, offices).sources,
+      pose: 'point',
+      entryIds: [],
+    };
   }
 
   private fallback(question: string): ButchReply {

@@ -6,18 +6,18 @@ with `npm test`; Gherkin scenarios run with `npm run e2e`.
 
 ## Functional requirements
 
-| ID    | Requirement (short)                       | Implementation                                         | Verified by                                               | Status                                              |
-| ----- | ----------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------- | --------------------------------------------------- |
-| FR-01 | Type a question; send via button or Enter | `client/src/components/Composer.tsx`                   | `01-submit-question.feature`, `App.test.tsx`              | Done                                                |
-| FR-02 | Distinct user and Butch bubbles, in order | `MessageBubble.tsx`, `ChatWindow.tsx`                  | `01-submit-question.feature`, `App.test.tsx`              | Done                                                |
-| FR-03 | Answer from a WSU knowledge base          | `server/data/knowledge-base.json`, `services/butch.ts` | `02`, `03`, `04` features, `app.test.ts`                  | Done                                                |
-| FR-04 | "Butch is typing…" indicator              | `TypingIndicator.tsx`                                  | `06-theme-and-mascot.feature`, `App.test.tsx`             | Done                                                |
-| FR-05 | Fallback with WSU help link when unsure   | `services/fallback.ts`, `data/offices.json`            | `02-fallback.feature`, `butch.test.ts`                    | Done                                                |
-| FR-06 | Start a new conversation                  | `Header.tsx`, `useChat.reset()`                        | `10-new-conversation.feature`, `App.test.tsx`             | Done                                                |
-| FR-07 | Keep session history while on the page    | `useChat.ts` (in memory for the page session)          | `10-new-conversation.feature`                             | Done                                                |
-| FR-08 | Thumbs up/down on each reply              | `RatingButtons.tsx`, `routes/feedback.ts`              | `07-rate-responses.feature`, `app.test.ts`                | Done                                                |
-| FR-09 | Log exchanges; no user identity           | `routes/chat.ts`, `store/`                             | `app.test.ts` ("US-08 / FR-09"), `prismaStore.db.test.ts` | Partial: logged in PostgreSQL; admin review pending |
-| FR-10 | Admin can add/edit/remove KB entries      | Store already reads KB per request                     | `09-knowledge-base-admin.feature` (@todo)                 | Not started                                         |
+| ID    | Requirement (short)                       | Implementation                                                           | Verified by                                                         | Status                                                             |
+| ----- | ----------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| FR-01 | Type a question; send via button or Enter | `client/src/components/Composer.tsx`                                     | `01-submit-question.feature`, `App.test.tsx`                        | Done                                                               |
+| FR-02 | Distinct user and Butch bubbles, in order | `MessageBubble.tsx`, `ChatWindow.tsx`                                    | `01-submit-question.feature`, `App.test.tsx`                        | Done                                                               |
+| FR-03 | Answer from a WSU knowledge base          | `server/data/knowledge-base.json`, `services/butch.ts`                   | `02`, `03`, `04` features, `app.test.ts`                            | Done                                                               |
+| FR-04 | "Butch is typing…" indicator              | `TypingIndicator.tsx`                                                    | `06-theme-and-mascot.feature`, `App.test.tsx`                       | Done                                                               |
+| FR-05 | Fallback with WSU help link when unsure   | `services/fallback.ts`, `data/offices.json`, `NO_ANSWER` in `persona.ts` | `02-fallback.feature`, `butch.test.ts`, `deepseekResponder.test.ts` | Done (DeepSeek answers WSU questions from general knowledge first) |
+| FR-06 | Start a new conversation                  | `Header.tsx`, `useChat.reset()`                                          | `10-new-conversation.feature`, `App.test.tsx`                       | Done                                                               |
+| FR-07 | Keep session history while on the page    | `useChat.ts` (in memory for the page session)                            | `10-new-conversation.feature`                                       | Done                                                               |
+| FR-08 | Thumbs up/down on each reply              | `RatingButtons.tsx`, `routes/feedback.ts`                                | `07-rate-responses.feature`, `app.test.ts`                          | Done                                                               |
+| FR-09 | Log exchanges; no user identity           | `routes/chat.ts`, `store/`                                               | `app.test.ts` ("US-08 / FR-09"), `prismaStore.db.test.ts`           | Partial: logged in PostgreSQL; admin review pending                |
+| FR-10 | Admin can add/edit/remove KB entries      | Store already reads KB per request                                       | `09-knowledge-base-admin.feature` (@todo)                           | Not started                                                        |
 
 ## Non-functional requirements
 

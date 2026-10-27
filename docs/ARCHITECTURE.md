@@ -113,11 +113,17 @@ A student types **"Is Southside open right now?"** at noon on a Monday and press
    - calls `butch.reply(question, history, now)`;
    - **logs Butch's reply** (role `butch`, with its kind and the knowledge entries used);
    - responds with `{ conversationId, messageId, reply, kind, sources }`.
-7. **`services/butch.ts` `reply()`** is the answer pipeline:
+7. **`services/butch.ts` `reply()`** is the answer pipeline: 0. **Small talk?** Greetings, "how's your day", "who made you", "how do you work", thanks,
+   and crisis words get a canned reply from `smallTalk.ts`. No search, no AI.
    1. **Search** the knowledge base (`retrieval.ts` `search()`) for the top 3 matches, then keep
       those scoring at least `BUTCH_CONFIDENCE_THRESHOLD` (0.6).
-   2. **No confident match?** Return the fallback (`fallback.ts`): "I'd rather not guess", plus
-      a link to the best-matching WSU office. **DeepSeek is never called** for these.
+   2. **No confident match?** DeepSeek is asked anyway, with no facts. It may answer WSU
+      questions from **stable general knowledge** (history, campuses, colleges, traditions,
+      sports), but never invents dates, hours, prices, or names; for those it points to the
+      right office. If the question isn't about WSU, it replies `NO_ANSWER` and Butch returns
+      the fallback (`fallback.ts`): "I'd never guess on you", plus a link to the best-matching
+      WSU office. Offline mode, or a DeepSeek error here, goes straight to the fallback.
+      General-knowledge answers link the matching office or the WSU homepage and log no entry IDs.
    3. **Add live status** to each match (`liveStatus.ts`), e.g. "Southside Café: open right
       now, closing at 9:00 PM today."
    4. **Respond** with the configured responder (DeepSeek or offline). If DeepSeek throws (network,
@@ -139,7 +145,7 @@ A student types **"Is Southside open right now?"** at noon on a Monday and press
       Southside locations tied, so both are shown.
     - **DeepSeek:** receives Butch's persona instructions plus a message containing the current
       Pullman time, both facts with their live status, and the question. It writes a short,
-      friendly answer from only those facts.
+      friendly answer from those facts, which win over anything it remembers.
 
 ### Back in the browser
 
@@ -156,9 +162,13 @@ A student types **"Is Southside open right now?"** at noon on a Monday and press
 
 "How do I get a refund on my parking permit?" → words `["refund", "parking", "permit"]`. Only
 "refund" matches anything (the Fall 2026 full-refund withdrawal entry), scoring 1/3 = 0.33,
-which is below 0.6. So Butch falls back. `pickOffice()` compares the words with each office's
-keywords: Transportation Services matches "parking" and "permit" (2), Financial Services
-matches "refund" (1), so the reply points to **Transportation Services** and the WSU homepage.
+which is below 0.6. In offline mode (and in the e2e suite) Butch falls back right away. With
+DeepSeek, it's asked first with no facts; a refund policy is a detail it must not invent, so it
+says it doesn't have the latest and points to the office. A question that isn't about WSU at all
+("Who won the NFL game last night?") gets `NO_ANSWER` and the fallback. `pickOffice()` compares the
+words with each office's keywords: Transportation Services matches "parking" and "permit" (2),
+Financial Services matches "refund" (1), so the reply points to **Transportation Services** and
+the WSU homepage.
 
 ---
 
@@ -228,7 +238,7 @@ matches "refund" (1), so the reply points to **Transportation Services** and the
 | -------------------------- | -------------------------------------------------------------------- |
 | `ChatRequest`              | `POST /api/chat` body: `message`, optional `conversationId`          |
 | `ChatResponse`             | Its reply: `conversationId`, `messageId`, `reply`, `kind`, `sources` |
-| `ReplyKind`                | `'answer'` (from the knowledge base) or `'fallback'` (not confident) |
+| `ReplyKind`                | `'answer'` (from facts or WSU knowledge) or `'fallback'` (no answer) |
 | `SourceLink`               | `{ label, url }` shown under a reply                                 |
 | `FeedbackRequest/Response` | `POST /api/feedback`: `messageId`, `rating`                          |
 | `Rating`                   | `'up'` or `'down'`                                                   |
@@ -321,9 +331,12 @@ to test "open at noon" and "closed at midnight." It's off by default and refused
 - **`butch.ts`**: the `Butch` class, described in section 2 step 7. Its dependencies (store,
   offices, responder, backup responder, threshold) are passed in through the constructor,
   which makes it easy to test with fakes.
-- **`fallback.ts`**: `buildFallback()` writes the "rather not guess" message. `pickOffice()`
+- **`smallTalk.ts`**: canned replies for greetings, "how's your day", questions about who built
+  Butch and how he works, thanks, "Go Cougs!", and crisis words. Each pattern must match the
+  whole message, so "hi, when is spring break?" still gets searched.
+- **`fallback.ts`**: `buildFallback()` writes the "never guess" message. `pickOffice()`
   finds the office in `offices.json` whose keywords overlap the question most. With no overlap,
-  only the WSU homepage is linked.
+  only the WSU homepage is linked. Its links are also the sources for general-knowledge answers.
 
 ### 5.5 Knowledge base, search, and live status (`src/knowledge/`, `src/lib/`)
 
@@ -393,8 +406,11 @@ Validation enforces https-only links, `HH:MM` times with close after open, ISO d
 | --------------------------------------------- | ---------------------- | ---------------------------------- |
 | What is the last day to drop a class?         | last, day, drop, class | Fall 2026 drop deadline (1.0)      |
 | Tell me about the amenities in the rec center | amenity, rec, center   | SRC amenities (1.0)                |
-| What classes should I take?                   | class, take            | Drop deadline (0.5) → **fallback** |
-| tell me about sigma nu at wsu                 | sigma, nu              | nothing → **fallback**             |
+| What classes should I take?                   | class, take            | Drop deadline (0.5) → **no facts** |
+| tell me about sigma nu at wsu                 | sigma, nu              | nothing → **no facts**             |
+
+"No facts" means DeepSeek answers from general WSU knowledge, or Butch falls back (offline, or
+off-topic).
 
 **`liveStatus.ts`** computes time-sensitive facts **in code**, because language models are
 unreliable at date math:
@@ -423,9 +439,10 @@ method, `respond({ question, history, facts, now })`, which returns `{ text, ans
 - **`deepseekResponder.ts`**: calls DeepSeek's OpenAI-style Chat Completions API
   (`POST https://api.deepseek.com/chat/completions`) with the built-in `fetch`. Text only:
   users can't attach images, so no vision model is needed.
-  - `system` message: Butch's persona (`persona.ts`). Answer only from the facts, never invent dates,
-    hours, or links, keep it to 2–4 sentences, stay on WSU topics, send emergencies to 911,
-    and be friendly with Cougar spirit.
+  - `system` message: Butch's persona (`persona.ts`). Answer from the facts first; with none,
+    use only stable general WSU knowledge. Never invent dates, hours, prices, names, or links,
+    keep it to 2–4 sentences, reply exactly `NO_ANSWER` to anything not about WSU, send
+    emergencies to 911, and be friendly with Cougar spirit.
   - then the earlier turns from this conversation, then the new message:
 
     ```
@@ -443,13 +460,15 @@ method, `respond({ question, history, facts, now })`, which returns `{ text, ans
 
     The current time goes in the message, not the system prompt, so the system prompt stays
     identical across requests. That lets DeepSeek's automatic context caching reuse it.
+    When nothing matched, `<wsu_facts>` holds `(none found for this question)` instead.
 
   - `max_tokens: 4096`: plenty for a short answer, and it caps what one request can cost.
   - `thinking: { type: 'disabled' }`: short grounded answers don't need reasoning, so this
     keeps replies fast and cheap.
   - Results: any `finish_reason` other than `stop` (e.g. `content_filter`, or a reply cut off
-    at `length`) or empty text counts as **not answered**, so Butch gives the fallback message. Errors (network, rate limit, outage) are
-    caught in `butch.ts`, which switches to the offline responder.
+    at `length`), empty text, or `NO_ANSWER` counts as **not answered**, so Butch gives the
+    fallback message. Errors (network, rate limit, outage) are caught in `butch.ts`, which
+    switches to the offline responder (or to the fallback when there were no facts).
 - **`index.ts`** `createResponder(config)` builds the right one. Requests have a 30-second
   timeout and 1 retry (network errors, 429s, and 5xx only).
 
@@ -664,7 +683,9 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 | ------------------------------------------ | ----------------------------------------------------------------------------- |
 | Search + DeepSeek (RAG), no model training | Facts change every semester. Editing data beats retraining (NFR-07).          |
 | Hours and dates computed in code           | "Open right now?" must be exact; language models are unreliable at date math. |
-| Confidence threshold before calling the AI | No guessing (FR-05), and unanswerable questions cost nothing.                 |
+| Confidence threshold for using facts       | Weak matches don't mislead the AI; below it, only general WSU knowledge.      |
+| General WSU knowledge when nothing matched | Broad questions ("how many campuses?") get answers without a KB entry each.   |
+| `NO_ANSWER` for off-topic questions        | DeepSeek decides what isn't about WSU; Butch still falls back (FR-05).        |
 | Offline responder                          | Works with no key, and is the deterministic stub for tests.                   |
 | `Store` interface: PostgreSQL or memory    | Real persistence in dev/prod; tests and no-Docker setups still work.          |
 | Shared types package                       | Client/server mismatches become compile errors.                               |
@@ -677,8 +698,12 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 
 - **Offline mode only repeats entries.** Without an API key, a reply is the matching entry's
   text word for word, wrapped in a Butch opener and sign-off (`voice.ts`).
-- **Only knows 56 facts.** Anything else falls back (e.g. "Sigma Nu", "jobs"). Add entries, or
-  add web search limited to wsu.edu (see ROADMAP.md).
+- **Only 56 verified facts.** Other WSU questions are answered from DeepSeek's general
+  knowledge, which isn't checked against a source and can be out of date or slightly off. Add
+  entries for anything important, or add web search limited to wsu.edu (see ROADMAP.md).
+  Offline mode still falls back for anything not in the knowledge base.
+- **Every unmatched question costs an API call**, including off-topic ones, because DeepSeek is
+  what decides they're off-topic. The chat rate limit caps this per IP.
 - **Keyword search** handles typos and listed synonyms but still misses paraphrases with no
   shared or synonym words. Add keywords or a synonym group, or move to embeddings (pgvector) later.
 - **Follow-ups** like "when does it close?" have no topic words, so search can't tell which
@@ -744,7 +769,7 @@ breakpoints.
 | **RAG**                | Retrieval-augmented generation: look up relevant facts, then have the AI answer from them. |
 | **Retrieval / search** | Finding the knowledge entries that match a question (`retrieval.ts`).                      |
 | **Responder**          | What writes the reply from retrieved facts: DeepSeek or offline.                           |
-| **Fallback**           | Butch's "I'd rather not guess" reply with a link to the right office.                      |
+| **Fallback**           | Butch's "I'd never guess" reply with a link to the right office.                           |
 | **Live status**        | A computed sentence like "open right now" or "3 days ago".                                 |
 | **Store**              | Where chats and ratings are saved (memory or PostgreSQL).                                  |
 | **Prisma**             | The database library: schema, migrations, typed queries, Studio.                           |

@@ -13,6 +13,8 @@ export class OfflineResponder implements Responder {
   readonly name = 'offline';
 
   async respond({ question, facts }: ResponderInput): Promise<ResponderResult> {
+    // No facts, nothing to quote.
+    if (facts.length === 0) return { text: '', answered: false };
     const best = facts[0]!.score;
     // Show equally-strong matches together, e.g. both "Southside" locations.
     const tied = facts.filter((f) => f.score >= best - 1e-9).slice(0, 2);

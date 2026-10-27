@@ -83,6 +83,15 @@ describe('DeepSeekResponder', () => {
     await expect(responder.respond(input)).resolves.toEqual({ text: '', answered: false });
   });
 
+  it('treats a NO_ANSWER reply (off-topic) as "not answered" so Butch falls back', async () => {
+    const fetch = fakeFetch(completion('stop', 'NO_ANSWER'));
+    const responder = new DeepSeekResponder({ ...options, fetch });
+    await expect(responder.respond({ ...input, facts: [] })).resolves.toEqual({
+      text: '',
+      answered: false,
+    });
+  });
+
   it('caps reply length and drops replies that get cut off', async () => {
     const fetch = fakeFetch(
       completion('length', 'Here is a 5,000-word essay about WSU. Chapter 1...'),
@@ -115,5 +124,10 @@ describe('buildPrompt', () => {
     );
     expect(prompt).toContain('<fact title="Southside Café" source="WSU Dining: Facility Hours">');
     expect(prompt).toContain('<question>Is Southside open?</question>');
+  });
+
+  it('says so when no facts matched, so DeepSeek knows to use general WSU knowledge', () => {
+    const prompt = buildPrompt({ ...input, facts: [] });
+    expect(prompt).toContain('<wsu_facts>\n(none found for this question)\n</wsu_facts>');
   });
 });
