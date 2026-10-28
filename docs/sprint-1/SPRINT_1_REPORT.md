@@ -8,7 +8,7 @@ Video Link: _(added after upload)_
 ## What's New (User Facing)
 
 - Ask Butch a question in a WSU-themed chat and get an answer from a curated knowledge base of
-  42 verified WSU facts, each with a source link.
+  56 verified WSU facts, each with a source link.
 - Replies are written in Butch's voice by an AI model (DeepSeek), grounded only in the retrieved
   facts; when no API key is set or the API fails, an offline mode still answers.
 - Live answers: "Is Southside open right now?" uses real dining hours; deadline questions say
