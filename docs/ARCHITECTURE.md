@@ -37,7 +37,7 @@ flowchart LR
   subgraph Browser
     UI[React app<br/>client/]
   end
-  subgraph "Your computer (dev) / Render (later)"
+  subgraph "Your computer (dev) / Railway (hosted)"
     V[Vite dev server :5173<br/>serves the app, proxies /api]
     API[Express API :3001<br/>server/]
     KB[(knowledge-base.json<br/>offices.json<br/>quick-prompts.json)]
@@ -301,7 +301,7 @@ Supertest. Middleware runs in this order:
 
 | Order | Middleware                        | Why                                                                           |
 | ----- | --------------------------------- | ----------------------------------------------------------------------------- |
-| 1     | `trust proxy` (production only)   | Behind Render's proxy, use the real client IP for rate limits                 |
+| 1     | `trust proxy` (production only)   | Behind the host's proxy (Railway), use the real client IP for rate limits     |
 | 2     | `helmet()`                        | Security headers (no sniffing, no framing, etc.)                              |
 | 3     | `cors({ origin: CLIENT_ORIGIN })` | Only our website may call the API from a browser                              |
 | 4     | API-wide rate limit               | 5 × `RATE_LIMIT_PER_MINUTE` requests/min per IP on every `/api` route         |
@@ -681,7 +681,7 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 
 | Decision                                   | Why                                                                           |
 | ------------------------------------------ | ----------------------------------------------------------------------------- |
-| Search + DeepSeek (RAG), no model training | Facts change every semester. Editing data beats retraining (NFR-07).          |
+| Search + DeepSeek (RAG), no model training | Facts change every semester. Editing data beats retraining.                   |
 | Hours and dates computed in code           | "Open right now?" must be exact; language models are unreliable at date math. |
 | Confidence threshold for using facts       | Weak matches don't mislead the AI; below it, only general WSU knowledge.      |
 | General WSU knowledge when nothing matched | Broad questions ("how many campuses?") get answers without a KB entry each.   |
@@ -709,7 +709,7 @@ per scenario: [SCENARIOS.md](SCENARIOS.md).
 - **Follow-ups** like "when does it close?" have no topic words, so search can't tell which
   place you mean.
 - **Regular hours only.** Holiday and break hours aren't modeled; entries warn about this.
-- **No admin screen yet** (US-08, US-09). Use `npm run db:studio` locally.
+- **No admin screen.** Read the logs with `npm run db:studio`, which runs only on your own machine.
 - **No streaming.** Replies appear all at once.
 - **Rate limits are per server instance and in memory.** Fine for one server, not for several.
 

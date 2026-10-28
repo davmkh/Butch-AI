@@ -1,161 +1,107 @@
 # Roadmap and next steps
 
-Where Butch AI stands after sprint 1's foundation (2026-09-25), and what's left before the
-final submission in December. Sprints are two weeks (Scrum, per Milestone 1), roughly lined up
-with the Fall 2026 calendar. **Kaiden** leads back end, data, AI, and infrastructure. **Dav**
-leads front-end design and graphics. Items marked **Both** need both of you.
+Where Butch AI stands on 2026-10-28 (sprint 2 of 3), and what's left before the end of
+sprint 3 on Dec 6. Sprints follow Scrum, per Milestone 1. **Kaiden** leads back end, data,
+AI, and documentation. **Dav** leads front-end design, graphics, and deployment. Items marked
+**Both** need both of you.
 
-Each item has a "done when" so it can become a GitHub issue as-is.
+Each item has a "done when" so it can become a GitHub issue as-is. IDs match
+[PRODUCT_BACKLOG.md](sprint-2/PRODUCT_BACKLOG.md); the sprint 2 commitments, owners, and
+acceptance criteria are in [SPRINT_2_BACKLOG.md](sprint-2/SPRINT_2_BACKLOG.md).
 
 ## Where things stand
 
-| Area                           | Status                                                                        |
-| ------------------------------ | ----------------------------------------------------------------------------- |
-| Chat UI (US-01, 02, 05–07, 10) | Working, accessible, tested                                                   |
-| Knowledge base                 | 42 verified facts; keyword search; live hours and deadlines                   |
-| AI replies                     | Code done and tested with mocks; **needs an API key to run for real**         |
-| Storage                        | PostgreSQL in Docker; every question, reply, and rating saved                 |
-| Admin (US-08, US-09)           | Not started (logs are viewable with Prisma Studio locally)                    |
-| Deployment                     | Not started                                                                   |
-| Tests / CI                     | 80 unit/component/database tests + 22 Gherkin scenarios; CI ready once pushed |
+| Area                           | Status                                                                                                                                               |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Chat UI (US-01, 02, 05–07, 10) | Working, accessible, tested                                                                                                                          |
+| Knowledge base                 | 56 verified facts; keyword search; live hours and deadlines                                                                                          |
+| AI replies                     | DeepSeek live, about 1 to 2 seconds. Questions outside the knowledge base are answered from the AI's general knowledge, which is not verified (T-46) |
+| Storage                        | PostgreSQL in Docker for local work; hosted PostgreSQL on Railway in progress (T-39)                                                                 |
+| Logs                           | Every question, reply, and rating is saved; read them with the database viewer (Prisma Studio locally). There is no admin screen                     |
+| Deployment                     | Railway deploy in progress (T-35)                                                                                                                    |
+| Tests / CI                     | 132 unit and component tests, 4 database tests, 22 Gherkin scenarios; CI green                                                                       |
 
 ---
 
-## Do first (this week)
+## Sprint 2 (Oct 13–Nov 3): hosted and documented
 
-1. **Make the repo private (Dav, as owner).** _Settings → General → Danger Zone → Change
-   visibility._ Then push the code on a branch and open a PR to `main` (SEC-07).
-   _Done when:_ the repo shows "Private" and the code is on GitHub.
-2. **Turn on repo protections (Dav).**
-   - Branch protection on `main`: require a PR, 1 approval, and CI passing.
-   - Dependabot alerts and security updates.
-   - Optionally, give Kaiden admin.
-
-   _Done when:_ a direct push to `main` is rejected.
-
-3. **Set up the GitHub Projects board (Both).** One issue per user story and per item below,
-   with columns Backlog → Ready → In Progress → In Review → Done (Milestone 1, §2.3.2).
-   _Done when:_ the sprint 1 items are on the board.
-4. **Get the dev environment running on Dav's machine (Both).** Clone, then follow README Quick
-   start: Node 24, Docker Desktop (plus `wsl --install` on Windows), copy `server/.env.example`.
-   _Done when:_ Dav can run `npm run dev` and `npm run check`.
-
----
-
-## Sprint 1 wrap-up (due ~Oct 9): demo-ready
-
-### Kaiden
-
-- **Get a DeepSeek API key and test real answers.**
-  1. Create an account at **platform.deepseek.com** and top up a few dollars of credit.
-  2. **Keep the balance small** so a leaked key can't run up a big bill (SEC-10).
-  3. Create a key named e.g. `butch-dev`, put it in `server/.env` as `DEEPSEEK_API_KEY`, and
-     restart. `GET /api/health` should show `"responder":"deepseek"`.
-
-  _Done when:_ Butch answers the quick prompts conversationally, with sources.
-
-- **Tune for speed and cost (NFR-02: replies within 5 s).** Time 20 typical questions with the
-  default `deepseek-flash`. Compare against `deepseek-v4-pro` via `DEEPSEEK_MODEL` only if
-  answer quality is lacking. Record latency, cost, and
-  answer quality in a short table, and pick defaults as a team.
-  _Done when:_ the table is in the sprint review notes, and `.env.example` has the chosen defaults.
-- **Write an adversarial question list (~25).** Off-topic, "ignore your instructions", rude,
-  emergency, personal info, very long, trick dates. Run them in DeepSeek mode and note any bad
-  replies; adjust `persona.ts` if needed (SEC-09).
-  _Done when:_ the list and results are in `docs/` and no reply would embarrass WSU.
-- **Grow the knowledge base for the demo** (see "Knowledge to add" below). Start with what
-  people have actually asked: **jobs** and **Greek life** both fell back in testing.
-  _Done when:_ 15–20 new verified entries, each with a source link and `lastVerified`.
+Goal: Butch runs at a public URL with a hosted PostgreSQL, and we can show it live and explain
+how we built it.
 
 ### Dav
 
-- **Figma mockups** of the chat on desktop and mobile, using the WSU tokens in
-  `client/src/index.css` (Milestone 1, §2.3.3).
-  _Done when:_ reviewed together and turned into issues.
-- **Butch art direction.** Decide the look for the idle / thinking (and maybe greeting /
-  celebrating) states. The official Butch logo is a **WSU trademark**, so use original art
-  unless WSU grants permission.
-  _Done when:_ sketches are approved; the final art can come in sprint 2.
-- **UI polish pass.** Spacing, type scale, the quick-prompt row (show that it scrolls),
-  empty/error states. Keep the accessible names and test IDs listed in ARCHITECTURE.md §6.7.
-  _Done when:_ `npm run e2e` still passes.
+- **Deploy to Railway (T-35).** One service for the API and the built client, with Railway
+  variables for secrets (`DEEPSEEK_API_KEY`, `DATABASE_URL`, `CLIENT_ORIGIN`, `NODE_ENV=production`).
+  _Done when:_ the public URL answers a Southside question and `/api/health` shows `deepseek`
+  and `postgres`.
+- **Hosted PostgreSQL on Railway (T-39).** Point the server at it, apply migrations with
+  `npm run db:deploy -w server`, and make the connection error message stop mentioning Docker.
+  _Done when:_ a fresh clone runs against the hosted database with no Docker.
+- **Production database hygiene (T-40).** Private database URL for the API, separate dev and
+  production databases, a usage cap or alert. _Done when:_ the SEC-13 items for the database are
+  ticked in SECURITY_REVIEW.md.
+- **Repo protections (T-28).** Branch protection on `main` (PR, 1 approval, CI passing),
+  Dependabot, and the public-or-private decision (SEC-07). _Done when:_ a direct push to `main`
+  is rejected.
+- **`CLAUDE.md` (T-51).** The rules both of us want Claude to follow when either of us prompts it.
+  _Done when:_ it is merged to `main` through a reviewed pull request.
+
+### Kaiden
+
+- **Planning documents (T-48).** Product backlog, sprint backlog, and this roadmap.
+- **DeepSeek keys (T-07).** Each of us uses our own small-balance key in a gitignored `.env`; the
+  production key exists only as a Railway variable (SEC-10).
+- **Latency and cost table (T-29).** Time 20 typical questions on `deepseek-flash` and one other
+  model; pick the default. _Done when:_ the table is in the slideshow and `.env.example` has
+  the chosen default.
+- **Adversarial question list (T-30).** About 25 prompts: off-topic, "ignore your instructions",
+  rude, emergency, personal information, very long, trick dates. Run them in DeepSeek mode and
+  adjust `persona.ts` if needed (SEC-09).
+- **Dev tooling upgrade (T-41).** Upgrade vite, vitest, and concurrently together to clear the
+  remaining `npm audit` findings.
+- **Sprint 2 report and submission package (T-54).** The report from the course template, Kanban
+  screenshots (before, after, end), the video link, and instructor access to the repo and board.
+- **Knowledge base entries (T-31).** Greek life, jobs, housing, and parking: 8 entries with
+  source links. _Done when:_ "Tell me about Sigma Nu" answers from the knowledge base.
 
 ### Both
 
-- **Sprint review demo script:** ask about Southside, drop deadlines, Family Weekend, a fallback
-  question, rate a reply, show the saved data in Prisma Studio. Then a retrospective.
-- **Manual accessibility check.** Use the app with only the keyboard, and with a screen reader
-  (NVDA on Windows is free). Note anything that's confusing (NFR-05).
+- **AI-use notes (T-42).** A short note each in `docs/AI_USAGE.md`: which AI tools we used for
+  code, tests, and UML, how well they worked, and how we checked the output. We also read the UML
+  once against the code and fix anything wrong.
+- **Demo script and dry run (T-45).** Run the script on the deployed URL the day before: ask about
+  Southside, drop deadlines, Family Weekend, a fallback question, rate a reply, and show the
+  saved data in the hosted database.
+- **Slideshow (T-49), video (T-50), and the review and retrospective meetings (T-53).**
+  Planning, execution (the Kanban board before and after), review, and retrospective are covered in
+  the slideshow, not in separate documents; only the sprint backlog and the sprint report are
+  turned in. The video follows the course outline: introduction, backlog, Kanban walkthrough,
+  feature demo, responsible use of AI, review and retrospective, conclusion. Both of us appear and
+  talk about our own work.
 
 ---
 
-## Sprint 2 (Oct 9–23): smarter answers
+## Sprint 3 (Nov 3–Dec 6): polish and final submission
 
-- **(Kaiden) Answer beyond the knowledge base with WSU web search.** When no entry matches,
-  search `wsu.edu` with a web search API (DeepSeek's API has no built-in search tool) and pass
-  the top results to DeepSeek as extra facts. Show the
-  pages it used as sources. Keep the office fallback when search finds nothing. This fixes
-  "Sigma Nu"-style questions. _Done when:_ 5 questions that used to fall back get correct,
-  cited answers.
-- **(Kaiden) Streaming replies (Server-Sent Events).** Text appears as DeepSeek writes it, which
-  feels much faster (NFR-02). Server: `client.messages.stream()`. Client: read the event stream
-  in `butchApi.ts` and append to the last bubble. _Done when:_ the first words appear in under
-  1 s. **(Dav)** designs how streaming text and the typing indicator hand off.
-- **(Kaiden) Follow-up questions.** If a question has almost no topic words ("when does it
-  close?"), include the previous question in the search. _Done when:_ the follow-up scenario in
-  SCENARIOS.md passes.
-- **(Kaiden) Real "most-asked" quick prompts (US-05).** Count the most-matched entries or
-  questions in the `messages` table over the last 30 days; fall back to the curated list.
-- **(Dav) Mascot art v1** in `MascotAvatar.tsx`: a first pass is in (original SVG of Butch in
-  costume with 9 poses the server picks per reply). Refine the drawing, or replace it with
-  Lottie (`lottie-react`) animations with a static frame for reduced motion, keeping the
-  `state` and `pose` props (Milestone 1, §2.1.5).
-- **(Both) New scenarios** from the "worth adding" list in SCENARIOS.md: rate limit, API down,
-  follow-ups, ambiguous questions.
+Thanksgiving break is Nov 23–27. Pick from this list by capacity at sprint 3 planning, high
+priority first.
 
-## Sprint 3 (Oct 23–Nov 6): admin tools (US-08, US-09, FR-10, NFR-06, NFR-07)
-
-- **(Kaiden) Knowledge base in the database.** Add a `KnowledgeEntry` table and a seed script
-  that loads `knowledge-base.json`. `PrismaStore.listKnowledge()` then reads from the database,
-  so admin edits apply immediately (NFR-07).
-- **(Kaiden) Authentication.** WSU sign-in with 2FA is the requirement (NFR-06). WSU SSO
-  access for a class project is uncertain, so ask the instructor early. A reasonable stand-in
-  is an OAuth provider (Google or GitHub) plus an admin allow-list, with the gap documented.
-  Build: sessions in secure cookies, CSRF protection, and an authorization check on every admin
-  route (SEC-08).
-- **(Kaiden) Admin API:** knowledge-base create/read/update/delete (with the same zod
-  validation), conversation log list and filters, and feedback summary (downvotes, fallbacks,
-  most-asked).
-- **(Dav) Admin UI:** a login page, a knowledge-base editor (a form for hours and dates), a log
-  viewer, and a feedback dashboard.
-- **(Both) Turn on the @todo scenarios** in `08-` and `09-*.feature` and US-10 scenario 2.
-
-## Sprint 4 (Nov 6–20): deploy and harden
-
-- **(Kaiden) Deploy to Render** (Milestone 1, §2.4.3):
-  - A `Dockerfile` for the API (multi-stage build, non-root user).
-  - A Render web service (API), static site (client, with `VITE_API_URL`), and managed PostgreSQL.
-  - A GitHub Actions deploy workflow on merge to `main`.
-  - Work through the **pre-deployment checklist** in SECURITY_REVIEW.md.
-- **(Kaiden) Load test NFR-02:** 200 concurrent users with replies within 5 s (e.g. `autocannon`
-  or k6 against offline mode, plus a small DeepSeek-mode sample). Record the results.
-- **(Kaiden) Privacy:** redact emails, phone numbers, and student-ID-like numbers before
-  saving or sending; delete messages older than the retention period (SEC-11).
-- **(Kaiden) Logging and monitoring:** structured request logs (SEC-16), plus an uptime check on
-  `/api/health` (NFR-03).
-- **(Dav) Static-site security headers** (SEC-14) and a final responsive and accessibility pass.
-- **(Dav) Optional: embeddable widget mode** (a floating chat bubble for WSU pages, as
-  Milestone 1 mentions).
-
-## Sprint 5 (Nov 30–Dec 11): polish and final submission
-
-Thanksgiving break is Nov 23–27; the last day of classes is Dec 11.
-
-- Fix bugs from testing with real students (friends and classmates), using fallbacks and
-  thumbs-downs from the logs.
-- Final documentation: update TRACEABILITY.md statuses, add screenshots, and write up the test
-  evidence (CI runs, Playwright report, load test, accessibility results).
-- Final demo and retrospective.
+- **(Kaiden) Answer beyond the knowledge base with WSU web search (US-12).** Search `wsu.edu`
+  with a web search API (DeepSeek's API has no built-in search tool), pass the top results to
+  DeepSeek, and show the pages as sources. _Done when:_ 5 questions that used to fall back get
+  correct, cited answers.
+- **(Kaiden) Mark general-knowledge replies (T-46)** and **add the remaining knowledge entries
+  (T-52).**
+- **(Dav) Mascot art (US-16)** and the **manual accessibility pass (T-38)** on the deployed site.
+  Figma mockups (T-32) only if time allows.
+- **(Dav) Automatic deploys:** deploy on merge to `main` once CI is green.
+- **(Kaiden, if time) Logging and privacy:** structured request logs and an uptime check on
+  `/api/health` (T-37, SEC-16), and redacting emails, phone numbers, and student-ID-like numbers
+  before saving or sending (SEC-11).
+- **(Both) Final polish (T-55).** Fix bugs from testing with real students (friends and
+  classmates), using fallbacks and thumbs-downs from the logs. Update TRACEABILITY.md statuses and
+  write up the test evidence (CI runs, Playwright report, accessibility results). Final live
+  demo, review, and retrospective.
 
 ---
 
@@ -184,12 +130,12 @@ were checked on 2026-09-25; the others need you to find the official page.
 
 ## Decisions the team needs to make
 
-| Decision                                      | Options / notes                                                      |
-| --------------------------------------------- | -------------------------------------------------------------------- |
-| Default DeepSeek model                        | Based on the sprint 1 latency/cost table                             |
-| How to meet "WSU 2FA" for admins              | Real WSU SSO (ask instructor) vs. OAuth stand-in documented as a gap |
-| Recent questions on shared computers (SEC-15) | Clear button / session-only / opt-in                                 |
-| Log retention period (SEC-11)                 | e.g. 30 or 90 days                                                   |
-| Mascot art                                    | Original art vs. requesting permission to use official Butch         |
-| Add FR-11 / FR-12 to the requirements         | For US-05 and US-06 (see TRACEABILITY.md)                            |
-| Who is Product Owner and Scrum Master         | Milestone 1 says the Scrum Master role rotates                       |
+| Decision                                      | Options / notes                                                               |
+| --------------------------------------------- | ----------------------------------------------------------------------------- |
+| Default DeepSeek model                        | Based on the sprint 2 latency/cost table (T-29)                               |
+| Railway budget                                | Whether Dav's $5 a month credit covers the API and database; set a cap (T-40) |
+| Repo visibility (SEC-07)                      | Keep public (no secrets committed) or make private before the URL goes public |
+| Recent questions on shared computers (SEC-15) | Clear button / session-only / opt-in                                          |
+| Log retention period (SEC-11)                 | e.g. 30 or 90 days                                                            |
+| Mascot art                                    | Original art vs. requesting permission to use official Butch                  |
+| Who is Product Owner and Scrum Master         | Milestone 1 says the Scrum Master role rotates                                |
