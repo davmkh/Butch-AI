@@ -3,8 +3,39 @@
 For Dav and his Claude agent. This covers T-35 (deploy to Railway, issue #37), T-39 (hosted
 PostgreSQL, #38), T-40 (database hygiene, #39), and what `CLAUDE.md` (T-51, #41) can point to.
 
-Written from the code on `main` on 2026-10-28. Check anything here against the code before relying
-on it. Things marked **unverified** come from memory and need checking in Railway's dashboard.
+Written from the code on `main` on 2026-10-28 and updated on 2026-11-03 after the deploy. Check
+anything here against the code before relying on it. Things marked **unverified** come from memory
+and need checking in Railway's dashboard.
+
+## Status on Nov 3
+
+The site is live at https://butch-ai-production.up.railway.app. Checked from outside on 2026-11-03:
+
+- `/api/health` returns `{"status":"ok","responder":"deepseek","storage":"postgres"}`.
+- The home page loads from the same address as the API, so one service serves both.
+- A Southside question got a DeepSeek answer in about 1.6 seconds, and a question outside the
+  knowledge base got a general-knowledge answer. A rating was saved and changed from up to down.
+  An unknown message ID gave 404, an empty message 400, and an unknown API route a JSON 404.
+- The security headers are set (Content-Security-Policy, HSTS, no-sniff, frame options, referrer
+  policy).
+
+The code is commit `986289e` on `feature/railway-deploy` ("Serve the web app from the API and fix
+rate limiting for Railway"). **It is not on `main` and has no pull request, so CI has not run on
+it.** Compared with the suggestions below, it:
+
+- serves the built client from the API (`express.static` in `app.ts`, production only): the
+  one-service option;
+- requires `DATABASE_URL` in production (`config.ts`, with tests);
+- no longer assumes Docker in the database connection error;
+- sets `trust proxy` to **2**, not 1: Railway adds two proxy hops, and with 1 unrelated visitors
+  shared a rate-limit bucket;
+- removes the Render wording from comments and `.env.example`.
+
+Still open: the pull request and merge, `CLAUDE.md` (T-51, not on GitHub yet), the T-40 hygiene
+items (private URL, separate dev and production databases, a usage cap), and T-28 (branch
+protection and Dependabot). The **unverified** list at the end of this file is still unverified.
+
+The sections below describe `main` as it was on Oct 28, with notes on what the deploy branch changed.
 
 ## The goal
 
@@ -39,15 +70,15 @@ From `server/.env.example` and `server/src/config.ts`.
 | `BUTCH_FAKE_NOW`             | Pretend it is a different time (dev only)                         | **Never set.** The server refuses to start if it is          |
 | `BUTCH_TEST_HOOKS`           | Lets tests send a fake-time header (e2e only)                     | **Never set.** The server refuses to start if it is `true`   |
 
-`config.ts` does not require `DATABASE_URL` in production. Without it the server quietly keeps
-everything in memory and loses it on restart, so consider requiring it when `NODE_ENV=production`
-(and add a case in `config.test.ts`).
+On `main`, `config.ts` does not require `DATABASE_URL` in production, so without it the server quietly
+keeps everything in memory and loses it on restart. The deploy branch now requires it when
+`NODE_ENV=production`, with cases in `config.test.ts`.
 
 ### Database code
 
 - `server/src/index.ts`, `createStore()`: with `DATABASE_URL` set it builds a `PrismaStore` and calls
-  `checkConnection()`. On failure it prints a Docker-specific message ("Is Docker running?...") and
-  exits. That message needs rewording for a hosted database.
+  `checkConnection()`. On `main` a failure prints a Docker-specific message ("Is Docker
+  running?...") and exits; the deploy branch rewords it for a hosted database.
 - `server/src/store/prismaStore.ts`, line 18: `new PrismaPg({ connectionString })`. There are no
   SSL or pool options. The adapter also accepts a `pg.Pool` config, so `ssl` and a small `max` can
   be added if Railway needs them. Check how `pg` treats `sslmode` in the URL before relying on it.
@@ -66,24 +97,28 @@ everything in memory and loses it on restart, so consider requiring it when `NOD
   Node 24 runs the `.ts` files directly, so there is no server build step. `.nvmrc` is `24` and
   `engines` is `>=24`.
 - Health check: `GET /api/health` returns `{ status, responder, storage }`.
-- `NODE_ENV=production` sets `trust proxy` to 1 (`server/src/app.ts`). Without it every visitor
-  behind Railway's proxy shares one rate-limit bucket, and the whole site gets limited at 20
-  questions a minute (SEC-13 in [SECURITY_REVIEW.md](../SECURITY_REVIEW.md)).
+- `NODE_ENV=production` sets `trust proxy` (`server/src/app.ts`): 1 on `main`, **2** on the deploy
+  branch because Railway adds two proxy hops. Without the right value, visitors behind Railway's
+  proxies share rate-limit buckets and the site gets limited at 20 questions a minute (SEC-13 in
+  [SECURITY_REVIEW.md](../SECURITY_REVIEW.md)).
 
 ### The client
 
 - `npm run build` builds only the client, into `client/dist`.
 - `client/src/api/butchApi.ts` calls `VITE_API_URL`, or the page origin if that is blank.
   `client/.env.example` still shows an `onrender.com` example, which is out of date.
-- **The API does not serve `client/dist` today.** There are two ways to deploy:
-  - **One service:** add static serving and a single-page-app fallback to `app.ts`. One URL, no CORS
-    setup, and the cheapest on a $5 credit. Helmet's default Content-Security-Policy may need a
-    tweak.
+- **On `main` the API does not serve `client/dist`.** There were two ways to deploy:
+  - **One service:** serve the built client from the API. One URL, no CORS setup, and the cheapest on
+    a $5 credit. **This is what Dav chose** (plain `express.static`, since the app has no
+    client-side routes), and Helmet's default Content-Security-Policy works with it.
   - **Two services:** a static site built with `VITE_API_URL`, plus the API with `CLIENT_ORIGIN`.
 
-  Decide this in T-35, then update the deployment diagram (`docs/sprint-2/uml/`) to match.
+  The deployment diagram in `docs/sprint-2/uml/` shows the one-service layout.
 
 ## A suggested order
+
+Status on Nov 3: steps 1 to 4 and 6 are done (checked from outside); step 5 waits for the pull
+request, which triggers CI; step 7 (T-40) is unconfirmed.
 
 1. Create the Railway project and PostgreSQL. Note the private and public URLs.
 2. Apply the migration: `npm run db:deploy -w server` with the URL pointed at Railway. Check that the
