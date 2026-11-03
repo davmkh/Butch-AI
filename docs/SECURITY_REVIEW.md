@@ -4,33 +4,33 @@
 at the end of sprint 1 · **Method:** code review, dependency audit (`npm audit`), secret scan
 of all files, and review of deployment assumptions.
 
-Butch AI is a public, anonymous chatbot. It has **no logins yet**, stores **chat logs and
+Butch AI is a public, anonymous chatbot. It has **no logins**, stores **chat logs and
 ratings**, and will call a **paid AI API**. So the main risks are cost abuse, privacy of what
-people type, embarrassing output under WSU branding, and (once added) the admin interface.
+people type, and embarrassing output under WSU branding.
 
 ## Summary
 
-| ID     | Finding                                                          | Severity                          | Status                     |
-| ------ | ---------------------------------------------------------------- | --------------------------------- | -------------------------- |
-| SEC-01 | Dev database reachable from other devices on the network         | Medium                            | **Fixed**                  |
-| SEC-02 | No cap on AI reply length (cost abuse)                           | Medium                            | **Fixed**                  |
-| SEC-03 | Only `/api/chat` was rate-limited                                | Low                               | **Fixed**                  |
-| SEC-04 | Test clock hook on by default outside production                 | Low                               | **Fixed**                  |
-| SEC-05 | 4 high-severity advisories in Prisma CLI dependencies            | Low                               | **Fixed**                  |
-| SEC-06 | Chats saved without telling users                                | Low                               | **Fixed**                  |
-| SEC-07 | GitHub repository is public                                      | Medium                            | **Open**: needs repo owner |
-| SEC-08 | No authentication; admin tools must not be exposed               | High (before admin features ship) | Open                       |
-| SEC-09 | Prompt injection / off-topic or inappropriate replies            | Medium                            | Partly mitigated           |
-| SEC-10 | Denial of wallet: many IPs can still run up the AI bill          | Medium                            | Open                       |
-| SEC-11 | Personal information typed by users is stored and sent to the AI | Medium                            | Partly mitigated           |
-| SEC-12 | Conversation ID works like a password for that chat              | Low                               | Accepted for now           |
-| SEC-13 | Deployment settings that must be right                           | Medium (at deploy)                | Checklist below            |
-| SEC-14 | Security headers for the static website                          | Low                               | Open (at deploy)           |
-| SEC-15 | Recent questions visible to the next person on a shared computer | Low                               | Open: team decision        |
-| SEC-16 | No request/audit logging                                         | Low                               | Open                       |
-| SEC-17 | Health endpoint reveals configuration                            | Info                              | Accepted                   |
-| SEC-18 | Repository and supply-chain settings                             | Info                              | Open: needs repo owner     |
-| SEC-19 | Future risks to design for                                       | Info                              | Guidance                   |
+| ID     | Finding                                                          | Severity           | Status                             |
+| ------ | ---------------------------------------------------------------- | ------------------ | ---------------------------------- |
+| SEC-01 | Dev database reachable from other devices on the network         | Medium             | **Fixed**                          |
+| SEC-02 | No cap on AI reply length (cost abuse)                           | Medium             | **Fixed**                          |
+| SEC-03 | Only `/api/chat` was rate-limited                                | Low                | **Fixed**                          |
+| SEC-04 | Test clock hook on by default outside production                 | Low                | **Fixed**                          |
+| SEC-05 | 4 high-severity advisories in Prisma CLI dependencies            | Low                | **Fixed**                          |
+| SEC-06 | Chats saved without telling users                                | Low                | **Fixed**                          |
+| SEC-07 | GitHub repository is public                                      | Medium             | **Open**: needs repo owner         |
+| SEC-08 | No authentication; fine while there are no admin routes          | Low                | Accepted: admin tools were dropped |
+| SEC-09 | Prompt injection / off-topic or inappropriate replies            | Medium             | Partly mitigated                   |
+| SEC-10 | Denial of wallet: many IPs can still run up the AI bill          | Medium             | Open                               |
+| SEC-11 | Personal information typed by users is stored and sent to the AI | Medium             | Partly mitigated                   |
+| SEC-12 | Conversation ID works like a password for that chat              | Low                | Accepted for now                   |
+| SEC-13 | Deployment settings that must be right                           | Medium (at deploy) | Checklist below                    |
+| SEC-14 | Security headers for the static website                          | Low                | Open (at deploy)                   |
+| SEC-15 | Recent questions visible to the next person on a shared computer | Low                | Open: team decision                |
+| SEC-16 | No request/audit logging                                         | Low                | Open                               |
+| SEC-17 | Health endpoint reveals configuration                            | Info               | Accepted                           |
+| SEC-18 | Repository and supply-chain settings                             | Info               | Open: needs repo owner             |
+| SEC-19 | Future risks to design for                                       | Info               | Guidance                           |
 
 Severity is judged for this project's actual situation: a class project, anonymous users, no
 production deployment yet.
@@ -92,20 +92,16 @@ commit of `.env` would publish the API key instantly. **Action:** Davit (the own
 it private before any code is pushed: _Settings → General → Danger Zone → Change repository
 visibility._ Kaiden's account has push but not admin rights, so it can't make this change.
 
-### SEC-08: No authentication yet; admin tools must stay local (High before admin ships)
+### SEC-08: No authentication (Low, accepted)
 
-Everything is anonymous, which is fine for students asking questions. But:
+Everything is anonymous, which is fine for students asking questions. There are no admin routes
+(the admin screens were dropped in sprint 2), so there is nothing to protect with a login. But:
 
 - **Prisma Studio** (`npm run db:studio`) gives full read/write access to every chat log with no
   login. Only run it on your own machine. Never deploy it or open port 5555.
-- The admin features (US-08 log review, US-09 knowledge-base editing) must require
-  **authentication and authorization** (NFR-06: WSU sign-in with 2FA). Plan:
-  - Server-side sessions in secure, `HttpOnly`, `SameSite` cookies.
-  - An admin allow-list.
-  - An authorization check on every admin route. Hiding the page isn't enough.
-  - CSRF protection once cookies exist.
-  - Rate limits on login.
-  - Tests for "not logged in → redirected" (already written as US-09 scenario 2).
+- If an admin route is ever added, it must require **authentication and authorization** before
+  it ships: server-side sessions in secure, `HttpOnly`, `SameSite` cookies; an authorization check
+  on every admin route (hiding the page isn't enough); CSRF protection; and rate limits on login.
 
 ### SEC-09: Prompt injection and off-topic or inappropriate replies (Medium)
 
@@ -185,7 +181,7 @@ See the checklist below. The critical ones:
 ### SEC-14: Security headers for the static website (Low, at deploy)
 
 The API sends Helmet's security headers, but the React site will be served by a static host
-(e.g. Render static site). There, configure:
+(for example the host's static site service). There, configure:
 
 - a `Content-Security-Policy` (scripts from self only; `connect-src` for the API origin);
 - `frame-ancestors` / `X-Frame-Options` (use an allow-list if the widget must be embedded in a
@@ -236,7 +232,7 @@ Optional hardening: pin GitHub Actions to commit SHAs instead of `@v5`.
 
 - **Markdown in replies:** replies are plain text today (React escapes them). If replies ever
   render Markdown or HTML, use a sanitizer. Never use `dangerouslySetInnerHTML` on AI output.
-- **Admin cookies** → CSRF protection and `SameSite` cookies (SEC-08).
+- **Admin cookies** (only if admin routes are ever added) → CSRF protection and `SameSite` cookies (SEC-08).
 - **Scraped content** → untrusted: review before it enters the knowledge base (SEC-09).
 - **Web search tool** → restrict to `wsu.edu` and cap uses per request.
 - **Uploaded files** (if ever added) → type and size limits, stored outside the web root.
