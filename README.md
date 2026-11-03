@@ -76,17 +76,19 @@ docs/       Guides (see Documentation below)
 
 ## Documentation
 
-| Guide                                                    | Read it to…                                                          |
-| -------------------------------------------------------- | -------------------------------------------------------------------- |
-| [ARCHITECTURE.md](docs/ARCHITECTURE.md)                  | Understand the whole codebase, starting from one question end to end |
-| [SCENARIOS.md](docs/SCENARIOS.md)                        | See what every user-story scenario checks and which code handles it  |
-| [SECURITY_REVIEW.md](docs/SECURITY_REVIEW.md)            | Know the risks, what's fixed, and the pre-deployment checklist       |
-| [ROADMAP.md](docs/ROADMAP.md)                            | Pick up the next task (sprint plan through December)                 |
-| [DATA_STRATEGY.md](docs/DATA_STRATEGY.md)                | Add or update WSU facts in the knowledge base                        |
-| [TRACEABILITY.md](docs/TRACEABILITY.md)                  | Map each requirement to its code and tests                           |
-| [PRODUCT_BACKLOG.md](docs/sprint-1/PRODUCT_BACKLOG.md)   | See every backlog item with its ID and priority                      |
-| [SPRINT_1_BACKLOG.md](docs/sprint-1/SPRINT_1_BACKLOG.md) | See what sprint 1 committed to, who owned it, and what shipped       |
-| [UML.md](docs/sprint-1/UML.md)                           | Use case, class, sequence, and collaboration diagrams                |
+| Guide                                                        | Read it to…                                                           |
+| ------------------------------------------------------------ | --------------------------------------------------------------------- |
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md)                      | Understand the whole codebase, starting from one question end to end  |
+| [SCENARIOS.md](docs/SCENARIOS.md)                            | See what every user-story scenario checks and which code handles it   |
+| [SECURITY_REVIEW.md](docs/SECURITY_REVIEW.md)                | Know the risks, what's fixed, and the pre-deployment checklist        |
+| [ROADMAP.md](docs/ROADMAP.md)                                | Pick up the next task (sprint plan through December)                  |
+| [DATA_STRATEGY.md](docs/DATA_STRATEGY.md)                    | Add or update WSU facts in the knowledge base                         |
+| [TRACEABILITY.md](docs/TRACEABILITY.md)                      | Map each requirement to its code and tests                            |
+| [PRODUCT_BACKLOG.md](docs/sprint-2/PRODUCT_BACKLOG.md)       | See every backlog item with its ID, priority, and status (sprint 2)   |
+| [SPRINT_2_BACKLOG.md](docs/sprint-2/SPRINT_2_BACKLOG.md)     | See what sprint 2 committed to, who owns it, and the acceptance tests |
+| [Sprint 1 product backlog](docs/sprint-1/PRODUCT_BACKLOG.md) | The backlog as it stood at the end of sprint 1                        |
+| [SPRINT_1_BACKLOG.md](docs/sprint-1/SPRINT_1_BACKLOG.md)     | See what sprint 1 committed to, who owned it, and what shipped        |
+| [UML.md](docs/sprint-1/UML.md)                               | Use case, class, sequence, and collaboration diagrams                 |
 
 ## How Butch answers
 
@@ -103,26 +105,27 @@ The full walkthrough is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Sprint 1 status
 
-| Story                              | Status                                              |
-| ---------------------------------- | --------------------------------------------------- |
-| US-01 Ask a question               | Done                                                |
-| US-02 Fallback link when unsure    | Done                                                |
-| US-03 Dining hours / open now      | Done                                                |
-| US-04 Academic deadlines           | Done                                                |
-| US-05 FAQ quick prompts            | Done (site list is curated for now; see roadmap)    |
-| US-06 WSU theme + mascot animation | Done with placeholder art; Lottie animation pending |
-| US-07 Thumbs up/down               | Done                                                |
-| US-08 Conversation logs            | Logged in PostgreSQL; admin review screen pending   |
-| US-09 Admin knowledge-base editor  | Not started                                         |
-| US-10 New conversation             | Done                                                |
+| Story                              | Status                                                                |
+| ---------------------------------- | --------------------------------------------------------------------- |
+| US-01 Ask a question               | Done                                                                  |
+| US-02 Fallback link when unsure    | Done                                                                  |
+| US-03 Dining hours / open now      | Done                                                                  |
+| US-04 Academic deadlines           | Done                                                                  |
+| US-05 FAQ quick prompts            | Done (site list is curated for now; see roadmap)                      |
+| US-06 WSU theme + mascot animation | Done with placeholder art; Lottie animation pending                   |
+| US-07 Thumbs up/down               | Done                                                                  |
+| US-08 Conversation logs            | Logged in PostgreSQL; read with the database viewer (no admin screen) |
+| US-09 Admin knowledge-base editor  | Dropped                                                               |
+| US-10 New conversation             | Done                                                                  |
 
 Full requirement-to-code-to-test map: [docs/TRACEABILITY.md](docs/TRACEABILITY.md).
 
 ## Roadmap
 
-Next up: a DeepSeek API key and real answers, more knowledge, WSU web search, streaming replies,
-mascot art, admin tools with sign-in, and deployment. The sprint-by-sprint plan is in
-[docs/ROADMAP.md](docs/ROADMAP.md).
+Sprint 2 (Oct 13–Nov 5) is about hosting: a public Railway URL with a hosted PostgreSQL, plus
+the sprint documents, AI-use notes, and demo video. Sprint 3 (Nov 5–Dec 6) is polish and the
+final submission: WSU web search, more knowledge, mascot art, and an accessibility pass. The
+sprint-by-sprint plan is in [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Team workflow
 

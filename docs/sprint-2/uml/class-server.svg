@@ -1,0 +1,487 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2260" height="1560" viewBox="0 0 2260 1560">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="10" y="10" width="360" height="590" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="22.0" y="30.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Startup (index.ts, config.ts)</text>
+<rect x="10" y="640" width="360" height="900" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="22.0" y="660.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Shared API types (shared/), used by client and server</text>
+<rect x="390" y="10" width="510" height="610" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="402.0" y="30.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Controllers: HTTP layer (app.ts, routes/)</text>
+<rect x="390" y="650" width="510" height="640" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="402.0" y="670.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Storage (store/)</text>
+<rect x="930" y="10" width="630" height="630" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="942.0" y="30.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Answer pipeline (services/)</text>
+<rect x="930" y="670" width="630" height="560" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="942.0" y="690.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Knowledge (knowledge/, lib/)</text>
+<rect x="1590" y="10" width="660" height="860" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="1602.0" y="30.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Responders (responders/)</text>
+<rect x="930" y="1260" width="630" height="280" rx="10" fill="#F6F6F6" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="942.0" y="1280.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >PostgreSQL tables (prisma/schema.prisma)</text>
+<path d="M 355.0 100.0 L 405.0 100.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="394.0,105.5 405.0,100.0 394.0,94.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 190.0 184.0 L 190.0 214.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="184.5,203.0 190.0,214.0 195.5,203.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 190.0 328.0 L 190.0 358.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="184.5,347.0 190.0,358.0 195.5,347.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 642.5 273.0 L 642.5 295.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polygon points="642.5,259.0 648.0,266.0 642.5,273.0 637.0,266.0" fill="#3A3A3A" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 391.0 160.0 L 397.0 160.0 L 397.0 550.0 L 405.0 550.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polygon points="405.0,160.0 398.0,165.5 391.0,160.0 398.0,154.5" fill="#3A3A3A" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 880.0 377.0 L 945.0 377.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="934.0,382.5 945.0,377.0 934.0,371.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 806.0 454.0 L 806.0 680.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="800.5,669.0 806.0,680.0 811.5,669.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 595.0 604.0 L 595.0 680.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="589.5,669.0 595.0,680.0 600.5,669.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1035.0 200.0 L 1035.0 154.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1040.5,165.0 1035.0,154.0 1029.5,165.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1140.0 434.0 L 1140.0 480.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1134.5,469.0 1140.0,480.0 1145.5,469.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1420.0 434.0 L 1420.0 480.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1414.5,469.0 1420.0,480.0 1425.5,469.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 983.0 434.0 L 983.0 700.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="977.5,689.0 983.0,700.0 988.5,689.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 945.0 410.0 L 915.0 410.0 L 915.0 760.0 L 880.0 760.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="891.0,754.5 880.0,760.0 891.0,765.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1545.0 240.0 L 1582.0 240.0 L 1582.0 80.0 L 1610.0 80.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="1599.0,85.5 1610.0,80.0 1599.0,74.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1545.0 350.0 L 1572.0 350.0 L 1572.0 750.0 L 1610.0 750.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1599.0,755.5 1610.0,750.0 1599.0,744.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1545.0 390.0 L 1562.0 390.0 L 1562.0 960.0 L 1555.0 960.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1566.0,954.5 1555.0,960.0 1566.0,965.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1712.0 190.0 L 1712.0 135.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polygon points="1712.0,124.0 1717.5,135.0 1706.5,135.0" fill="white" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1610.0 560.0 L 1598.0 560.0 L 1598.0 105.0 L 1599.0 105.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polygon points="1610.0,105.0 1599.0,110.5 1599.0,99.5" fill="white" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1950.0 90.0 L 1985.0 90.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1974.0,95.5 1985.0,90.0 1974.0,84.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1950.0 110.0 L 1967.0 110.0 L 1967.0 190.0 L 1985.0 190.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1974.0,195.5 1985.0,190.0 1974.0,184.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 2110.0 285.0 L 2110.0 310.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polygon points="2110.0,271.0 2115.5,278.0 2110.0,285.0 2104.5,278.0" fill="white" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1950.0 355.0 L 1967.0 355.0 L 1967.0 480.0 L 1985.0 480.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1974.0,485.5 1985.0,480.0 1974.0,474.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1780.0 367.0 L 1780.0 405.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1774.5,394.0 1780.0,405.0 1785.5,394.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1780.0 642.0 L 1780.0 690.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1774.5,679.0 1780.0,690.0 1785.5,679.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 527.5 930.0 L 527.5 895.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polygon points="527.5,884.0 533.0,895.0 522.0,895.0" fill="white" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 772.5 930.0 L 772.0 895.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polygon points="771.9,884.0 777.5,894.9 766.5,895.1" fill="white" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 410.0 840.0 L 398.0 840.0 L 398.0 1180.0 L 410.0 1180.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="399.0,1185.5 410.0,1180.0 399.0,1174.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 885.0 1010.0 L 915.0 1010.0 L 915.0 1400.0 L 930.0 1400.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="919.0,1405.5 930.0,1400.0 919.0,1394.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1107.5 889.0 L 1107.5 950.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1102.0,939.0 1107.5,950.0 1113.0,939.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1420.0 556.0 L 1420.0 700.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1414.5,689.0 1420.0,700.0 1425.5,689.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1422.5 1016.0 L 1422.5 1050.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1417.0,1039.0 1422.5,1050.0 1428.0,1039.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1100.0 1355.0 L 1122.0 1355.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1357.0 1355.0 L 1379.0 1355.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="40" width="330" height="144" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="40" width="330" height="38" fill="#4D4D4D" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="54.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«entry point»</text>
+<text x="190.0" y="71.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Server (index.ts)</text>
+<text x="34.0" y="92.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- config: Config</text>
+<text x="34.0" y="107.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- store: Store</text>
+<text x="34.0" y="122.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- butch: Butch, clientDir?: string</text>
+<line x1="25" y1="131" x2="355" y2="131" stroke="#3A3A3A" stroke-width="1"/>
+<text x="34.0" y="145.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- createStore(databaseUrl?, entries): Promise&lt;Store&gt;</text>
+<text x="34.0" y="160.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- createResponder(config): Responder</text>
+<text x="34.0" y="175.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- shutdown (SIGINT, SIGTERM): closes the store</text>
+<line x1="25" y1="131" x2="355" y2="131" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="25" y="214" width="330" height="114" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="214" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="228.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="190.0" y="245.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >KnowledgeLoader</text>
+<text x="34.0" y="266.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- DATA_DIR = server/data</text>
+<line x1="25" y1="275" x2="355" y2="275" stroke="#3A3A3A" stroke-width="1"/>
+<text x="34.0" y="289.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ loadKnowledgeBase(): Promise&lt;KnowledgeEntry[]&gt;</text>
+<text x="34.0" y="304.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ loadOffices(): Promise&lt;OfficesFile&gt;</text>
+<text x="34.0" y="319.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ loadQuickPrompts(): Promise&lt;QuickPrompt[]&gt;</text>
+<line x1="25" y1="275" x2="355" y2="275" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="25" y="358" width="330" height="219" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="358" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="372.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«value object»</text>
+<text x="190.0" y="389.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Config</text>
+<text x="34.0" y="410.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ env: development | test | production</text>
+<text x="34.0" y="425.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ port: number = 3001</text>
+<text x="34.0" y="440.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ clientOrigin: string</text>
+<text x="34.0" y="455.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ rateLimitPerMinute: number = 20</text>
+<text x="34.0" y="470.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ databaseUrl?: string (required in production)</text>
+<text x="34.0" y="485.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ responder: deepseek | offline</text>
+<text x="34.0" y="500.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ deepseek: { apiKey?, model }</text>
+<text x="34.0" y="515.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ confidenceThreshold: number = 0.6</text>
+<text x="34.0" y="530.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ fakeNow?: Date</text>
+<text x="34.0" y="545.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ testHooks: boolean = false</text>
+<line x1="25" y1="554" x2="355" y2="554" stroke="#3A3A3A" stroke-width="1"/>
+<text x="34.0" y="568.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ loadConfig(env): Config</text>
+<line x1="25" y1="554" x2="355" y2="554" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="405" y="40" width="475" height="219" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="405" y="40" width="475" height="38" fill="#A60F2D" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="642.5" y="54.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«front controller»</text>
+<text x="642.5" y="71.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ExpressApp (app.ts)</text>
+<text x="414.0" y="92.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- config: Config (env, clientOrigin, rate limit, testHooks)</text>
+<text x="414.0" y="107.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- store: Store</text>
+<text x="414.0" y="122.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- butch: Butch</text>
+<text x="414.0" y="137.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- quickPrompts: QuickPrompt[]</text>
+<text x="414.0" y="152.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- clock: () =&gt; Date, clientDir?: string (production)</text>
+<text x="414.0" y="167.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- middleware: helmet, cors, rate limit, json (10 KB), trust proxy 2 (production)</text>
+<line x1="405" y1="176" x2="880" y2="176" stroke="#3A3A3A" stroke-width="1"/>
+<text x="414.0" y="190.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ createApp(deps): Express (also serves clientDir)</text>
+<text x="414.0" y="205.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ GET /api/health(): { status, responder, storage }</text>
+<text x="414.0" y="220.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ GET /api/quick-prompts(): QuickPromptsResponse</text>
+<text x="414.0" y="235.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- now(req): Date (the test header only if testHooks)</text>
+<text x="414.0" y="250.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- errorHandler(err, req, res, next): void</text>
+<line x1="405" y1="176" x2="880" y2="176" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="405" y="295" width="475" height="159" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="405" y="295" width="475" height="38" fill="#A60F2D" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="642.5" y="309.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«controller»</text>
+<text x="642.5" y="326.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ChatController (routes/chat.ts)</text>
+<text x="414.0" y="347.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- store: Store</text>
+<text x="414.0" y="362.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- butch: Butch</text>
+<text x="414.0" y="377.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- now: (req) =&gt; Date</text>
+<text x="414.0" y="392.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- limiter: 20 chat requests per minute per IP</text>
+<text x="414.0" y="407.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- HISTORY_MESSAGES = 6</text>
+<line x1="405" y1="416" x2="880" y2="416" stroke="#3A3A3A" stroke-width="1"/>
+<text x="414.0" y="430.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ chatRouter(deps): Router</text>
+<text x="414.0" y="445.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ POST /api/chat(body: ChatRequest): ChatResponse</text>
+<line x1="405" y1="416" x2="880" y2="416" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="405" y="505" width="375" height="99" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="405" y="505" width="375" height="38" fill="#A60F2D" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="592.5" y="519.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«controller»</text>
+<text x="592.5" y="536.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >FeedbackController (routes/feedback.ts)</text>
+<text x="414.0" y="557.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- store: Store</text>
+<line x1="405" y1="566" x2="780" y2="566" stroke="#3A3A3A" stroke-width="1"/>
+<text x="414.0" y="580.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ feedbackRouter(deps): Router</text>
+<text x="414.0" y="595.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ POST /api/feedback(body: FeedbackRequest): FeedbackResponse</text>
+<line x1="405" y1="566" x2="780" y2="566" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="945" y="40" width="365" height="114" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="945" y="40" width="365" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1127.5" y="54.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="1127.5" y="71.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >SmallTalk</text>
+<text x="954.0" y="92.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- CRISIS: RegExp (911, 988, CAPS)</text>
+<text x="954.0" y="107.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- INTENTS: Intent[9] (two more than sprint 1)</text>
+<line x1="945" y1="116" x2="1310" y2="116" stroke="#3A3A3A" stroke-width="1"/>
+<text x="954.0" y="130.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ smallTalk(message): SmallTalkReply | undefined</text>
+<text x="954.0" y="145.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- clean(message): string</text>
+<line x1="945" y1="116" x2="1310" y2="116" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="945" y="200" width="600" height="234" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="945" y="200" width="600" height="38" fill="#4D4D4D" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1245.0" y="214.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«service»</text>
+<text x="1245.0" y="231.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Butch (services/butch.ts)</text>
+<text x="954.0" y="252.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- store: Store</text>
+<text x="954.0" y="267.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- offices: OfficesFile</text>
+<text x="954.0" y="282.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- responder: Responder</text>
+<text x="954.0" y="297.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- backupResponder: Responder (offline)</text>
+<text x="954.0" y="312.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- confidenceThreshold: number = 0.6</text>
+<text x="954.0" y="327.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- maxFacts: number = 3</text>
+<text x="954.0" y="342.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- logger: Console</text>
+<line x1="945" y1="351" x2="1545" y2="351" stroke="#3A3A3A" stroke-width="1"/>
+<text x="954.0" y="365.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ responderName: deepseek | offline (get)</text>
+<text x="954.0" y="380.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ reply(question, history, now): Promise&lt;ButchReply&gt;</text>
+<text x="954.0" y="395.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- respond(input): Promise&lt;ResponderResult&gt; (offline backup if the AI throws)</text>
+<text x="954.0" y="410.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- answerWithoutFacts(question, history, now): Promise&lt;ButchReply&gt;   NEW</text>
+<text x="954.0" y="425.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- fallback(question): ButchReply</text>
+<line x1="945" y1="351" x2="1545" y2="351" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="1040" y="480" width="190" height="121" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1040" y="480" width="190" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1135.0" y="494.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«value object»</text>
+<text x="1135.0" y="511.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ButchReply</text>
+<text x="1049.0" y="532.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ text: string</text>
+<text x="1049.0" y="547.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ kind: answer | fallback</text>
+<text x="1049.0" y="562.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ sources: SourceLink[0..3]</text>
+<text x="1049.0" y="577.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ pose: ButchPose</text>
+<text x="1049.0" y="592.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ entryIds: string[]</text>
+<rect x="1245" y="480" width="305" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1245" y="480" width="305" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1397.5" y="494.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="1397.5" y="511.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Fallback</text>
+<line x1="1245" y1="518" x2="1550" y2="518" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1254.0" y="532.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ buildFallback(question, offices): { text, sources }</text>
+<text x="1254.0" y="547.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ pickOffice(question, offices): Office | undefined</text>
+<rect x="1610" y="40" width="340" height="84" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1610" y="40" width="340" height="38" fill="#ECECEC" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1780.0" y="54.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«interface»</text>
+<text x="1780.0" y="71.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Responder</text>
+<text x="1619.0" y="92.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name: deepseek | offline</text>
+<line x1="1610" y1="101" x2="1950" y2="101" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1619.0" y="115.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ respond(input: ResponderInput): Promise&lt;ResponderResult&gt;</text>
+<line x1="1610" y1="101" x2="1950" y2="101" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="1610" y="190" width="340" height="177" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1610" y="190" width="340" height="26" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1780.0" y="208.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >DeepSeekResponder</text>
+<text x="1619.0" y="230.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name = &#x27;deepseek&#x27;</text>
+<text x="1619.0" y="245.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- apiKey: string</text>
+<text x="1619.0" y="260.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- model: string</text>
+<text x="1619.0" y="275.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- timeoutMs = 30000, maxRetries = 1</text>
+<text x="1619.0" y="290.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- MAX_TOKENS = 4096</text>
+<text x="1619.0" y="305.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- system prompt = BUTCH_SYSTEM_PROMPT</text>
+<line x1="1610" y1="314" x2="1950" y2="314" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1619.0" y="328.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ respond(input): Promise&lt;ResponderResult&gt;</text>
+<text x="1619.0" y="343.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- post(body): Promise&lt;ChatCompletion&gt; (retry on 429 / 5xx)</text>
+<text x="1619.0" y="358.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ buildPrompt(input): string (facts may be empty)</text>
+<line x1="1610" y1="314" x2="1950" y2="314" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="1610" y="405" width="340" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1610" y="405" width="340" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1780.0" y="419.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="1780.0" y="436.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >persona (persona.ts)</text>
+<text x="1619.0" y="457.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ BUTCH_SYSTEM_PROMPT: string</text>
+<text x="1619.0" y="472.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ NO_ANSWER = &#x27;NO_ANSWER&#x27;   NEW</text>
+<rect x="1610" y="540" width="340" height="102" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1610" y="540" width="340" height="26" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1780.0" y="558.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >OfflineResponder</text>
+<text x="1619.0" y="580.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name = &#x27;offline&#x27;</text>
+<line x1="1610" y1="589" x2="1950" y2="589" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1619.0" y="603.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ respond(input): Promise&lt;ResponderResult&gt;</text>
+<text x="1619.0" y="618.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >   no facts: answered = false   NEW</text>
+<text x="1619.0" y="633.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- describe(fact): string</text>
+<line x1="1610" y1="589" x2="1950" y2="589" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="1610" y="690" width="340" height="129" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1610" y="690" width="340" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1780.0" y="704.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="1780.0" y="721.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Voice (voice.ts)</text>
+<text x="1619.0" y="742.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- OPENERS, CLOSERS, GENTLE_CLOSERS</text>
+<text x="1619.0" y="757.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- POSE_BY_CATEGORY</text>
+<line x1="1610" y1="766" x2="1950" y2="766" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1619.0" y="780.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ poseFor(category): ButchPose</text>
+<text x="1619.0" y="795.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ inButchVoice(body, category, seed): string</text>
+<text x="1619.0" y="810.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ pick(options, seed): T</text>
+<line x1="1610" y1="766" x2="1950" y2="766" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="1985" y="40" width="250" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1985" y="40" width="250" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="2110.0" y="54.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«value object»</text>
+<text x="2110.0" y="71.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ResponderResult</text>
+<text x="1994.0" y="92.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ text: string</text>
+<text x="1994.0" y="107.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ answered: boolean</text>
+<rect x="1985" y="150" width="250" height="121" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1985" y="150" width="250" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="2110.0" y="164.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«value object»</text>
+<text x="2110.0" y="181.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ResponderInput</text>
+<text x="1994.0" y="202.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ question: string</text>
+<text x="1994.0" y="217.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ history: HistoryTurn[]</text>
+<text x="1994.0" y="232.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ facts: GroundedFact[0..3]</text>
+<text x="1994.0" y="247.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >   (empty when nothing matched)</text>
+<text x="1994.0" y="262.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ now: Date</text>
+<rect x="1985" y="310" width="250" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1985" y="310" width="250" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="2110.0" y="324.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«value object»</text>
+<text x="2110.0" y="341.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >GroundedFact</text>
+<text x="1994.0" y="362.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ entry: KnowledgeEntry</text>
+<text x="1994.0" y="377.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ score: number (0 to 1)</text>
+<text x="1994.0" y="392.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ liveStatus?: string</text>
+<rect x="1985" y="450" width="250" height="61" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1985" y="450" width="250" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="2110.0" y="464.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«exception»</text>
+<text x="2110.0" y="481.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >DeepSeekApiError</text>
+<text x="1994.0" y="502.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ status: number</text>
+<rect x="410" y="680" width="470" height="204" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="410" y="680" width="470" height="38" fill="#ECECEC" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="645.0" y="694.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«interface»</text>
+<text x="645.0" y="711.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Store (store/types.ts)</text>
+<text x="419.0" y="732.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name: memory | postgres</text>
+<line x1="410" y1="741" x2="880" y2="741" stroke="#3A3A3A" stroke-width="1"/>
+<text x="419.0" y="755.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ listKnowledge(): Promise&lt;KnowledgeEntry[]&gt;</text>
+<text x="419.0" y="770.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ createConversation(): Promise&lt;string&gt;</text>
+<text x="419.0" y="785.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ conversationExists(id): Promise&lt;boolean&gt;</text>
+<text x="419.0" y="800.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ addMessage(message: NewMessage): Promise&lt;StoredMessage&gt;</text>
+<text x="419.0" y="815.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ getMessage(id): Promise&lt;StoredMessage | undefined&gt;</text>
+<text x="419.0" y="830.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ recentMessages(conversationId, limit): Promise&lt;StoredMessage[]&gt;</text>
+<text x="419.0" y="845.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ setRating(messageId, rating): Promise&lt;void&gt;</text>
+<text x="419.0" y="860.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ getRating(messageId): Promise&lt;Rating | undefined&gt;</text>
+<text x="419.0" y="875.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ close(): Promise&lt;void&gt;</text>
+<line x1="410" y1="741" x2="880" y2="741" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="410" y="930" width="235" height="132" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="410" y="930" width="235" height="26" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="527.5" y="948.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >MemoryStore</text>
+<text x="419.0" y="970.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name = &#x27;memory&#x27;</text>
+<text x="419.0" y="985.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- knowledge: KnowledgeEntry[]</text>
+<text x="419.0" y="1000.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- conversations: Set&lt;string&gt;</text>
+<text x="419.0" y="1015.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- messages: Map&lt;string, StoredMessage&gt;</text>
+<text x="419.0" y="1030.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- ratings: Map&lt;string, Rating&gt;</text>
+<line x1="410" y1="1039" x2="645" y2="1039" stroke="#3A3A3A" stroke-width="1"/>
+<text x="419.0" y="1053.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >(implements every Store operation)</text>
+<line x1="410" y1="1039" x2="645" y2="1039" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="660" y="930" width="225" height="117" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="660" y="930" width="225" height="26" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="772.5" y="948.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >PrismaStore</text>
+<text x="669.0" y="970.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name = &#x27;postgres&#x27;</text>
+<text x="669.0" y="985.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- prisma: PrismaClient (pg adapter)</text>
+<text x="669.0" y="1000.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- knowledge: KnowledgeEntry[]</text>
+<line x1="660" y1="1009" x2="885" y2="1009" stroke="#3A3A3A" stroke-width="1"/>
+<text x="669.0" y="1023.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ checkConnection(): Promise&lt;void&gt;</text>
+<text x="669.0" y="1038.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >(implements every Store operation)</text>
+<line x1="660" y1="1009" x2="885" y2="1009" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="410" y="1110" width="300" height="151" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="410" y="1110" width="300" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="560.0" y="1124.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«value object»</text>
+<text x="560.0" y="1141.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >StoredMessage</text>
+<text x="419.0" y="1162.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ id: uuid</text>
+<text x="419.0" y="1177.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ conversationId: uuid</text>
+<text x="419.0" y="1192.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ role: user | butch</text>
+<text x="419.0" y="1207.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ text: string</text>
+<text x="419.0" y="1222.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ kind?: answer | fallback</text>
+<text x="419.0" y="1237.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ entryIds?: string[]</text>
+<text x="419.0" y="1252.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ createdAt: Date</text>
+<rect x="945" y="700" width="325" height="189" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="945" y="700" width="325" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1107.5" y="714.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="1107.5" y="731.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Retrieval (retrieval.ts)</text>
+<text x="954.0" y="752.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- indexCache: WeakMap&lt;entries, Index&gt;</text>
+<text x="954.0" y="767.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- STOPWORDS, TIME_WORDS</text>
+<text x="954.0" y="782.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- SYNONYM_GROUPS, WORD_FIXES (synonyms.ts)</text>
+<text x="954.0" y="797.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- WEAK_MATCH_WEIGHT = 0.4</text>
+<text x="954.0" y="812.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- TYPO_MATCH_WEIGHT = 0.9</text>
+<line x1="945" y1="821" x2="1270" y2="821" stroke="#3A3A3A" stroke-width="1"/>
+<text x="954.0" y="835.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ search(entries, question, opts): ScoredEntry[]</text>
+<text x="954.0" y="850.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ understand(question, vocabulary): QuestionWord[]</text>
+<text x="954.0" y="865.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ tokenize(text): string[]</text>
+<text x="954.0" y="880.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ typoDistance(a, b, max): number</text>
+<line x1="945" y1="821" x2="1270" y2="821" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="1290" y="700" width="265" height="121" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1290" y="700" width="265" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1422.5" y="714.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«entity»</text>
+<text x="1422.5" y="731.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Office</text>
+<text x="1299.0" y="752.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ id: string</text>
+<text x="1299.0" y="767.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ name: string</text>
+<text x="1299.0" y="782.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ helpsWith: string</text>
+<text x="1299.0" y="797.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ keywords: string[]</text>
+<text x="1299.0" y="812.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ link: SourceLink</text>
+<rect x="945" y="950" width="325" height="196" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="945" y="950" width="325" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1107.5" y="964.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«entity»</text>
+<text x="1107.5" y="981.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >KnowledgeEntry</text>
+<text x="954.0" y="1002.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ id: string</text>
+<text x="954.0" y="1017.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ category: Category (13 values)</text>
+<text x="954.0" y="1032.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ title: string</text>
+<text x="954.0" y="1047.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ content: string</text>
+<text x="954.0" y="1062.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ keywords: string[]</text>
+<text x="954.0" y="1077.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ links: SourceLink[1..*]</text>
+<text x="954.0" y="1092.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ lastVerified: date</text>
+<text x="954.0" y="1107.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ hours?: WeeklyHours</text>
+<text x="954.0" y="1122.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ date?: date</text>
+<text x="954.0" y="1137.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ endDate?: date</text>
+<rect x="1290" y="910" width="265" height="106" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1290" y="910" width="265" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1422.5" y="924.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«module»</text>
+<text x="1422.5" y="941.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >LiveStatus (liveStatus.ts)</text>
+<line x1="1290" y1="948" x2="1555" y2="948" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1299.0" y="962.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ liveStatus(entry, now): string?</text>
+<text x="1299.0" y="977.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ describeHours(place, hours, now): string</text>
+<text x="1299.0" y="992.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ describeDate(date, endDate?, now): string</text>
+<text x="1299.0" y="1007.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ summarizeWeek(hours): string</text>
+<rect x="1290" y="1050" width="265" height="129" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1290" y="1050" width="265" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1422.5" y="1064.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«utility»</text>
+<text x="1422.5" y="1081.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >PullmanTime (lib/)</text>
+<text x="1299.0" y="1102.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ PULLMAN_TIME_ZONE = America/Los_Angeles</text>
+<line x1="1290" y1="1111" x2="1555" y2="1111" stroke="#3A3A3A" stroke-width="1"/>
+<text x="1299.0" y="1125.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ pullmanClock(now): PullmanClock</text>
+<text x="1299.0" y="1140.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ formatPullmanDateTime(now): string</text>
+<text x="1299.0" y="1155.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ daysBetween(fromIso, toIso): number</text>
+<text x="1299.0" y="1170.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ formatMinutes(minutes): string</text>
+<line x1="1290" y1="1111" x2="1555" y2="1111" stroke="#3A3A3A" stroke-width="1"/>
+<rect x="950" y="1295" width="150" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="950" y="1295" width="150" height="38" fill="#0B2A5B" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1025.0" y="1309.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«table»</text>
+<text x="1025.0" y="1326.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >conversations</text>
+<text x="959.0" y="1347.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ id: UUID [PK]</text>
+<text x="959.0" y="1362.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ created_at: timestamp</text>
+<rect x="1122" y="1295" width="235" height="166" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1122" y="1295" width="235" height="38" fill="#0B2A5B" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1239.5" y="1309.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«table»</text>
+<text x="1239.5" y="1326.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >messages</text>
+<text x="1131.0" y="1347.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ id: UUID [PK]</text>
+<text x="1131.0" y="1362.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ seq: serial</text>
+<text x="1131.0" y="1377.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ conversation_id: UUID [FK]</text>
+<text x="1131.0" y="1392.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ role: user | butch</text>
+<text x="1131.0" y="1407.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ text: text</text>
+<text x="1131.0" y="1422.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ kind: answer | fallback</text>
+<text x="1131.0" y="1437.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ entry_ids: text[]</text>
+<text x="1131.0" y="1452.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ created_at: timestamp</text>
+<rect x="1379" y="1295" width="172" height="106" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1379" y="1295" width="172" height="38" fill="#0B2A5B" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1465.0" y="1309.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«table»</text>
+<text x="1465.0" y="1326.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >feedback</text>
+<text x="1388.0" y="1347.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ message_id: UUID [PK, FK]</text>
+<text x="1388.0" y="1362.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ rating: up | down</text>
+<text x="1388.0" y="1377.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ created_at: timestamp</text>
+<text x="1388.0" y="1392.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ updated_at: timestamp</text>
+<rect x="25" y="670" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="670" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="684.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«DTO»</text>
+<text x="190.0" y="701.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ChatRequest</text>
+<text x="34.0" y="722.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ message: string (1 to 500 chars)</text>
+<text x="34.0" y="737.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ conversationId?: uuid</text>
+<rect x="25" y="758" width="330" height="136" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="758" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="772.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«DTO»</text>
+<text x="190.0" y="789.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ChatResponse</text>
+<text x="34.0" y="810.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ conversationId: uuid</text>
+<text x="34.0" y="825.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ messageId: uuid</text>
+<text x="34.0" y="840.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ reply: string</text>
+<text x="34.0" y="855.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ kind: ReplyKind</text>
+<text x="34.0" y="870.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ sources: SourceLink[]</text>
+<text x="34.0" y="885.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ pose: ButchPose</text>
+<rect x="25" y="906" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="906" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="920.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«DTO»</text>
+<text x="190.0" y="937.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >FeedbackRequest / FeedbackResponse</text>
+<text x="34.0" y="958.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ messageId: uuid</text>
+<text x="34.0" y="973.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ rating: Rating</text>
+<rect x="25" y="994" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="994" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="1008.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«DTO»</text>
+<text x="190.0" y="1025.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >QuickPrompt</text>
+<text x="34.0" y="1046.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ id: string</text>
+<text x="34.0" y="1061.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ prompt: string</text>
+<rect x="25" y="1082" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="1082" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="1096.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«DTO»</text>
+<text x="190.0" y="1113.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >QuickPromptsResponse / ApiError</text>
+<text x="34.0" y="1134.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ prompts: QuickPrompt[]</text>
+<text x="34.0" y="1149.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ error: string</text>
+<rect x="25" y="1170" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="1170" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="1184.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«DTO»</text>
+<text x="190.0" y="1201.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >SourceLink</text>
+<text x="34.0" y="1222.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ label: string</text>
+<text x="34.0" y="1237.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >+ url: string (https)</text>
+<rect x="25" y="1258" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="1258" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="1272.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«enumeration»</text>
+<text x="190.0" y="1289.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ReplyKind</text>
+<text x="34.0" y="1310.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >answer</text>
+<text x="34.0" y="1325.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >fallback</text>
+<rect x="25" y="1346" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="1346" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="1360.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«enumeration»</text>
+<text x="190.0" y="1377.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Rating</text>
+<text x="34.0" y="1398.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >up</text>
+<text x="34.0" y="1413.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >down</text>
+<rect x="25" y="1434" width="330" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="25" y="1434" width="330" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="1448.0" font-size="11" fill="#A60F2D" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«enumeration»</text>
+<text x="190.0" y="1465.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >ButchPose</text>
+<text x="34.0" y="1486.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >idle, wave, thinking,</text>
+<text x="34.0" y="1501.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >hype, point, flex,</text>
+<text x="34.0" y="1516.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >study, shrug, thumbsup</text>
+<path d="M1590 900 H2178 L2190 912 V1108 H1590 Z" fill="#FFF8D6" stroke="#B8A94A" stroke-width="1"/><path d="M2178 900 V912 H2190" fill="none" stroke="#B8A94A"/>
+<text x="1597.0" y="917.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >What changed in sprint 2 (marked NEW in the boxes)</text>
+<text x="1597.0" y="931.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- Butch.answerWithoutFacts(): when no fact scores 0.6 or more, DeepSeek answers</text>
+<text x="1597.0" y="945.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >  WSU questions from general knowledge (facts is empty), with no made-up dates.</text>
+<text x="1597.0" y="959.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- NO_ANSWER: an off-topic question gets the office fallback instead.</text>
+<text x="1597.0" y="973.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- OfflineResponder returns answered = false when facts is empty.</text>
+<text x="1597.0" y="987.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- SmallTalk has 9 intents (it had 7).</text>
+<text x="1597.0" y="1001.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" ></text>
+<text x="1597.0" y="1015.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >Corrected from the sprint 1 diagram after reading the code</text>
+<text x="1597.0" y="1029.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- DeepSeekResponder (sprint 1 said AIResponder); Config.deepseek (it said ai).</text>
+<text x="1597.0" y="1043.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >- Added DeepSeekApiError, persona, createResponder, and the table note.</text>
+<text x="1597.0" y="1057.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" ></text>
+<text x="1597.0" y="1071.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >Railway deploy (live; on feature/railway-deploy until it is merged):</text>
+<text x="1597.0" y="1085.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >the API also serves client/dist, DATABASE_URL is required in production,</text>
+<text x="1597.0" y="1099.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >and trust proxy is 2 because Railway adds two proxy hops.</text>
+<text x="388.0" y="93.0" font-size="9" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >«creates»</text>
+<text x="215.0" y="205.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >loads data</text>
+<text x="215.0" y="349.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >loadConfig()</text>
+<text x="650.0" y="283.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >mounts /api/chat</text>
+<text x="530.0" y="497.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >mounts /api/feedback</text>
+<text x="910.0" y="371.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >reply()</text>
+<text x="812.0" y="575.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >logs messages</text>
+<text x="601.0" y="645.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >setRating()</text>
+<text x="1043.0" y="179.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >step 0</text>
+<text x="1148.0" y="462.0" font-size="9" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >«creates»</text>
+<text x="1412.0" y="448.0" font-size="10" fill="#333" text-anchor="end" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >step 2: no match and the AI</text>
+<text x="1412.0" y="460.0" font-size="10" fill="#333" text-anchor="end" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >can&#x27;t answer (or offline)</text>
+<text x="990.0" y="626.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >step 1: search()</text>
+<text x="915.0" y="590.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >listKnowledge()</text>
+<text x="1566.0" y="80.0" font-size="10" fill="#333" text-anchor="end" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >respond()</text>
+<text x="1566.0" y="592.0" font-size="10" fill="#333" text-anchor="end" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >to Voice: poseFor()</text>
+<text x="1556.0" y="626.0" font-size="10" fill="#333" text-anchor="end" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >to LiveStatus: step 3</text>
+<text x="1967.0" y="84.0" font-size="9" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >returns</text>
+<text x="1967.0" y="66.0" font-size="9" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >takes</text>
+<text x="2116.0" y="295.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >facts 0..3</text>
+<text x="1962.0" y="392.0" font-size="10" fill="#333" text-anchor="end" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >throws</text>
+<text x="1788.0" y="392.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >uses</text>
+<text x="1788.0" y="677.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >inButchVoice()</text>
+<text x="440.0" y="1103.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >returns</text>
+<text x="922.0" y="1215.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >Prisma ORM</text>
+<text x="1115.5" y="935.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >scores (ScoredEntry)</text>
+<text x="1428.0" y="600.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >picks</text>
+<text x="1430.5" y="1040.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >uses</text>
+<text x="1111.0" y="1349.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >1</text>
+<text x="1111.0" y="1371.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >0..*</text>
+<text x="1368.0" y="1349.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >1</text>
+<text x="1368.0" y="1371.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >0..1</text>
+</svg>

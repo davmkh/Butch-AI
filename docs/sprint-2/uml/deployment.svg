@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1090" viewBox="0 0 1900 1090">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="20" y="140" width="340" height="190" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="32.0" y="160.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«device» Student&#x27;s browser</text>
+<rect x="430" y="40" width="790" height="540" rx="10" fill="#FBF6F7" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="442.0" y="60.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«cloud» Railway project (live: butch-ai-production.up.railway.app)</text>
+<rect x="450" y="80" width="750" height="270" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="462.0" y="100.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«execution environment» Web service (Node 24, npm start)</text>
+<rect x="450" y="390" width="750" height="170" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="462.0" y="410.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«database» Railway PostgreSQL</text>
+<rect x="1330" y="120" width="540" height="200" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="1342.0" y="140.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«cloud» DeepSeek API (api.deepseek.com)</text>
+<rect x="20" y="720" width="860" height="340" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="32.0" y="740.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«device» Developer laptop</text>
+<rect x="1010" y="720" width="880" height="340" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<text x="1022.0" y="740.0" font-size="12" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >«cloud» GitHub: davmkh/Butch-AI</text>
+<rect x="1330" y="350" width="540" height="62" rx="10" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1.2"/>
+<path d="M 360.0 260.0 L 450.0 260.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="439.0,265.5 450.0,260.0 439.0,254.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 630.0 226.0 L 630.0 430.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="624.5,419.0 630.0,430.0 635.5,419.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1200.0 215.0 L 1330.0 215.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="1319.0,220.5 1330.0,215.0 1319.0,209.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 230.0 800.5 L 260.0 800.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="249.0,806.0 260.0,800.5 249.0,795.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 510.0 800.5 L 540.0 815.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="527.7,815.5 540.0,815.5 532.6,805.7" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 700.0 861.0 L 700.0 930.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="694.5,919.0 700.0,930.0 705.5,919.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 880.0 860.0 L 1010.0 860.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="999.0,865.5 1010.0,860.0 999.0,854.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1320.0 815.5 L 1390.0 815.5" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><polyline points="1379.0,821.0 1390.0,815.5 1379.0,810.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1110.0 720.0 L 1110.0 580.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/><polyline points="1115.5,591.0 1110.0,580.0 1104.5,591.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1344.0 392.0 L 1384.0 392.0" fill="none" stroke="#3A3A3A" stroke-width="1.3"/>
+<path d="M 1500.0 392.0 L 1540.0 392.0" fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/>
+<rect x="40" y="185" width="300" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="40" y="185" width="300" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="190.0" y="199.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«artifact»</text>
+<text x="190.0" y="216.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >React app (client/dist)</text>
+<text x="49.0" y="237.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >built by Vite (npm run build)</text>
+<text x="49.0" y="252.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >calls /api on the page origin,</text>
+<text x="49.0" y="267.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >or on VITE_API_URL</text>
+<rect x="470" y="120" width="320" height="106" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="470" y="120" width="320" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="630.0" y="134.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«artifact»</text>
+<text x="630.0" y="151.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Express API (server/src)</text>
+<text x="479.0" y="172.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >serves /api/chat, /api/feedback,</text>
+<text x="479.0" y="187.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >/api/quick-prompts, /api/health</text>
+<text x="479.0" y="202.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >and the built client (express.static)</text>
+<text x="479.0" y="217.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >trust proxy 2 (two Railway proxy hops)</text>
+<rect x="810" y="120" width="370" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="810" y="120" width="370" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="995.0" y="134.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«artifact»</text>
+<text x="995.0" y="151.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >React build (client/dist)</text>
+<text x="819.0" y="172.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >built by npm run build</text>
+<text x="819.0" y="187.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >served by the Express API: one URL for site and API</text>
+<rect x="810" y="220" width="370" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="810" y="220" width="370" height="38" fill="#ECECEC" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="995.0" y="234.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«configuration»</text>
+<text x="995.0" y="251.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Railway variables</text>
+<text x="819.0" y="272.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >NODE_ENV=production, CLIENT_ORIGIN, DATABASE_URL</text>
+<text x="819.0" y="287.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >DEEPSEEK_API_KEY, DEEPSEEK_MODEL</text>
+<text x="819.0" y="302.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >DATABASE_URL is required in production</text>
+<rect x="470" y="430" width="330" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="470" y="430" width="330" height="38" fill="#0B2A5B" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="635.0" y="444.0" font-size="11" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«schema»</text>
+<text x="635.0" y="461.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Tables (prisma/schema.prisma)</text>
+<text x="479.0" y="482.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >conversations, messages, feedback</text>
+<text x="479.0" y="497.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >created by: npm run db:deploy -w server</text>
+<rect x="830" y="430" width="350" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/>
+<rect x="830" y="430" width="350" height="38" fill="#ECECEC" stroke="#3A3A3A" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="1005.0" y="444.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«connection»</text>
+<text x="1005.0" y="461.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >DATABASE_URL</text>
+<text x="839.0" y="482.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >set as a Railway variable</text>
+<text x="839.0" y="497.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >private versus public URL: to confirm</text>
+<text x="839.0" y="512.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >(hygiene: T-40)</text>
+<rect x="1350" y="165" width="500" height="91" fill="#ECECEC" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1350" y="165" width="500" height="38" fill="#ECECEC" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1600.0" y="179.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«service»</text>
+<text x="1600.0" y="196.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Chat completions</text>
+<text x="1359.0" y="217.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >model: deepseek-flash</text>
+<text x="1359.0" y="232.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >key kept in a Railway variable (T-07)</text>
+<text x="1359.0" y="247.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >paid per request: keep the balance small</text>
+<rect x="40" y="770" width="190" height="61" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="40" y="770" width="190" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="135.0" y="784.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«device»</text>
+<text x="135.0" y="801.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Browser</text>
+<text x="49.0" y="822.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >http://localhost:5173</text>
+<rect x="260" y="770" width="250" height="61" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="260" y="770" width="250" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="385.0" y="784.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«process»</text>
+<text x="385.0" y="801.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Vite dev server :5173</text>
+<text x="269.0" y="822.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >proxies /api to :3001</text>
+<rect x="540" y="770" width="320" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="540" y="770" width="320" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="700.0" y="784.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«process»</text>
+<text x="700.0" y="801.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Express API :3001</text>
+<text x="549.0" y="822.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >npm run dev (node --watch)</text>
+<text x="549.0" y="837.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >responder: DeepSeek or offline</text>
+<text x="549.0" y="852.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >storage: PostgreSQL or memory</text>
+<rect x="540" y="930" width="320" height="76" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="540" y="930" width="320" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="700.0" y="944.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«container»</text>
+<text x="700.0" y="961.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Docker Desktop: PostgreSQL 17</text>
+<text x="549.0" y="982.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >butch_ai on localhost:5432</text>
+<text x="549.0" y="997.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >npm run db:up, then db:deploy</text>
+<path d="M40 930 H498 L510 942 V984 H40 Z" fill="#FFF8D6" stroke="#B8A94A" stroke-width="1"/><path d="M498 930 V942 H510" fill="none" stroke="#B8A94A"/>
+<text x="47.0" y="947.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >US-20 (T-39): set DATABASE_URL to the hosted PostgreSQL</text>
+<text x="47.0" y="961.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >and Docker Desktop is not needed.</text>
+<text x="47.0" y="975.0" font-size="10" fill="#4A4320" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >A developer&#x27;s own DeepSeek key lives in server/.env (gitignored).</text>
+<rect x="1030" y="770" width="290" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1030" y="770" width="290" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1175.0" y="784.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«repository»</text>
+<text x="1175.0" y="801.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Repository</text>
+<text x="1039.0" y="822.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >main and feature branches</text>
+<text x="1039.0" y="837.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >pull requests need 1 review (T-28)</text>
+<text x="1039.0" y="852.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >Sprint 2 milestone and issues</text>
+<rect x="1390" y="770" width="480" height="91" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<rect x="1390" y="770" width="480" height="38" fill="#FFFFFF" stroke="#3A3A3A" stroke-width="1.3"/>
+<text x="1630.0" y="784.0" font-size="11" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" >«workflow»</text>
+<text x="1630.0" y="801.0" font-size="13" fill="#222222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >GitHub Actions CI (ci.yml)</text>
+<text x="1399.0" y="822.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >Check: format, lint, typecheck, unit tests, build</text>
+<text x="1399.0" y="837.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >Database: tests on a PostgreSQL service container</text>
+<text x="1399.0" y="852.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >E2E: Playwright (Chromium), 22 scenarios</text>
+<text x="405.0" y="238.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >HTTPS</text>
+<text x="405.0" y="251.0" font-size="9" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >page + /api</text>
+<text x="640.0" y="374.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >Prisma + pg over DATABASE_URL</text>
+<text x="1265.0" y="205.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >HTTPS</text>
+<text x="1265.0" y="232.0" font-size="9" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >DEEPSEEK_API_KEY</text>
+<text x="525.0" y="762.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >/api</text>
+<text x="708.0" y="905.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >localhost:5432 (Prisma + pg)</text>
+<text x="945.0" y="840.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >git push,</text>
+<text x="945.0" y="853.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >pull request</text>
+<text x="1355.0" y="806.0" font-size="10" fill="#333" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >on every PR</text>
+<text x="1120.0" y="650.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >deploys from GitHub</text>
+<text x="1120.0" y="663.0" font-size="10" fill="#333" text-anchor="start" font-family="Arial, Helvetica, sans-serif" stroke="white" stroke-width="4" stroke-linejoin="round" paint-order="stroke" >(trigger: to confirm)</text>
+<text x="1344.0" y="370.0" font-size="11" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-weight="bold" >Legend</text>
+<text x="1394.0" y="396.0" font-size="10" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >works today</text>
+<text x="1550.0" y="396.0" font-size="10" fill="#222222" text-anchor="start" font-family="Arial, Helvetica, sans-serif" >to confirm or planned</text>
+</svg>

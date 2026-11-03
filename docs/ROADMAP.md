@@ -23,7 +23,7 @@ acceptance criteria are in [SPRINT_2_BACKLOG.md](sprint-2/SPRINT_2_BACKLOG.md).
 
 ---
 
-## Sprint 2 (Oct 13–Nov 3): hosted and documented
+## Sprint 2 (Oct 13–Nov 5): hosted and documented
 
 Goal: Butch runs at a public URL with a hosted PostgreSQL, and we can show it live and explain
 how we built it.
@@ -81,7 +81,7 @@ how we built it.
 
 ---
 
-## Sprint 3 (Nov 3–Dec 6): polish and final submission
+## Sprint 3 (Nov 5–Dec 6): polish and final submission
 
 Thanksgiving break is Nov 23–27. Pick from this list by capacity at sprint 3 planning, high
 priority first.
