@@ -298,10 +298,12 @@ class Diagram:
     def save(self, out_dir, name, scale=2):
         out_dir = pathlib.Path(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
-        svg_path = out_dir / f"{name}.svg"
         png_path = out_dir / f"{name}.png"
-        svg_path.write_text(self.svg(), encoding="utf-8")
-        render_png(svg_path, png_path, self.w, self.h, scale)
+        # Only the PNG is kept in the repo; the SVG is a temporary file Chrome renders from.
+        with tempfile.TemporaryDirectory() as tmp:
+            svg_path = pathlib.Path(tmp) / f"{name}.svg"
+            svg_path.write_text(self.svg(), encoding="utf-8")
+            render_png(svg_path, png_path, self.w, self.h, scale)
         return png_path
 
 

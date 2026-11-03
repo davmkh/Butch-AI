@@ -1,8 +1,8 @@
 # UML diagrams (Sprint 2)
 
 The sprint 2 versions of the Butch AI diagrams: use case, class (client and server), sequence,
-collaboration, and a new deployment diagram. Each is a PNG (for documents and slides) and an
-SVG (vector, for zooming) in [uml/](uml/). The sprint 1 versions and their descriptions stay in
+collaboration, and a new deployment diagram. Each is a PNG (for documents and slides) in
+[uml/](uml/). The sprint 1 versions and their descriptions stay in
 [../sprint-1/UML.md](../sprint-1/UML.md).
 
 ## What changed since sprint 1
@@ -128,7 +128,7 @@ and what to drop (the admin features and their use cases), as well as additional
 
 Claude then produced the sprint 2 versions. It read the current
 code (`server/src`, `client/src`, `shared/`, the Prisma schema, and the CI workflow) and the
-sprint 2 documents, and wrote Python scripts that draw each diagram as an SVG and render the PNG
+sprint 2 documents, and wrote Python scripts that draw each diagram and render the PNG
 with Chrome. The scripts are in [uml/source/](uml/source/), so a diagram can be changed by editing
 its script and rebuilding.
 

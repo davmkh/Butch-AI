@@ -2,9 +2,6 @@
 
 **Submit one report per team.** Keep it to **1–2 pages**, using brief bullet points.
 
-> **Draft as of Nov 3 (midpoint).** Sections marked _(update)_ must be re-checked against the
-> board before we submit on Nov 5. The template is the course's `Sprint_Report_Template.md`.
-
 **Team/Project Name:** Butch AI (Davit Mkhoyan and Kaiden Penney)  
 **Sprint Dates:** 2026-10-13 to 2026-11-05  
 **Demo Video Link:** _(add after upload: unlisted YouTube link)_
@@ -14,8 +11,6 @@ Board: https://github.com/users/KaidenPenney/projects/4 (private; share with the
 submitting)
 
 ## 1. Work Completed
-
-_(update)_
 
 - **Butch answers beyond the knowledge base:** DeepSeek answers WSU questions the data does not cover, plus more small talk — [#56](https://github.com/davmkh/Butch-AI/issues/56) (PR #35, merged Oct 22)
 - **Deployed to Railway:** one public HTTPS URL serves the chat and the API; `/api/health` reports `deepseek` and `postgres` — [#37](https://github.com/davmkh/Butch-AI/issues/37) (live Nov 3; in Testing until the pull request merges)

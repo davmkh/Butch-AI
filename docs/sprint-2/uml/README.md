@@ -1,17 +1,17 @@
 # UML exports (Sprint 2)
 
-The six sprint 2 diagrams, each as a PNG (documents, slides) and an SVG (vector):
+The six sprint 2 diagrams, each as a PNG (documents, slides):
 
-| Diagram               | Files                                    |
-| --------------------- | ---------------------------------------- |
-| Use case              | `use-case.png`, `use-case.svg`           |
-| Class diagram: client | `class-client.png`, `class-client.svg`   |
-| Class diagram: server | `class-server.png`, `class-server.svg`   |
-| Sequence              | `sequence.png`, `sequence.svg`           |
-| Collaboration         | `collaboration.png`, `collaboration.svg` |
-| Deployment (new)      | `deployment.png`, `deployment.svg`       |
+| Diagram               | Files               |
+| --------------------- | ------------------- |
+| Use case              | `use-case.png`      |
+| Class diagram: client | `class-client.png`  |
+| Class diagram: server | `class-server.png`  |
+| Sequence              | `sequence.png`      |
+| Collaboration         | `collaboration.png` |
+| Deployment (new)      | `deployment.png`    |
 
-They are described in [../UML.md](../UML.md). Do not edit the PNGs or SVGs by hand: they are
+They are described in [../UML.md](../UML.md). Do not edit the PNGs by hand: they are
 generated from the scripts in [source/](source/). To change a diagram, edit its script and run
 
 ```bash

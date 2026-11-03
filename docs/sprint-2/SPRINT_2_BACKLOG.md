@@ -1,7 +1,6 @@
 # Sprint 2 backlog
 
-**Sprint 2:** 2026-10-13 to 2026-11-05 (3 weeks and 2 days: the due date moved from Tuesday Nov 3
-to Thursday Nov 5). **Team:** Davit M (Dav, repo owner, front end,
+**Sprint 2:** 2026-10-13 to 2026-11-05 **Team:** Davit M (Dav, repo owner, front end,
 design, and deployment) and Kaiden Penney (back end, data, AI, and documentation).
 
 **Sprint goal.** Butch AI runs at a public HTTPS URL on Railway, backed by a hosted PostgreSQL,
@@ -10,12 +9,10 @@ We also show the running app in our video instead of screenshots, and write a sh
 how we used generative AI.
 
 **Planning meeting:** 2026-10-28. Items were chosen from [PRODUCT_BACKLOG.md](PRODUCT_BACKLOG.md).
-The project has three sprints; sprint 3 runs 2026-11-05 to 2026-12-06.
 
 **Kanban board:** the "Butch AI Sprint 2 Board" on GitHub Projects,
 https://github.com/users/KaidenPenney/projects/4, with the five course columns To Do, In
-Progress, Code Review, Testing, Done. The `Sprint 2` milestone on `davmkh/Butch-AI` is due Nov 5
-and holds one issue per row below, each with a `points:` label, a `priority:` label, and a
+Progress, Code Review, Testing, Done. The `Sprint 2` milestone on `davmkh/Butch-AI` holds one issue per row below, each with a `points:` label, a `priority:` label, and a
 `sprint 2` label. All of them are on the board. The board screenshots (before, midpoint, and end)
 are in [kanban/](kanban/) and in the slideshow. The sprint 1 board is still at
 https://github.com/users/davmkh/projects/2.
@@ -113,14 +110,6 @@ Sprint 3 runs 2026-11-05 to 2026-12-06. These items are candidates for it, in pr
   balance small, and the per-IP rate limits stay on.
 - **Railway cost.** Dav's $5 a month credit must cover the API and the database. Check the usage
   page after the first deploy and set the cap in T-40.
-- **The board was set up late, and it is private.** The sprint began Oct 13, but the issues and
-  the board were only created at the planning meeting. The "before" screenshot shows the board
-  as set up that day; say so in the report and do not backdate it. The board belongs to
-  Kaiden's account and is private. Dav was added as a writer; the instructor cannot see it until
-  it is shared or made public.
-- **Instructor access.** If the repo is made private (T-28, SEC-07), add the instructor as a
-  collaborator and confirm they can open the project board.
-- **The AI-use notes must be our own account**, written by each of us, not generated.
 
 ## Retrospective actions carried from sprint 1
 

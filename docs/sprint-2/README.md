@@ -5,14 +5,14 @@ Keep UML exports in [uml/](uml/) and Kanban screenshots in [kanban/](kanban/).
 
 ## Files
 
-| File                                       | What it is                                                          | Owner  | Status                  |
-| ------------------------------------------ | ------------------------------------------------------------------- | ------ | ----------------------- |
-| [PRODUCT_BACKLOG.md](PRODUCT_BACKLOG.md)   | Backlog with ID, description, priority, and status for every item   | Kaiden | Written                 |
-| [SPRINT_2_BACKLOG.md](SPRINT_2_BACKLOG.md) | Selected items with owners, effort, and acceptance criteria         | Kaiden | Written                 |
-| [SPRINT_2_REPORT.md](SPRINT_2_REPORT.md)   | The sprint report (the course Sprint_Report_Template.md)            | Kaiden | To fill in              |
-| [UML.md](UML.md)                           | Diagram descriptions, review table, and how each diagram was made   | Both   | Drafted; being reviewed |
-| [uml/](uml/)                               | The six sprint 2 diagrams (PNG, SVG) and the scripts that draw them | Both   | Drafted                 |
-| [kanban/](kanban/)                         | Board screenshots: before, midpoint, and end                        | Both   | Empty                   |
+| File                                       | What it is                                                        | Owner  | Status                  |
+| ------------------------------------------ | ----------------------------------------------------------------- | ------ | ----------------------- |
+| [PRODUCT_BACKLOG.md](PRODUCT_BACKLOG.md)   | Backlog with ID, description, priority, and status for every item | Kaiden | Written                 |
+| [SPRINT_2_BACKLOG.md](SPRINT_2_BACKLOG.md) | Selected items with owners, effort, and acceptance criteria       | Kaiden | Written                 |
+| [SPRINT_2_REPORT.md](SPRINT_2_REPORT.md)   | The sprint report (the course Sprint_Report_Template.md)          | Kaiden | To fill in              |
+| [UML.md](UML.md)                           | Diagram descriptions, review table, and how each diagram was made | Both   | Drafted; being reviewed |
+| [uml/](uml/)                               | The six sprint 2 diagrams (PNG) and the scripts that draw them    | Both   | Drafted                 |
+| [kanban/](kanban/)                         | Board screenshots: before, midpoint, and end                      | Both   | Empty                   |
 
 ## What we turn in
 
