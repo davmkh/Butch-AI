@@ -32,8 +32,9 @@ pure all-To-Do picture instead, move those five cards back first, and say so in 
 
 Cards moved for the midpoint screenshot: T-35 and T-39 to Testing (the Railway site is live and
 checked, but the code is still on `feature/railway-deploy`), T-51 `CLAUDE.md` to Code Review (PR
-\#57), and T-54 to In Progress. Everything else stays where it was. This is the real state: the
-tooling, key, and knowledge-base items have not been started.
+\#57), and T-54 to In Progress. Everything else stays where it was. T-41 and T-31 left the
+board (moved to sprint 3). This is the real state: the keys, latency table, adversarial list,
+database hygiene, and branch protection have not been started.
 
 ## Before the video
 

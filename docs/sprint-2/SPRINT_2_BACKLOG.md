@@ -16,9 +16,8 @@ The project has three sprints; sprint 3 runs 2026-11-05 to 2026-12-06.
 https://github.com/users/KaidenPenney/projects/4, with the five course columns To Do, In
 Progress, Code Review, Testing, Done. The `Sprint 2` milestone on `davmkh/Butch-AI` is due Nov 5
 and holds one issue per row below, each with a `points:` label, a `priority:` label, and a
-`sprint 2` label. All of them are on the board. Take the "before" screenshot of the board as it
-stands, move cards as work happens, then take the "after" screenshot. Both go in
-[kanban/](kanban/) and in the slideshow. The sprint 1 board is still at
+`sprint 2` label. All of them are on the board. The board screenshots (before, midpoint, and end)
+are in [kanban/](kanban/) and in the slideshow. The sprint 1 board is still at
 https://github.com/users/davmkh/projects/2.
 
 Effort is in story points (2, 3, 5, 8, matching the repo's `points:` labels). Acceptance criteria
@@ -28,9 +27,9 @@ are the checks listed on each issue, plus the Gherkin scenarios in `e2e/features
 ## Capacity
 
 Sprint 1 finished 62 of 68 committed points in 4 weeks, about 15 points a week for two people.
-Sprint 2 is 3 weeks plus the 2 extra days, so capacity is about 46 points or a little more. We plan 48 points to deliver and have 3
-already done, which is about 2 over. Completion is graded, so if we fall behind we drop T-41
-first, then T-31.
+Sprint 2 is 3 weeks plus the 2 extra days, so capacity is about 46 points or a little more. We planned 48 points to deliver and had 3
+already done, which was about 2 over, so at the midpoint (Nov 3) we moved T-41 and T-31 (5 points)
+to sprint 3. That leaves 43 points to deliver.
 
 ## Selected items
 
@@ -45,8 +44,6 @@ first, then T-31.
 | #43   | T-07 | Per-developer DeepSeek keys and a separate production key | Kaiden | 2      | Each member has their own small-balance key in a gitignored `.env`; the production key exists only as a Railway variable; no key is ever sent in chat.                                                                                                                                                                              | To do                          |
 | #44   | T-29 | DeepSeek latency and cost table (carried over)            | Kaiden | 2      | 20 typical questions timed on two models; table in the slideshow; default model chosen and set in `.env.example`.                                                                                                                                                                                                                   | To do                          |
 | #45   | T-30 | Adversarial question list (25 prompts)                    | Kaiden | 3      | List and results in `docs/`; any bad reply fixed in `persona.ts`.                                                                                                                                                                                                                                                                   | To do                          |
-| #46   | T-41 | Upgrade dev tooling together (vite, vitest, concurrently) | Kaiden | 2      | `npm audit` shows no critical or high findings; `npm run check` and `npm run e2e` pass.                                                                                                                                                                                                                                             | To do                          |
-| #47   | T-31 | Knowledge base: Greek life, jobs, housing, parking        | Kaiden | 3      | 8 entries, each with an official source link and `lastVerified`; "Tell me about Sigma Nu" answers from the knowledge base; `retrieval.test.ts` passes.                                                                                                                                                                              | To do                          |
 | #48   | T-54 | Sprint 2 report and submission package                    | Kaiden | 2      | `SPRINT_2_REPORT.md` filled in from the course's `Sprint_Report_Template.md`; Kanban screenshots (before, midpoint, end) in `kanban/`; unlisted YouTube link added.                                                                                                                                                                 | In progress                    |
 | #49   | T-42 | Short AI-use notes and a quick UML read-through           | Both   | 2      | Each member writes a short note in `docs/AI_USAGE.md`: which AI tools, for what, how well they worked, and how the output was checked; we read the UML once and fix errors.                                                                                                                                                         | To do                          |
 | #52   | T-45 | Demo script and dry run (no screenshots)                  | Both   | 2      | Script run end to end on the deployed URL the day before recording; the board is shown live.                                                                                                                                                                                                                                        | To do                          |
@@ -55,22 +52,23 @@ first, then T-31.
 | #55   | T-53 | Sprint 2 review and retrospective meetings                | Both   | 2      | The review meeting checks every item against its acceptance criteria and notes blockers; the retrospective meeting lists what improved, what is still hard, and at least 3 action items; both outcomes go into the slideshow (T-49).                                                                                                | To do                          |
 | #56   | T-47 | Answer beyond the knowledge base, more small talk         | Kaiden | 3      | Merged in PR #35 on 2026-10-22 with CI green.                                                                                                                                                                                                                                                                                       | Done                           |
 
-**Committed:** 51 points, of which 3 were done before planning. Remaining to deliver: 48.
+**Committed:** 46 points (51 planned, minus 5 moved to sprint 3 on Nov 3), of which 3 were done
+before planning. Remaining to deliver: 43.
 
-**Board status at the midpoint (Nov 3):** 1 Done, 1 Code Review, 2 Testing, 2 In Progress, and 12
-To Do. The course deliverables above (#42, #48, #49, #52, #53, #54, #55) are not product backlog
+**Board status at the midpoint (Nov 3):** 1 Done, 1 Code Review, 2 Testing, 2 In Progress, and 10
+To Do (16 cards). The course deliverables above (#42, #48, #49, #52, #53, #54, #55) are not product backlog
 items; they stay on the board until the video is recorded, then the slideshow, video, and meeting
 cards are closed (see [kanban/README.md](kanban/README.md)).
 
 ## Per-member feature
 
-| Member | Items in sprint 2                                                                                                                                        | Points      |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Dav    | Deploy to Railway, hosted PostgreSQL, production database hygiene, branch protection and repo settings, `CLAUDE.md`                                      | 19          |
-| Kaiden | Planning documents, DeepSeek keys, latency and cost table, adversarial questions, tooling upgrade, knowledge base entries, sprint report package, PR #35 | 17 + 3 done |
-| Both   | AI-use notes, demo script, slideshow, video, review and retrospective (6 points each)                                                                    | 12          |
+| Member | Items in sprint 2                                                                                                   | Points      |
+| ------ | ------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Dav    | Deploy to Railway, hosted PostgreSQL, production database hygiene, branch protection and repo settings, `CLAUDE.md` | 19          |
+| Kaiden | Planning documents, DeepSeek keys, latency and cost table, adversarial questions, sprint report package, PR #35     | 12 + 3 done |
+| Both   | AI-use notes, demo script, slideshow, video, review and retrospective (6 points each)                               | 12          |
 
-Totals per person: Dav 25, Kaiden 23 plus 3 done. Each member owns at least five items of their
+Totals per person: Dav 25, Kaiden 18 plus 3 done. Each member owns at least five items of their
 own plus the shared ones.
 
 ## Carried over from sprint 1 (re-estimated)
@@ -94,18 +92,20 @@ own plus the shared ones.
 
 Sprint 3 runs 2026-11-05 to 2026-12-06. These items are candidates for it, in priority order.
 
-| ID                   | Item                                                   | Why not in sprint 2                                                        | Moved to |
-| -------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------- | -------- |
-| US-12                | wsu.edu search with citations                          | Needs a search API; PR #35 only added unchecked general-knowledge answers. | Sprint 3 |
-| T-46                 | Mark general-knowledge replies                         | Needs a small server and UI change; do after the deploy is stable.         | Sprint 3 |
-| T-52                 | Remaining knowledge entries                            | T-31 covers the highest-demand topics first.                               | Sprint 3 |
-| US-16, T-38          | Mascot art, screen reader pass                         | Deployment comes first.                                                    | Sprint 3 |
-| T-37, SEC-11, SEC-16 | Request logging, uptime check, personal-data redaction | Low priority; only if time allows.                                         | Sprint 3 |
+| ID                   | Item                                                                  | Why not in sprint 2                                                        | Moved to |
+| -------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
+| US-12                | wsu.edu search with citations                                         | Needs a search API; PR #35 only added unchecked general-knowledge answers. | Sprint 3 |
+| T-46                 | Mark general-knowledge replies                                        | Needs a small server and UI change; do after the deploy is stable.         | Sprint 3 |
+| T-31, T-52           | Knowledge entries (Greek life, jobs, housing, parking; then the rest) | Moved at the midpoint to keep the sprint within capacity.                  | Sprint 3 |
+| T-41                 | Upgrade dev tooling (vite, vitest, concurrently)                      | Moved at the midpoint to keep the sprint within capacity.                  | Sprint 3 |
+| US-16, T-38          | Mascot art, screen reader pass                                        | Deployment comes first.                                                    | Sprint 3 |
+| T-37, SEC-11, SEC-16 | Request logging, uptime check, personal-data redaction                | Low priority; only if time allows.                                         | Sprint 3 |
 
 ## Risks
 
-- **Completion is graded and the plan is about 2 points over capacity.** Drop T-41 first, then
-  T-31. Decide by Wednesday Nov 4, not on the due date.
+- **Completion is graded and time is short.** The plan was about 2 points over capacity, so T-41
+  and T-31 moved to sprint 3 on Nov 3. If Nov 4 shows the rest will not finish, move the next
+  lowest priority items (T-29, T-30) the same way rather than leaving them open on Nov 5.
 - **The deployed code is not on `main` yet.** The live site (checked Nov 3) runs commit `986289e`
   on `feature/railway-deploy`. Open and merge its pull request so the instructor sees the work on
   `main` and CI runs on it.

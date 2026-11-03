@@ -99,13 +99,13 @@ mockups) are retired and not reused.
 | T-28 | Branch protection on `main`: PR required, 1 approval, CI green; Dependabot; repo visibility.     | Medium   | To do                                                 | 2      |
 | T-29 | DeepSeek latency and cost table for 20 typical questions; pick the default model.                | Medium   | To do                                                 | 2      |
 | T-30 | Adversarial question list (25 prompts) run against DeepSeek mode; adjust persona if needed.      | Medium   | To do                                                 | 2      |
-| T-31 | Knowledge base: 8 entries on Greek life, jobs, housing, and parking, each with a source link.    | Medium   | To do                                                 | 2      |
+| T-31 | Knowledge base: 8 entries on Greek life, jobs, housing, and parking, each with a source link.    | Medium   | To do                                                 | 3      |
 | T-35 | Deploy to Railway: public HTTPS URL for the chat, API and client together.                       | High     | Testing: live Nov 3; code on `feature/railway-deploy` | 2      |
 | T-37 | Structured request logging and an uptime check on `/api/health`.                                 | Low      | To do                                                 | 3      |
 | T-38 | Manual accessibility pass with a screen reader (NVDA or VoiceOver).                              | Medium   | To do                                                 | 3      |
 | T-39 | Hosted PostgreSQL on Railway: connection settings, migrations applied, no Docker needed (US-20). | High     | Testing: live Nov 3; waiting on pull request and CI   | 2      |
 | T-40 | Production database hygiene: private URL, separate dev and production databases, usage cap.      | High     | To do                                                 | 2      |
-| T-41 | Upgrade dev tooling together (vite, vitest, concurrently) to clear `npm audit` findings.         | Medium   | To do                                                 | 2      |
+| T-41 | Upgrade dev tooling together (vite, vitest, concurrently) to clear `npm audit` findings.         | Medium   | To do                                                 | 3      |
 | T-46 | Mark replies that come from general AI knowledge, not verified facts.                            | Medium   | To do                                                 | 3      |
 | T-47 | Let DeepSeek answer WSU questions the knowledge base does not cover, plus more small talk.       | Medium   | Done (PR #35)                                         | 2      |
 | T-51 | `CLAUDE.md` with project rules for AI coding assistants.                                         | Medium   | Code review (PR #57)                                  | 2      |
