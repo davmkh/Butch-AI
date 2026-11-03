@@ -1,3 +1,4 @@
+import path from 'node:path';
 import { createApp } from './app.ts';
 import { loadConfig } from './config.ts';
 import { loadKnowledgeBase, loadOffices, loadQuickPrompts } from './knowledge/loadData.ts';
@@ -29,7 +30,11 @@ const butch = new Butch({
 
 const clock = config.fakeNow ? () => config.fakeNow! : () => new Date();
 
-const app = createApp({ config, store, butch, quickPrompts, clock });
+// In production this server also serves the web app, so the site and API share one URL.
+const clientDir =
+  config.env === 'production' ? path.resolve(import.meta.dirname, '../../client/dist') : undefined;
+
+const app = createApp({ config, store, butch, quickPrompts, clock, clientDir });
 
 const server = app.listen(config.port, () => {
   console.log(`[server] Butch AI API on http://localhost:${config.port}`);
@@ -63,8 +68,9 @@ async function createStore(
   } catch (error) {
     console.error(
       `[server] Can't reach the database at ${new URL(databaseUrl).host}.\n` +
-        '  Is Docker running? Start the database with: npm run db:up\n' +
-        '  Or remove DATABASE_URL from server/.env to keep data in memory instead.\n',
+        '  Hosted: check the DATABASE_URL variable and that the database service is running.\n' +
+        '  Local: start Docker and run npm run db:up, or remove DATABASE_URL from server/.env\n' +
+        '  to keep data in memory instead.\n',
       error instanceof Error ? error.message : error,
     );
     process.exit(1);

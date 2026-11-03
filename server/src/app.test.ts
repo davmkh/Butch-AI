@@ -1,3 +1,6 @@
+import { mkdtemp, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import request from 'supertest';
 import { describe, expect, it } from 'vitest';
 import type { ChatResponse } from '@butch/shared';
@@ -222,5 +225,48 @@ describe('X-Butch-Fake-Now header (end-to-end test hook)', () => {
   it('is ignored unless test hooks are explicitly turned on', async () => {
     const { app } = await buildTestApp({ now: pullman('2026-09-21 12:00') });
     expect((await askAtMidnight(app)).body.reply).toContain('open right now');
+  });
+});
+
+describe('serving the web app', () => {
+  async function clientDirWithIndex() {
+    const dir = await mkdtemp(path.join(tmpdir(), 'butch-client-'));
+    await writeFile(path.join(dir, 'index.html'), '<title>Ask Butch</title>');
+    return dir;
+  }
+
+  it('serves the built client at / when clientDir is set', async () => {
+    const { app } = await buildTestApp({ clientDir: await clientDirWithIndex() });
+    const res = await request(app).get('/');
+    expect(res.status).toBe(200);
+    expect(res.text).toContain('Ask Butch');
+    expect(res.headers['content-security-policy']).toContain("script-src 'self'");
+  });
+
+  it('keeps answering unknown API routes with JSON, not the web app', async () => {
+    const { app } = await buildTestApp({ clientDir: await clientDirWithIndex() });
+    const res = await request(app).get('/api/nope');
+    expect(res.status).toBe(404);
+    expect(res.body.error).toBe('Not found.');
+  });
+
+  it('does not serve anything at / without clientDir', async () => {
+    const { app } = await buildTestApp();
+    expect((await request(app).get('/')).status).toBe(404);
+  });
+});
+
+describe('rate limiting behind Railway', () => {
+  // Railway sends `X-Forwarded-For: <client>, <edge proxy>`, and the edge proxy varies by request.
+  const chatFrom = (app: Awaited<ReturnType<typeof buildTestApp>>['app'], xff: string) =>
+    request(app).post('/api/chat').set('X-Forwarded-For', xff).send({ message: 'Library hours?' });
+
+  it('limits each visitor by their own IP, not by the edge proxy that carried the request', async () => {
+    const { app } = await buildTestApp({ env: 'production', rateLimitPerMinute: 1 });
+    expect((await chatFrom(app, '203.0.113.1, 152.233.76.9')).status).toBe(200);
+    // Same visitor through a different edge proxy: still limited.
+    expect((await chatFrom(app, '203.0.113.1, 79.127.217.65')).status).toBe(429);
+    // Different visitor through the same edge proxy: not affected.
+    expect((await chatFrom(app, '203.0.113.2, 152.233.76.9')).status).toBe(200);
   });
 });

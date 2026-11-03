@@ -26,8 +26,8 @@ export class ApiRequestError extends Error {
 }
 
 /**
- * In development Vite proxies /api to the server, so the page's own origin works.
- * In production set VITE_API_URL to the API's address (e.g. the Render web service).
+ * In development Vite proxies /api to the server, and in production the server serves
+ * this app, so the page's own origin works. Set VITE_API_URL only if the API moves elsewhere.
  */
 const API_BASE = import.meta.env.VITE_API_URL || window.location.origin;
 
