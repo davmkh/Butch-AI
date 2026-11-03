@@ -12,12 +12,14 @@ export async function buildTestApp({
   env = 'test',
   rateLimitPerMinute = 1000,
   testHooks = false,
+  clientDir,
 }: {
   now?: Date;
   responder?: Responder;
   env?: 'test' | 'production';
   rateLimitPerMinute?: number;
   testHooks?: boolean;
+  clientDir?: string;
 } = {}) {
   const [knowledge, offices, quickPrompts] = await Promise.all([
     loadKnowledgeBase(),
@@ -39,6 +41,7 @@ export async function buildTestApp({
     butch,
     quickPrompts,
     clock: () => now,
+    clientDir,
   });
   return { app, store };
 }

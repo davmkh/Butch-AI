@@ -16,10 +16,19 @@ export interface AppDependencies {
   quickPrompts: QuickPrompt[];
   /** Injected so tests can pin "now" (e.g. to check dining hours at midnight). */
   clock: () => Date;
+  /** Built web app (client/dist) to serve from this server. Unset in development, where Vite serves it. */
+  clientDir?: string;
 }
 
 /** Builds the Express app without starting it, so Supertest can call it directly. */
-export function createApp({ config, store, butch, quickPrompts, clock }: AppDependencies): Express {
+export function createApp({
+  config,
+  store,
+  butch,
+  quickPrompts,
+  clock,
+  clientDir,
+}: AppDependencies): Express {
   const app = express();
 
   // Test hook (BUTCH_TEST_HOOKS=true, never in production): an `X-Butch-Fake-Now`
@@ -31,8 +40,9 @@ export function createApp({ config, store, butch, quickPrompts, clock }: AppDepe
     return fake && !Number.isNaN(fake.getTime()) ? fake : clock();
   };
 
-  // Render (and most hosts) sit behind one proxy; needed for correct client IPs in rate limiting.
-  if (config.env === 'production') app.set('trust proxy', 1);
+  // Railway adds two hops (X-Forwarded-For: <client>, <edge>, then an internal proxy). Trusting
+  // only one makes req.ip the edge's IP, so unrelated visitors would share a rate-limit bucket.
+  if (config.env === 'production') app.set('trust proxy', 2);
 
   app.use(helmet());
   app.use(cors({ origin: config.clientOrigin }));
@@ -69,6 +79,9 @@ export function createApp({ config, store, butch, quickPrompts, clock }: AppDepe
     const body: ApiError = { error: 'Not found.' };
     res.status(404).json(body);
   });
+
+  // One page and no client-side routes, so plain static files are enough.
+  if (clientDir) app.use(express.static(clientDir));
 
   app.use(errorHandler);
   return app;

@@ -11,7 +11,7 @@ const EnvSchema = z.object({
   CLIENT_ORIGIN: optional(z.string()).default('http://localhost:5173'),
   /** Max chat questions per minute from one IP address. Other API calls may use 5x this. */
   RATE_LIMIT_PER_MINUTE: optional(z.coerce.number().int().positive()).default(20),
-  /** PostgreSQL connection string. Unset = keep everything in memory. */
+  /** PostgreSQL connection string. Unset = keep everything in memory (not allowed in production). */
   DATABASE_URL: optional(z.string()),
 
   /**
@@ -64,6 +64,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
   }
   if (e.BUTCH_TEST_HOOKS === 'true' && e.NODE_ENV === 'production') {
     throw new Error('BUTCH_TEST_HOOKS must not be enabled in production.');
+  }
+  if (!e.DATABASE_URL && e.NODE_ENV === 'production') {
+    throw new Error('DATABASE_URL must be set in production, or chats are lost on every restart.');
   }
 
   const autoResponder = e.DEEPSEEK_API_KEY ? 'deepseek' : 'offline';

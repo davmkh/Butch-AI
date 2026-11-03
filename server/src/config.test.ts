@@ -37,4 +37,12 @@ describe('loadConfig', () => {
     ).toThrow(/production/);
     expect(() => loadConfig({ PORT: 'not-a-number' })).toThrow(/Invalid server environment/);
   });
+
+  it('requires a database in production so chats are never silently lost on restart', () => {
+    expect(() => loadConfig({ NODE_ENV: 'production' })).toThrow(/DATABASE_URL/);
+    expect(() => loadConfig({ NODE_ENV: 'production', DATABASE_URL: '' })).toThrow(/DATABASE_URL/);
+    expect(
+      loadConfig({ NODE_ENV: 'production', DATABASE_URL: 'postgresql://db/butch' }).databaseUrl,
+    ).toBe('postgresql://db/butch');
+  });
 });
