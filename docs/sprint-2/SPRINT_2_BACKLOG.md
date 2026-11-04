@@ -26,64 +26,70 @@ are the checks listed on each issue, plus the Gherkin scenarios in `e2e/features
 Sprint 1 finished 62 of 68 committed points in 4 weeks, about 15 points a week for two people.
 Sprint 2 is 3 weeks plus the 2 extra days, so capacity is about 46 points or a little more. We planned 48 points to deliver and had 3
 already done, which was about 2 over, so at the midpoint (Nov 3) we moved T-41 and T-31 (5 points)
-to sprint 3. That leaves 43 points to deliver.
+to sprint 3. At the end of the sprint (the Nov 3 retrospective) we also moved T-28, T-07, and
+T-30 (7 points) to sprint 3 because they were not started, and dropped T-29 and T-45 (4 points).
 
 ## Selected items
 
-| Issue | ID   | Item                                                      | Owner  | Effort | Acceptance criteria (summary)                                                                                                                                                                                                                                                                                                       | Status                         |
-| ----- | ---- | --------------------------------------------------------- | ------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| #37   | T-35 | Deploy to Railway: public HTTPS URL for the chat          | Dav    | 8      | The URL loads the chat; a Southside question gets a DeepSeek answer; `/api/health` shows `deepseek` and `postgres`; secrets are Railway variables, not in the repo.                                                                                                                                                                 | Testing: live Nov 3            |
-| #38   | T-39 | Hosted PostgreSQL on Railway (US-20)                      | Dav    | 5      | `db:deploy` applies the migration to Railway Postgres; chats and ratings appear in it; a fresh clone runs against it with no Docker; `npm run check` and `e2e` pass.                                                                                                                                                                | Testing: live, needs PR and CI |
-| #39   | T-40 | Production database hygiene                               | Dav    | 2      | API uses the private database URL; no public database access left on; separate dev and production databases; usage cap or alert set; SEC-13 items ticked.                                                                                                                                                                           | To do                          |
-| #40   | T-28 | Branch protection, Dependabot, repo visibility decision   | Dav    | 2      | A direct push to `main` is rejected; Dependabot is on; the SEC-07 decision is recorded, and the instructor can open the repo and board either way.                                                                                                                                                                                  | To do                          |
-| #41   | T-51 | `CLAUDE.md` for the repository                            | Dav    | 2      | File at the repo root with the rules both of us want Claude to follow (commands, style, conventions); merged to `main` through a pull request the other member reviews.                                                                                                                                                             | Code review (PR #57)           |
-| #42   | T-48 | Sprint 2 planning documents                               | Kaiden | 3      | Product backlog, sprint backlog, and roadmap updated; `npm run format:check` passes.                                                                                                                                                                                                                                                | In progress                    |
-| #43   | T-07 | Per-developer DeepSeek keys and a separate production key | Kaiden | 2      | Each member has their own small-balance key in a gitignored `.env`; the production key exists only as a Railway variable; no key is ever sent in chat.                                                                                                                                                                              | To do                          |
-| #44   | T-29 | DeepSeek latency and cost table (carried over)            | Kaiden | 2      | 20 typical questions timed on two models; table in the slideshow; default model chosen and set in `.env.example`.                                                                                                                                                                                                                   | To do                          |
-| #45   | T-30 | Adversarial question list (25 prompts)                    | Kaiden | 3      | List and results in `docs/`; any bad reply fixed in `persona.ts`.                                                                                                                                                                                                                                                                   | To do                          |
-| #48   | T-54 | Sprint 2 report and submission package                    | Kaiden | 2      | `SPRINT_2_REPORT.md` filled in from the course's `Sprint_Report_Template.md`; Kanban screenshots (before, midpoint, end) in `kanban/`; unlisted YouTube link added.                                                                                                                                                                 | In progress                    |
-| #49   | T-42 | Short AI-use notes and a quick UML read-through           | Both   | 2      | Each member writes a short note in `docs/AI_USAGE.md`: which AI tools, for what, how well they worked, and how the output was checked; we read the UML once and fix errors.                                                                                                                                                         | To do                          |
-| #52   | T-45 | Demo script and dry run (no screenshots)                  | Both   | 2      | Script run end to end on the deployed URL the day before recording; the board is shown live.                                                                                                                                                                                                                                        | To do                          |
-| #53   | T-49 | Sprint 2 slideshow                                        | Both   | 3      | Slides cover sprint 2 planning, execution, review, and retrospective, and follow the video outline: goal and backlog, the Kanban board before and after, the demo, responsible AI use, each item against its acceptance criteria, what went well and what to improve (at least 3 action items for sprint 3), and the sprint 3 plan. | To do                          |
-| #54   | T-50 | Sprint 2 video                                            | Both   | 3      | Screen recording of the deployed app; both members appear and discuss their own work; uploaded as an unlisted YouTube video and linked in the report.                                                                                                                                                                               | To do                          |
-| #55   | T-53 | Sprint 2 review and retrospective meetings                | Both   | 2      | The review meeting checks every item against its acceptance criteria and notes blockers; the retrospective meeting lists what improved, what is still hard, and at least 3 action items; both outcomes go into the slideshow (T-49).                                                                                                | To do                          |
-| #56   | T-47 | Answer beyond the knowledge base, more small talk         | Kaiden | 3      | Merged in PR #35 on 2026-10-22 with CI green.                                                                                                                                                                                                                                                                                       | Done                           |
+| Issue | ID   | Item                                                      | Owner  | Effort | Acceptance criteria (summary)                                                                                                                                                                                                                                                                                                       | Status                       |
+| ----- | ---- | --------------------------------------------------------- | ------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| #37   | T-35 | Deploy to Railway: public HTTPS URL for the chat          | Dav    | 8      | The URL loads the chat; a Southside question gets a DeepSeek answer; `/api/health` shows `deepseek` and `postgres`; secrets are Railway variables, not in the repo.                                                                                                                                                                 | Done: live Nov 3             |
+| #38   | T-39 | Hosted PostgreSQL on Railway (US-20)                      | Dav    | 5      | `db:deploy` applies the migration to Railway Postgres; chats and ratings appear in it; a fresh clone runs against it with no Docker; `npm run check` and `e2e` pass.                                                                                                                                                                | Done: live Nov 3             |
+| #39   | T-40 | Production database hygiene                               | Dav    | 2      | API uses the private database URL; no public database access left on; separate dev and production databases; usage cap or alert set; SEC-13 items ticked.                                                                                                                                                                           | Done                         |
+| #40   | T-28 | Branch protection, Dependabot, repo visibility decision   | Dav    | 2      | A direct push to `main` is rejected; Dependabot is on; the SEC-07 decision is recorded, and the instructor can open the repo and board either way.                                                                                                                                                                                  | Moved to sprint 3            |
+| #41   | T-51 | `CLAUDE.md` for the repository                            | Dav    | 2      | File at the repo root with the rules both of us want Claude to follow (commands, style, conventions); merged to `main` through a pull request the other member reviews.                                                                                                                                                             | Done (PR #57)                |
+| #42   | T-48 | Sprint 2 planning documents                               | Kaiden | 3      | Product backlog, sprint backlog, and roadmap updated; `npm run format:check` passes.                                                                                                                                                                                                                                                | Done                         |
+| #43   | T-07 | Per-developer DeepSeek keys and a separate production key | Kaiden | 2      | Each member has their own small-balance key in a gitignored `.env`; the production key exists only as a Railway variable; no key is ever sent in chat.                                                                                                                                                                              | Moved to sprint 3            |
+| #44   | T-29 | DeepSeek latency and cost table (carried over)            | Kaiden | 2      | 20 typical questions timed on two models; table in the slideshow; default model chosen and set in `.env.example`.                                                                                                                                                                                                                   | Dropped at the retrospective |
+| #45   | T-30 | Adversarial question list (25 prompts)                    | Kaiden | 3      | List and results in `docs/`; any bad reply fixed in `persona.ts`.                                                                                                                                                                                                                                                                   | Moved to sprint 3            |
+| #48   | T-54 | Sprint 2 report and submission package                    | Kaiden | 2      | `SPRINT_2_REPORT.md` filled in from the course's `Sprint_Report_Template.md`; Kanban screenshots (before, midpoint, end) in `kanban/`; unlisted YouTube link added.                                                                                                                                                                 | In progress                  |
+| #49   | T-42 | Short AI-use notes and a quick UML read-through           | Both   | 2      | Each member writes a short note in `docs/AI_USAGE.md`: which AI tools, for what, how well they worked, and how the output was checked; we read the UML once and fix errors.                                                                                                                                                         | Done                         |
+| #52   | T-45 | Demo script and dry run (no screenshots)                  | Both   | 2      | Script run end to end on the deployed URL the day before recording; the board is shown live.                                                                                                                                                                                                                                        | Dropped at the retrospective |
+| #53   | T-49 | Sprint 2 slideshow                                        | Both   | 3      | Slides cover sprint 2 planning, execution, review, and retrospective, and follow the video outline: goal and backlog, the Kanban board before and after, the demo, responsible AI use, each item against its acceptance criteria, what went well and what to improve (at least 3 action items for sprint 3), and the sprint 3 plan. | In progress                  |
+| #54   | T-50 | Sprint 2 video                                            | Both   | 3      | Screen recording of the deployed app; both members appear and discuss their own work; uploaded as an unlisted YouTube video and linked in the report.                                                                                                                                                                               | In progress                  |
+| #55   | T-53 | Sprint 2 review and retrospective meetings                | Both   | 2      | The review meeting checks every item against its acceptance criteria and notes blockers; the retrospective meeting lists what improved, what is still hard, and at least 3 action items; both outcomes go into the slideshow (T-49).                                                                                                | Done                         |
+| #56   | T-47 | Answer beyond the knowledge base, more small talk         | Kaiden | 3      | Merged in PR #35 on 2026-10-22 with CI green.                                                                                                                                                                                                                                                                                       | Done                         |
 
-**Committed:** 46 points (51 planned, minus 5 moved to sprint 3 on Nov 3), of which 3 were done
-before planning. Remaining to deliver: 43.
+**Committed at the end of the sprint:** 35 points (51 planned, minus 12 moved to sprint 3 and 4
+dropped), of which 3 were done before planning. Done: 27 points. In progress: 8 points (report,
+slideshow, and video, finished when the video is recorded).
 
 **Board status at the midpoint (Nov 3):** 1 Done, 1 Code Review, 2 Testing, 2 In Progress, and 10
-To Do (16 cards). The course deliverables above (#42, #48, #49, #52, #53, #54, #55) are not product backlog
-items; they stay on the board until the video is recorded, then the slideshow, video, and meeting
-cards are closed (see [kanban/README.md](kanban/README.md)).
+To Do (16 cards). The course deliverables above (#42, #48, #49, #53, #54, #55) are not product backlog
+items.
+
+**Board status at the end (Nov 3):** 8 Done, 3 In Progress (report, slideshow, video), and 3 To Do
+(T-28, T-07, T-30), which then moved to sprint 3 and came off the board. T-29 and T-45 were dropped
+at the retrospective. T-41 and T-31 had already moved to sprint 3. Screenshots are in
+[kanban/](kanban/).
 
 ## Per-member feature
 
-| Member | Items in sprint 2                                                                                                   | Points      |
-| ------ | ------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Dav    | Deploy to Railway, hosted PostgreSQL, production database hygiene, branch protection and repo settings, `CLAUDE.md` | 19          |
-| Kaiden | Planning documents, DeepSeek keys, latency and cost table, adversarial questions, sprint report package, PR #35     | 12 + 3 done |
-| Both   | AI-use notes, demo script, slideshow, video, review and retrospective (6 points each)                               | 12          |
+| Member | Items in sprint 2                                                              | Points     |
+| ------ | ------------------------------------------------------------------------------ | ---------- |
+| Dav    | Deploy to Railway, hosted PostgreSQL, production database hygiene, `CLAUDE.md` | 17         |
+| Kaiden | Planning documents, sprint report package, PR #35                              | 5 + 3 done |
+| Both   | AI-use notes, slideshow, video, review and retrospective (5 points each)       | 10         |
 
-Totals per person: Dav 25, Kaiden 18 plus 3 done. Each member owns at least five items of their
-own plus the shared ones.
+Totals per person: Dav 22, Kaiden 10 plus 3 done. Each member owns several items of their own
+(Dav 4, Kaiden 3) plus the shared ones.
 
 ## Carried over from sprint 1 (re-estimated)
 
-| ID         | State at sprint 1 end         | Estimate | Decision                                                      |
-| ---------- | ----------------------------- | -------- | ------------------------------------------------------------- |
-| T-03       | PR to `main` pending          | Done     | Merged in PR #33.                                             |
-| T-04       | In review                     | Done     | Merged in PR #33.                                             |
-| T-27       | In progress                   | Done     | Submitted and graded.                                         |
-| T-07       | To do                         | 2        | In sprint 2: needed before the URL is public (SEC-10).        |
-| T-28       | To do                         | 2        | In sprint 2: branch protection, as sprint 1 retro action 3.   |
-| T-29       | To do                         | 2        | In sprint 2: DeepSeek key now works, so timings are possible. |
-| US-16      | Partial (placeholder SVG art) | 5        | Sprint 3: deployment comes first.                             |
-| T-38       | To do (screen reader pass)    | 3        | Sprint 3: run it on the deployed site.                        |
-| T-32       | To do (Figma mockups)         | 3        | Dropped: the UI is already built.                             |
-| US-08 pt 2 | Admin log screen              | 5        | Dropped: admin tools removed. Logs are read in the database.  |
-| US-09      | Not started                   | 8        | Dropped: admin tools removed.                                 |
-| US-10 sc.2 | `@todo`                       | 1        | Dropped: it needed the admin log screen.                      |
+| ID         | State at sprint 1 end         | Estimate | Decision                                                     |
+| ---------- | ----------------------------- | -------- | ------------------------------------------------------------ |
+| T-03       | PR to `main` pending          | Done     | Merged in PR #33.                                            |
+| T-04       | In review                     | Done     | Merged in PR #33.                                            |
+| T-27       | In progress                   | Done     | Submitted and graded.                                        |
+| T-07       | To do                         | 2        | Moved to sprint 3 at the end of sprint 2 (not started).      |
+| T-28       | To do                         | 2        | Moved to sprint 3 at the end of sprint 2 (not started).      |
+| T-29       | To do                         | 2        | Dropped at the sprint 2 retrospective.                       |
+| US-16      | Partial (placeholder SVG art) | 5        | Sprint 3: deployment comes first.                            |
+| T-38       | To do (screen reader pass)    | 3        | Sprint 3: run it on the deployed site.                       |
+| T-32       | To do (Figma mockups)         | 3        | Dropped: the UI is already built.                            |
+| US-08 pt 2 | Admin log screen              | 5        | Dropped: admin tools removed. Logs are read in the database. |
+| US-09      | Not started                   | 8        | Dropped: admin tools removed.                                |
+| US-10 sc.2 | `@todo`                       | 1        | Dropped: it needed the admin log screen.                     |
 
 ## Not selected and why
 
@@ -95,19 +101,19 @@ Sprint 3 runs 2026-11-05 to 2026-12-06. These items are candidates for it, in pr
 | T-46                 | Mark general-knowledge replies                                        | Needs a small server and UI change; do after the deploy is stable.         | Sprint 3 |
 | T-31, T-52           | Knowledge entries (Greek life, jobs, housing, parking; then the rest) | Moved at the midpoint to keep the sprint within capacity.                  | Sprint 3 |
 | T-41                 | Upgrade dev tooling (vite, vitest, concurrently)                      | Moved at the midpoint to keep the sprint within capacity.                  | Sprint 3 |
+| T-07, T-28, T-30     | DeepSeek keys, branch protection, adversarial question list           | Not started by the end of sprint 2; moved at the retrospective.            | Sprint 3 |
 | US-16, T-38          | Mascot art, screen reader pass                                        | Deployment comes first.                                                    | Sprint 3 |
 | T-37, SEC-11, SEC-16 | Request logging, uptime check, personal-data redaction                | Low priority; only if time allows.                                         | Sprint 3 |
 
 ## Risks
 
-- **Completion is graded and time is short.** The plan was about 2 points over capacity, so T-41
-  and T-31 moved to sprint 3 on Nov 3. If Nov 4 shows the rest will not finish, move the next
-  lowest priority items (T-29, T-30) the same way rather than leaving them open on Nov 5.
-- **The deployed code is not on `main` yet.** The live site (checked Nov 3) runs commit `986289e`
-  on `feature/railway-deploy`. Open and merge its pull request so the instructor sees the work on
-  `main` and CI runs on it.
-- **A public URL makes SEC-10 real.** Anyone can spend the DeepSeek balance. T-07 keeps the
-  balance small, and the per-IP rate limits stay on.
+- **Completion is graded and time was short.** The plan was about 2 points over capacity, so T-41
+  and T-31 moved to sprint 3 at the midpoint, and T-28, T-07, T-30 moved at the end. T-29 and
+  T-45 were dropped.
+- **The deployed code is on `main`.** The live site runs commit `986289e`, merged in PR #59 on
+  Nov 3 with CI green.
+- **A public URL makes SEC-10 real.** Anyone can spend the DeepSeek balance. T-07 (moved to
+  sprint 3) keeps the balance small; until then the per-IP rate limits stay on.
 - **Railway cost.** Dav's $5 a month credit must cover the API and the database. Check the usage
   page after the first deploy and set the cap in T-40.
 
@@ -117,5 +123,5 @@ Sprint 3 runs 2026-11-05 to 2026-12-06. These items are candidates for it, in pr
 | --------------------------------------------------------------------------------- | -------------------------------------------------- |
 | 1. Create every issue, assign it, and put it on the board before writing code     | First task after planning; Dav checks twice a week |
 | 2. One documents home (`docs/sprint-N/`) and one owner per deliverable            | This folder; owners in the table above             |
-| 3. One pull request per member per week, reviewed by the other; branch protection | T-28                                               |
-| 4. Separate DeepSeek keys per developer with a small balance each                 | T-07                                               |
+| 3. One pull request per member per week, reviewed by the other; branch protection | T-28 (moved to sprint 3)                           |
+| 4. Separate DeepSeek keys per developer with a small balance each                 | T-07 (moved to sprint 3)                           |
