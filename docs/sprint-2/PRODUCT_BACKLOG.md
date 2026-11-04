@@ -80,42 +80,42 @@ T-01 to T-05, T-07, and T-23 match the GitHub issues Kaiden opened on 2026-10-15
 T-08 to T-22 are reserved for the rest of that list and will be filled in when it lands. T-39 and
 up are new in sprint 2.
 
-| ID   | Description                                                                                                                      | Priority | Status                        | Sprint |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------- | ------ |
-| T-01 | Project setup: npm workspaces, TypeScript, Express API, React client, Vitest, Playwright, CI.                                    | High     | Done                          | 1      |
-| T-02 | PostgreSQL storage via Prisma, with an in-memory store for tests and no-Docker setups.                                           | High     | Done                          | 1      |
-| T-03 | Connect Butch to an AI API (DeepSeek) with an offline fallback when no key is set or it fails.                                   | High     | Done (merged in PR #33)       | 1      |
-| T-04 | UML diagrams: use case, class, collaboration, sequence, each with a description.                                                 | High     | Done (merged in PR #33)       | 1      |
-| T-05 | Accessible, responsive chat: axe clean, keyboard-only, 320 to 1920 px.                                                           | High     | Done                          | 1      |
-| T-07 | Per-developer DeepSeek keys with a small balance each, and a separate production key (SEC-10).                                   | High     | To do                         | 2      |
-| T-23 | Improve the AI's replies: conversational, in Butch's voice, grounded, within 5 s.                                                | High     | Done                          | 1      |
-| T-24 | Knowledge base v1: 40+ verified WSU facts with source links, keyword search, typo tolerance.                                     | High     | Done                          | 1      |
-| T-25 | Security and privacy review of sprint 1 code (SECURITY_REVIEW.md).                                                               | High     | Done                          | 1      |
-| T-26 | Documentation set: README, ARCHITECTURE, DATA_STRATEGY, SCENARIOS, TRACEABILITY, ROADMAP.                                        | Medium   | Done                          | 1      |
-| T-27 | Sprint 1 submission: Kanban board and screenshots, review, retrospective report, demo video.                                     | High     | Done (graded)                 | 1      |
-| T-28 | Branch protection on `main`: PR required, 1 approval, CI green; Dependabot; repo visibility; instructor access.                  | Medium   | To do                         | 2      |
-| T-29 | DeepSeek latency and cost table for 20 typical questions; pick the default model.                                                | Medium   | To do                         | 2      |
-| T-30 | Adversarial question list (25 prompts) run against DeepSeek mode; adjust persona if needed.                                      | Medium   | To do                         | 2      |
-| T-31 | Knowledge base: 8 entries on Greek life, jobs, housing, and parking, each with a source link.                                    | Medium   | To do                         | 2      |
-| T-32 | Figma mockups of the chat on desktop and mobile using the WSU tokens.                                                            | Low      | To do                         | 3      |
-| T-35 | Deploy to Railway: public HTTPS URL for the chat, API and client together.                                                       | High     | Done: live Nov 3              | 2      |
-| T-37 | Structured request logging and an uptime check on `/api/health`.                                                                 | Low      | To do                         | 3      |
-| T-38 | Manual accessibility pass with a screen reader (NVDA or VoiceOver).                                                              | Medium   | To do                         | 3      |
-| T-39 | Hosted PostgreSQL on Railway: connection settings, migrations applied, no Docker needed (US-20).                                 | High     | Live; waiting on CI and merge | 2      |
-| T-40 | Production database hygiene: private URL, separate dev and production databases, usage cap.                                      | High     | To do                         | 2      |
-| T-41 | Upgrade dev tooling together (vite, vitest, concurrently) to clear `npm audit` findings.                                         | Medium   | To do                         | 2      |
-| T-42 | Short AI-use notes in `docs/AI_USAGE.md` (which tools, for what, how we checked), plus a quick read-through of the UML.          | High     | To do                         | 2      |
-| T-45 | Demo script and dry run on the deployed URL; the video shows the running app, not screenshots.                                   | High     | To do                         | 2      |
-| T-46 | Mark replies that come from general AI knowledge, not verified facts.                                                            | Medium   | To do                         | 3      |
-| T-47 | Let DeepSeek answer WSU questions the knowledge base does not cover, plus more small talk.                                       | Medium   | Done (PR #35)                 | 2      |
-| T-48 | Sprint 2 planning documents: product backlog, sprint backlog, roadmap.                                                           | High     | In progress (Kaiden)          | 2      |
-| T-49 | Sprint 2 slideshow: planning, execution (Kanban board before and after), review, and retrospective, following the video outline. | High     | To do                         | 2      |
-| T-50 | Sprint 2 video: screen recording of the deployed app with both members speaking.                                                 | High     | To do                         | 2      |
-| T-51 | `CLAUDE.md` with project rules for AI coding assistants, written by Dav.                                                         | Medium   | In progress (Dav)             | 2      |
-| T-52 | Knowledge base: remaining entries (financial aid, safety, health, IT help, athletics).                                           | Medium   | To do                         | 3      |
-| T-53 | Sprint 2 review and retrospective meetings; the results go into the slideshow.                                                   | High     | To do                         | 2      |
-| T-54 | Sprint 2 report and submission package: report from the template, Kanban screenshots, video link, instructor access.             | High     | To do                         | 2      |
-| T-55 | Sprint 3 final polish: bugs from real-student testing, final docs and test evidence, final demo and retrospective.               | High     | To do                         | 3      |
+| ID   | Description                                                                                                                      | Priority | Status                                | Sprint |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------- | ------ |
+| T-01 | Project setup: npm workspaces, TypeScript, Express API, React client, Vitest, Playwright, CI.                                    | High     | Done                                  | 1      |
+| T-02 | PostgreSQL storage via Prisma, with an in-memory store for tests and no-Docker setups.                                           | High     | Done                                  | 1      |
+| T-03 | Connect Butch to an AI API (DeepSeek) with an offline fallback when no key is set or it fails.                                   | High     | Done (merged in PR #33)               | 1      |
+| T-04 | UML diagrams: use case, class, collaboration, sequence, each with a description.                                                 | High     | Done (merged in PR #33)               | 1      |
+| T-05 | Accessible, responsive chat: axe clean, keyboard-only, 320 to 1920 px.                                                           | High     | Done                                  | 1      |
+| T-07 | Per-developer DeepSeek keys with a small balance each, and a separate production key (SEC-10).                                   | High     | To do (moved to sprint 3)             | 3      |
+| T-23 | Improve the AI's replies: conversational, in Butch's voice, grounded, within 5 s.                                                | High     | Done                                  | 1      |
+| T-24 | Knowledge base v1: 40+ verified WSU facts with source links, keyword search, typo tolerance.                                     | High     | Done                                  | 1      |
+| T-25 | Security and privacy review of sprint 1 code (SECURITY_REVIEW.md).                                                               | High     | Done                                  | 1      |
+| T-26 | Documentation set: README, ARCHITECTURE, DATA_STRATEGY, SCENARIOS, TRACEABILITY, ROADMAP.                                        | Medium   | Done                                  | 1      |
+| T-27 | Sprint 1 submission: Kanban board and screenshots, review, retrospective report, demo video.                                     | High     | Done (graded)                         | 1      |
+| T-28 | Branch protection on `main`: PR required, 1 approval, CI green; Dependabot; repo visibility; instructor access.                  | Medium   | To do (moved to sprint 3)             | 3      |
+| T-29 | DeepSeek latency and cost table for 20 typical questions; pick the default model.                                                | Medium   | Dropped at the sprint 2 retrospective | -      |
+| T-30 | Adversarial question list (25 prompts) run against DeepSeek mode; adjust persona if needed.                                      | Medium   | To do (moved to sprint 3)             | 3      |
+| T-31 | Knowledge base: 8 entries on Greek life, jobs, housing, and parking, each with a source link.                                    | Medium   | To do (moved to sprint 3)             | 3      |
+| T-32 | Figma mockups of the chat on desktop and mobile using the WSU tokens.                                                            | Low      | To do                                 | 3      |
+| T-35 | Deploy to Railway: public HTTPS URL for the chat, API and client together.                                                       | High     | Done: live Nov 3 (PR #59)             | 2      |
+| T-37 | Structured request logging and an uptime check on `/api/health`.                                                                 | Low      | To do                                 | 3      |
+| T-38 | Manual accessibility pass with a screen reader (NVDA or VoiceOver).                                                              | Medium   | To do                                 | 3      |
+| T-39 | Hosted PostgreSQL on Railway: connection settings, migrations applied, no Docker needed (US-20).                                 | High     | Done: live Nov 3 (PR #59)             | 2      |
+| T-40 | Production database hygiene: private URL, separate dev and production databases, usage cap.                                      | High     | Done                                  | 2      |
+| T-41 | Upgrade dev tooling together (vite, vitest, concurrently) to clear `npm audit` findings.                                         | Medium   | To do (moved to sprint 3)             | 3      |
+| T-42 | Short AI-use notes in `docs/AI_USAGE.md` (which tools, for what, how we checked), plus a quick read-through of the UML.          | High     | Done                                  | 2      |
+| T-45 | Demo script and dry run on the deployed URL; the video shows the running app, not screenshots.                                   | High     | Dropped at the sprint 2 retrospective | -      |
+| T-46 | Mark replies that come from general AI knowledge, not verified facts.                                                            | Medium   | To do                                 | 3      |
+| T-47 | Let DeepSeek answer WSU questions the knowledge base does not cover, plus more small talk.                                       | Medium   | Done (PR #35)                         | 2      |
+| T-48 | Sprint 2 planning documents: product backlog, sprint backlog, roadmap.                                                           | High     | Done                                  | 2      |
+| T-49 | Sprint 2 slideshow: planning, execution (Kanban board before and after), review, and retrospective, following the video outline. | High     | In progress                           | 2      |
+| T-50 | Sprint 2 video: screen recording of the deployed app with both members speaking.                                                 | High     | In progress                           | 2      |
+| T-51 | `CLAUDE.md` with project rules for AI coding assistants, written by Dav.                                                         | Medium   | Done (PR #57)                         | 2      |
+| T-52 | Knowledge base: remaining entries (financial aid, safety, health, IT help, athletics).                                           | Medium   | To do                                 | 3      |
+| T-53 | Sprint 2 review and retrospective meetings; the results go into the slideshow.                                                   | High     | Done                                  | 2      |
+| T-54 | Sprint 2 report and submission package: report from the template, Kanban screenshots, video link, instructor access.             | High     | In progress (Kaiden)                  | 2      |
+| T-55 | Sprint 3 final polish: bugs from real-student testing, final docs and test evidence, final demo and retrospective.               | High     | To do                                 | 3      |
 
 ## Open issues from the security review
 
@@ -123,12 +123,12 @@ Fixed findings SEC-01 to SEC-06 are closed. Open ones that need work:
 
 | ID     | Description                                                                                                    | Priority | Sprint |
 | ------ | -------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| SEC-07 | Repository is public; decide whether to make it private (T-28).                                                | Medium   | 2      |
+| SEC-07 | Repository is public; decide whether to make it private (T-28).                                                | Medium   | 3      |
 | SEC-08 | No authentication. Fine while there are no admin routes; add sign-in before any admin route is ever added.     | Low      | -      |
-| SEC-09 | Prompt injection and off-topic replies (covered by T-30).                                                      | Medium   | 2      |
-| SEC-10 | Denial of wallet: small DeepSeek balance, separate production key (T-07). Matters more once the URL is public. | High     | 2      |
+| SEC-09 | Prompt injection and off-topic replies (covered by T-30).                                                      | Medium   | 3      |
+| SEC-10 | Denial of wallet: small DeepSeek balance, separate production key (T-07). Matters more once the URL is public. | High     | 3      |
 | SEC-11 | Personal information in free text: redact before saving; retention period. Do it if time allows.               | Medium   | 3      |
 | SEC-13 | Deployment settings checklist (NODE_ENV, CLIENT_ORIGIN, host secrets) (T-35, T-40).                            | High     | 2      |
 | SEC-14 | Security headers for the site (T-35).                                                                          | Medium   | 2      |
 | SEC-16 | No request or audit logging (covered by T-37). Do it if time allows.                                           | Low      | 3      |
-| SEC-18 | Repository and supply-chain settings: branch protection, Dependabot (T-28).                                    | Medium   | 2      |
+| SEC-18 | Repository and supply-chain settings: branch protection, Dependabot (T-28).                                    | Medium   | 3      |
